@@ -1,0 +1,11 @@
+site_name: Getting Started Guides
+
+docs_dir: Docs
+
+pages:
+- ['index.md','Getting Started Guides']
+- ['GettingStarted.md', 'Guides', 'Getting started with the new mbed']
+- ['FirstProject.md', 'Guides', 'Your first project']
+- ['MigrationGuide.md', 'Guides', 'Migrating from mbed Classic']
+- ['FurtherReading.md', 'Additional Resources', 'Further reading']
+- ['GetTheCode.md', 'Additional Resources', 'Get the code']
