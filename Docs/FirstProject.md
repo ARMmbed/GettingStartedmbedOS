@@ -1,11 +1,11 @@
 # Your first project
 
-Ok, let's get to the nitty gritty and create your first mbed project (using yotta)! For this project we are going to make the LED on our board blink, and print some commands to the terminal. We are going to use the mbed-core (mbed OS) yotta module.
+Ok, let's get to the nitty gritty and create your first mbed project (using yotta)! For this project we are going to make the LED on our board blink, and print some commands to the terminal. We are going to use the mbed-drivers (mbed OS) yotta module.
 
 ## Step 0: install yotta
 
 
-Tip: this section covers installing yotta on your own computer. If you are using an IDE or other environment with yotta pre-installed, you can skip this step.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">Tip: this section covers installing yotta on your own computer. If you are using an IDE or other environment with yotta pre-installed, you can skip this step.</span>
 
 
 Note: make sure you have an up to date version of [Python](https://www.python.org/downloads/) installed; it should include pip, but if it doesn't you can manually [install it](https://pypi.python.org/pypi/pip). 
@@ -92,10 +92,10 @@ frdm-k64f-gcc,*
 
 ## Step 3: add dependencies
 
-Now let's add the dependencies. In this project,  we'll have `mbed-core` (also known as mbed OS) as our dependency:
+Now let's add the dependencies. In this project,  we'll have `mbed-drivers` (also known as mbed OS) as our dependency:
 
 ```bash
-$ yotta install mbed-core
+$ yotta install mbed-drivers
 info: ... a bunch of messages about stuff being downloaded ...
 ```
 
