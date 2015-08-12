@@ -32,5 +32,6 @@ One of the most important features of yotta is the ability to compile the same s
 
 Before you build anything with yotta, you select the target that you want to build for (we'll see later how that's done). The instructions for a particular development board or shield will tell you which target to use to build software for that hardware target, or you can find target descriptions by searching the yotta registry (we'll see that later, too).
 
+_____
 
 Now that you've been briefed, let's jump on over to the next section and get you started with [your first project](FirstProject.md).
