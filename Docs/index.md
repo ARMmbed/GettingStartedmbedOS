@@ -2,7 +2,7 @@
 
 Welcome to mbed's getting started guides. 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** If you're not sure what mbed is, you can start [here](http://http://mbed.com/en/about-mbed/what-mbed/).</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** If you're not sure what mbed is, you can start [here](http://mbed.com/en/about-mbed/what-mbed/).</span>
 
 The guides cover:
 
