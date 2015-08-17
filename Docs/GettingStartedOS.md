@@ -1,4 +1,4 @@
-# Getting started with the new mbed
+# Getting started with the new mbed OS
 
 Ah, great, you're here! Welcome to the new mbed. it's great to have you. Let's get started, shall we? 
 
