@@ -18,6 +18,8 @@ To learn about our [software](http://mbed.com/en/development/software/):
 
 Learn about [connectivity on mbed](http://mbed.com/en/technologies/connectivity/) and our [cloud products](http://mbed.com/en/production/cloud-products/) and [services](http://mbed.com/en/production/services/).
 
+You might want to pay special attention to [mbed Client](https://github.com/ARMmbed/mbed-client), the software library that connects constrained devices to mbed Device Server.
+
 ## Hardware and production
 
 * The [mbed Enabled hardware list](http://mbed.com/en/development/hardware/)
