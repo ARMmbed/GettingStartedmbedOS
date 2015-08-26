@@ -110,7 +110,7 @@ info: ... a bunch of messages about stuff being downloaded ...
 
 You could at this point add other yotta modules. Check out the `yotta search` command to search for other available modules.
 
-If you want to learn more about mbed OS and try some other functionality, you can [start here](http://mbed.com/en/technologies/technology-mbed-os/).
+If you want to learn more about mbed OS and try some other functionality, you can [start here](http://mbed.com/en/development/software/mbed-os/).
 
 ## Step 4: add source files
 
@@ -226,4 +226,4 @@ LED = 0
 
 ___
 
-We're done with our first program. For more information, see our [mbed OS](http://mbed.com/en/technologies/technology-mbed-os/) documentation.
+We're done with our first program. For more information, see our [mbed OS](http://mbed.com/en/development/software/mbed-os/) documentation.
