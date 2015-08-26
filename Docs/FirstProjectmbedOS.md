@@ -45,7 +45,8 @@ $ cd example-mbedos-blinky
 $ yotta init
 Enter the module name: <example-mbedos-blinky>
 Enter the initial version: <0.0.0>
-Short description: simple example program to blink an LED on an mbed board with mbed OS
+Short description: simple example program to blink an LED 
+on an mbed board with mbed OS
 Keywords:  <blinky, mbedOS>
 Author: mbedAustin
 Repository url:
@@ -70,9 +71,17 @@ Earlier, we explained that yotta can build the same code for multiple targets; i
 For a full list of available targets run the following `search` command:
 
 ```bash
-$ yotta search --limit 1000 targetfrdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
-st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
-frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+$ yotta search --limit 1000 targetfrdm-k64f-gcc 0.0.21: 
+Official mbed build target for the mbed frdm-k64f 
+development board.
+
+st-nucleo-f401re-gcc 0.1.0: 
+Official mbed build target for the mbed st-nucleo-f401re 
+development board.
+
+frdm-k64f-armcc 0.0.13: 
+Official mbed build target for the mbed frdm-k64f 
+development board, using the armcc toolchain.
 ...
 ```
 
@@ -130,7 +139,8 @@ To build the project, run the yotta build command in the top level of the exampl
 
 ```bash
 $ yt build
-info: generate for target: frdm-k64f-gcc 0.0.21 at ~\example-mbedos-blinky\yotta_targets\frdm-k64f-gcc
+info: generate for target: frdm-k64f-gcc 0.0.21 
+at ~\example-mbedos-blinky\yotta_targets\frdm-k64f-gcc
 GCC version is: 4.9.3
 -- The ASM compiler identification is GNU
 -- Found assembler: GNU Tools ARM Embedded/4.9 2014q4/bin/arm-none-eabi-gcc.exe
@@ -171,9 +181,17 @@ You can build this example for any target. To see all targets available run the 
 
 ```bash
 $ yotta search --limit 1000 target target
-frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
-st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
-frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+frdm-k64f-gcc 0.0.21: 
+Official mbed build target for the mbed frdm-k64f 
+development board.
+
+st-nucleo-f401re-gcc 0.1.0: 
+Official mbed build target for the mbed st-nucleo-f401re 
+development board.
+
+frdm-k64f-armcc 0.0.13:
+Official mbed build target for the mbed frdm-k64f 
+development board, using the armcc toolchain.
 ...
 ```
 

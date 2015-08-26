@@ -52,7 +52,7 @@ The first step in making a module or application build with yotta is adding this
     "version": "0.0.1",
     "license": "Apache-2",
     "description": "Describe what your library does here!",
-    "keywords": ["mbed-classic", "some", "keywords", "describing", "your", "module"],
+    "keywords": ["mbed-classic", "keywords", "describing", "your", "module"],
     "author": "Your Name <you@example.com>",
     "homepage": "http://github.com/yourname/yourrepository",
     "dependencies":{
@@ -110,7 +110,8 @@ After selecting the target, you can build! Run `yotta build` in the directory co
 
 ```
 yotta build
-info: generate for target: seeedtinyble-gcc 0.0.2 at ./yotta_targets/seeedtinyble-gcc
+info: generate for target: seeedtinyble-gcc 0.0.2 
+at ./yotta_targets/seeedtinyble-gcc
 GCC version is: 4.8.4
 -- The ASM compiler identification is GNU
 -- Found assembler: /usr/local/bin/arm-none-eabi-gcc
