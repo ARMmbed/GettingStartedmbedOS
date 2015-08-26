@@ -12,7 +12,7 @@ The guides cover:
 
 * [The migration guide](MigrationGuide.md): get your existing libraries and application to yotta, our new build system.
 
-The additional sources section offers
+The additional sources section offers:
 
 * [Further reading sources](FurtherReading.md) about other mbed tools, hardware, community and partners.
 
