@@ -10,8 +10,6 @@ The guides cover:
 
 * [Your first mbed OS project](FirstProjectmbedOS.md): a simple project to get you going.
 
-* [The migration guide](MigrationGuide.md): get your existing libraries and application to yotta, our new build system.
-
 The additional sources section offers:
 
 * [Further reading sources](FurtherReading.md) about other mbed tools, hardware, community and partners.
