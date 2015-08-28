@@ -6,6 +6,5 @@ pages:
 - ['index.md','Getting Started with mbed OS']
 - ['GettingStartedmbedOS.md', 'Guides', 'Getting started with mbed OS']
 - ['FirstProjectmbedOS.md', 'Guides', 'Your first project']
-- ['MigrationGuide.md', 'Guides', 'Migrating from mbed Classic']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
 - ['GetTheCode.md', 'Additional Resources', 'Get the code']
