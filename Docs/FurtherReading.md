@@ -12,7 +12,7 @@ To learn about our [software](http://mbed.com/en/development/software/):
 
 * [The testing tools](http://mbed.com/en/development/software/tools/testing/).
 
-* Security with [mbed TLS and uVisor](http://mbed.com/en/technologies/security/).
+* Security with [mbed TLS and mbed OS uVisor](http://mbed.com/en/technologies/security/).
 
 ## Connectivity
 
