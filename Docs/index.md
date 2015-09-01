@@ -15,3 +15,6 @@ The additional sources section offers:
 * [Further reading sources](FurtherReading.md) about other mbed tools, hardware, community and partners.
 
 * Links to [our main code repositories and their documentation](GetTheCode.md).
+
+______
+Copyright © 2015 ARM Ltd. All rights reserved.

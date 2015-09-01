@@ -5,10 +5,9 @@ Ok, let's get to the nitty gritty and create your first mbed project (using yott
 ## Step 0: install yotta
 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">Tip: this section covers installing yotta on your own computer. If you are using an IDE or other environment with yotta pre-installed, you can skip this step.</span>
-
-
-Note: make sure you have an up to date version of [Python](https://www.python.org/downloads/) installed; it should include pip, but if it doesn't you can manually [install it](https://pypi.python.org/pypi/pip). 
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip**: this section covers installing yotta on your own computer. If you are using an IDE or other environment with yotta pre-installed, you can skip this step.
+<br>
+**Note**: make sure you have an up to date version of [Python](https://www.python.org/downloads/) installed; it should include pip, but if it doesn't you can manually [install it](https://pypi.python.org/pypi/pip). </span>
 
 
 On the command line, run this command to install yotta:
@@ -227,3 +226,6 @@ LED = 0
 ___
 
 We're done with our first program. For more information, see our [mbed OS](http://mbed.com/en/development/software/mbed-os/) documentation.
+
+______
+Copyright © 2015 ARM Ltd. All rights reserved.

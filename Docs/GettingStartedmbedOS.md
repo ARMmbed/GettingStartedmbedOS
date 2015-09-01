@@ -35,3 +35,6 @@ Before you build anything with yotta, you select the target that you want to bui
 _____
 
 Now that you've been briefed, let's jump on over to the next section and get you started with [your first project](FirstProjectmbedOS.md).
+
+______
+Copyright © 2015 ARM Ltd. All rights reserved.

@@ -150,3 +150,6 @@ The rules to migrate a simple application should cover the vast majority of all 
 One significant difference between the mbed Classic build system and the yotta build system is that yotta will compile each module that your application uses into a separate static library archive, and then link these archives into your application. Because of the way archive linking works, this means that weak symbol overrides will not necessarily be picked up in the same way.
 
 If you have a source file in a library that defines weak symbol overrides, then these will not be included unless something else from that source file (and hence that object within the archive) is being linked into the final application. It is not recommended to use weak symbols as part of the API of modules in yotta (because it makes it impossible for multiple modules linked into the same application to use your module successfully), but to work around this problem in legacy software you must ensure that any files that define weak symbol overrides also include something that is strongly linked into the final application.
+
+______
+Copyright © 2015 ARM Ltd. All rights reserved.
