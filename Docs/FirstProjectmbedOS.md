@@ -70,22 +70,18 @@ Earlier, we explained that yotta can build the same code for multiple targets; i
 For a full list of available targets run the following `search` command:
 
 ```bash
-$ yotta search --limit 1000 targetfrdm-k64f-gcc 0.0.21: 
-Official mbed build target for the mbed frdm-k64f 
-development board.
-
-st-nucleo-f401re-gcc 0.1.0: 
-Official mbed build target for the mbed st-nucleo-f401re 
-development board.
-
-frdm-k64f-armcc 0.0.13: 
-Official mbed build target for the mbed frdm-k64f 
-development board, using the armcc toolchain.
-...
+$ yotta search target target
+frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
+st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
+frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+stm32f429i-disco-gcc 0.0.4: Official mbed build target for the mbed st-nucleo-f429zi development board.
+nordic-nrf51822-16k-gcc 0.0.5: Official mbed build target for the mbed nrf51822 development board, using the armgcc toolchain.
+nordic-nrf51822-16k-armcc 0.0.5: Official mbed build target for the mbed nrf51822 development board, using the armcc toolchain.
+bbc-microbit-classic-gcc 0.1.0: Official mbed build target for the mbed nrf51822 development board, using the armgcc toolchain.
+st-stm32f439zi-gcc 0.0.3: Official mbed build target for the st stm32f439zi microcontroller.
+st-stm32f429i-disco-gcc 0.0.2: Official mbed build target for the mbed st-nucleo-f429zi development board.
 ```
-
 In this example we are going to use the Freescale FRDM K64F board, so we'll use the `frdm-k64f-gcc` target.
-
 
 ```bash
 $ yotta target frdm-k64f-gcc
@@ -118,19 +114,19 @@ Now that we have set up an executable module and downloaded our dependencies, le
 ```C
 #include "mbed/mbed.h"
 
-DigitalOut led(LED1);
+static void blinky(void) {
+    static DigitalOut led(LED1);
+
+    led = !led;
+    printf("LED = %d \n\r",led.read());
+}
 
 void app_start(int, char**){
-	while(1){
-    	led = !led;
-    	printf("LED = %d \n\r",led.read());
-    	wait(0.5f);
-	}
+    minar::Scheduler::postCallback(blinky).period(minar::milliseconds(500));
 }
 ```
-
 This program will cause the LED on the board to flash and print out the status of the LED to the terminal. The default terminal speed is `9600 baud` at `8-N-1`.
-
+For more information about MINAR and the structure of mbed OS programs, please refer to the [MINAR documentation](https://github.com/ARMmbed/minar).
 
 ## Step 5: build
 
@@ -138,8 +134,7 @@ To build the project, run the yotta build command in the top level of the exampl
 
 ```bash
 $ yt build
-info: generate for target: frdm-k64f-gcc 0.0.21 
-at ~\example-mbedos-blinky\yotta_targets\frdm-k64f-gcc
+info: generate for target: frdm-k64f-gcc 0.0.21 at ~\example-mbedos-blinky\yotta_targets\frdm-k64f-gcc
 GCC version is: 4.9.3
 -- The ASM compiler identification is GNU
 -- Found assembler: GNU Tools ARM Embedded/4.9 2014q4/bin/arm-none-eabi-gcc.exe
@@ -179,18 +174,10 @@ $ git clone https://github.com/ARMmbed/example-mbedos-blinky.git
 You can build this example for any target. To see all targets available run the following `search` command.
 
 ```bash
-$ yotta search --limit 1000 target target
-frdm-k64f-gcc 0.0.21: 
-Official mbed build target for the mbed frdm-k64f 
-development board.
-
-st-nucleo-f401re-gcc 0.1.0: 
-Official mbed build target for the mbed st-nucleo-f401re 
-development board.
-
-frdm-k64f-armcc 0.0.13:
-Official mbed build target for the mbed frdm-k64f 
-development board, using the armcc toolchain.
+$ yotta search target target
+frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
+st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
+frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
 ...
 ```
 
