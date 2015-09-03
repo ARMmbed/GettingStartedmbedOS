@@ -1,19 +1,19 @@
 # Your first application
 
-Ok, let's get to the nitty gritty and create your first mbed application (using yotta)! For this application we are going to make the LED on our board blink, and print some commands to the terminal using mbed OS.
+Ok, let`s get to the nitty gritty and create your first mbed application (using yotta)! For this application we are going to make the LED on our board blink, and print some commands to the terminal using mbed OS.
 
 ## Step 1: install yotta and its dependencies
 
 Please see http://docs.yottabuild.org for operating specific installation instructions.
 
-## Step 2: create an executable
+## Step 2: create an application
 
 First create an empty folder, then move into that folder:
 ```
 $ mkdir blinky
 $ cd blinky
 ```
-Next initialize the module with 'yotta init' and fill out the details. Make sure you select executable as the module type at the end.
+Next initialize the module with `yotta init` and fill out the details. Make sure you select executable as the module type at the end.
 ```
 $ yotta init
 Enter the module name: <blinky>
@@ -29,13 +29,13 @@ You should now have several folders and files in the directory:
 $ ls
 blinky  module.json  source  test
 ```
-The module.json file contains all the settings for your executable; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The '/source' directory contains all the source files, the `/test` directory contains all tests you’ll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html), and the '/blinky' directory where header files for your executable should be created.
+The module.json file contains all the settings for your executable; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `/source` directory contains all the source files, the `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html), and the `/blinky` directory where header files for your executable should be created.
 Tip: if you want to learn about other module types, [start here.](http://docs.yottabuild.org/)
 
 ## Step 3: select a target board
 
 Earlier, we explained that yotta can build the same code for multiple targets; it therefore needs to be told which target every build is for. So now that we have created a basic executable, let's set the target.
-For a full list of available targets run the following 'search' command:
+For a full list of available targets run the following `search` command:
 ```
 $ yotta search --limit 1000 target
 frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
@@ -43,29 +43,29 @@ st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f4
 frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
 ...
 ```
-In this example we are going to use the Freescale FRDM-K64F board configured for building with gcc, so we'll use the 'target frdm-k64f-gcc'.
+In this example we are going to use the Freescale FRDM-K64F board configured for building with gcc, so we'll use the `target frdm-k64f-gcc`.
 ```
 $ yotta target frdm-k64f-gcc
 To check that the target has been set correctly run the target command to see what yotta is currently targeting for its builds:
 $ yotta target
 frdm-k64f-gcc,*
 ```
-*The information for this target has been downloaded to a directory named '/yotta_targets'. Do not edit or modify files here as they can be modified without your knowing.*
+* The information for this target has been downloaded to a directory named `/yotta_targets`. Do not edit or modify files here as they can be modified without your knowing. *
 
 ## Step 4: add dependencies
 
-Now let's add the dependencies. In this application, we'll have 'mbed-drivers' as our dependency:
+Now let`s add the dependencies. In this application, we`ll have `mbed-drivers` as our dependency:
 ```
 $ yotta install mbed-drivers
 info: ... a bunch of messages about stuff being downloaded ...
 ```
-*You could at this point add other yotta modules. Check out the 'yotta search' command to search for other available modules.
-The modules are downloaded and installed in a directory named '/yotta_modules'. Do not edit or modify files here as they can be modified without your knowing.*
+*You could at this point add other yotta modules. Check out the `yotta search` command to search for other available modules.
+The modules are downloaded and installed in a directory named `/yotta_modules`. Do not edit or modify files here as they can be modified without your knowing.*
 If you want to learn more about mbed OS and try some other functionality, you can [start here.](http://mbed.com/en/development/software/mbed-os/)
 
 ## Step 5: add source files
 
-Now that we have set up an executable module and downloaded our dependencies, let's add some source code to use the module. In the '/source' folder create a file called app.cpp with the following contents:
+Now that we have set up an executable module and downloaded our dependencies, let's add some source code to use the module. In the `/source` folder create a file called app.cpp with the following contents:
 ```
 #include "mbed/mbed.h"
 
@@ -83,7 +83,7 @@ This program will cause LED1 on the board to flash and print the status of LED1 
 
 ## Step 6: build
 
-To build the executable, run the 'yotta build' command in the top level directory:
+To build the executable, run the `yotta build` command in the top level directory:
 ```
 $ yt build
 info: generate for target: frdm-k64f-gcc 0.0.21 at ~\blinky\yotta_targets\frdm-k64f-gcc
@@ -95,7 +95,7 @@ GCC version is: 4.9.3
 -- Build files have been written to: ~/blinky/build/frdm-k64f-gcc
 [135/135] Linking CXX executable source/blinky
 ```
-The compiled binary will be located in the '/build' folder. Copy the binary from '/build/frdm-k64f-gcc/source/blinky.bin' to your mbed board and see the LED blink. If you hook up a terminal to the board, you can see the output being printed from the board. It should look like this:.
+The compiled binary will be located in the `/build` folder. Copy the binary from `/build/frdm-k64f-gcc/source/blinky.bin` to your mbed board and see the LED blink. If you hook up a terminal to the board, you can see the output being printed from the board. It should look like this:.
 ```
 LED = 1
 LED = 0
@@ -129,7 +129,7 @@ $ yotta build
 ... bunch of build messages ...
 [135/135] Linking CXX executable source/example-mbedos-blinky
 ```
-The compiled binary will be located in the '/build' folder. Copy the binary from '/build/frdm-k64f-gcc/source/example-mbedos-blinky.bin' to your mbed board and see the LED blink. If you hook up a terminal to the board, you can see the output being printed form the board. It should look like this:
+The compiled binary will be located in the `/build` folder. Copy the binary from `/build/frdm-k64f-gcc/source/example-mbedos-blinky.bin` to your mbed board and see the LED blink. If you hook up a terminal to the board, you can see the output being printed form the board. It should look like this:
 ```
 LED = 1
 LED = 0
