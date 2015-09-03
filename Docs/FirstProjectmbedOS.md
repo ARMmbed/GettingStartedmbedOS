@@ -71,15 +71,24 @@ For a full list of available targets run the following `search` command:
 
 ```bash
 $ yotta search target target
-frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
-st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
-frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
-stm32f429i-disco-gcc 0.0.4: Official mbed build target for the mbed st-nucleo-f429zi development board.
-nordic-nrf51822-16k-gcc 0.0.5: Official mbed build target for the mbed nrf51822 development board, using the armgcc toolchain.
-nordic-nrf51822-16k-armcc 0.0.5: Official mbed build target for the mbed nrf51822 development board, using the armcc toolchain.
-bbc-microbit-classic-gcc 0.1.0: Official mbed build target for the mbed nrf51822 development board, using the armgcc toolchain.
-st-stm32f439zi-gcc 0.0.3: Official mbed build target for the st stm32f439zi microcontroller.
-st-stm32f429i-disco-gcc 0.0.2: Official mbed build target for the mbed st-nucleo-f429zi development board.
+frdm-k64f-gcc 0.0.21: Official mbed build target 
+for the mbed frdm-k64f development board.
+st-nucleo-f401re-gcc 0.1.0: Official mbed build target 
+for the mbed st-nucleo-f401re development board.
+frdm-k64f-armcc 0.0.13: Official mbed build target 
+for the mbed frdm-k64f development board, using the armcc toolchain.
+stm32f429i-disco-gcc 0.0.4: Official mbed build target 
+for the mbed st-nucleo-f429zi development board.
+nordic-nrf51822-16k-gcc 0.0.5: Official mbed build target 
+for the mbed nrf51822 development board, using the armgcc toolchain.
+nordic-nrf51822-16k-armcc 0.0.5: Official mbed build target 
+for the mbed nrf51822 development board, using the armcc toolchain.
+bbc-microbit-classic-gcc 0.1.0: Official mbed build target 
+for the mbed nrf51822 development board, using the armgcc toolchain.
+st-stm32f439zi-gcc 0.0.3: Official mbed build target 
+for the st stm32f439zi microcontroller.
+st-stm32f429i-disco-gcc 0.0.2: Official mbed build target 
+for the mbed st-nucleo-f429zi development board.
 ```
 In this example we are going to use the Freescale FRDM K64F board, so we'll use the `frdm-k64f-gcc` target.
 
@@ -134,7 +143,8 @@ To build the project, run the yotta build command in the top level of the exampl
 
 ```bash
 $ yt build
-info: generate for target: frdm-k64f-gcc 0.0.21 at ~\example-mbedos-blinky\yotta_targets\frdm-k64f-gcc
+info: generate for target: frdm-k64f-gcc 0.0.21 
+at ~\example-mbedos-blinky\yotta_targets\frdm-k64f-gcc
 GCC version is: 4.9.3
 -- The ASM compiler identification is GNU
 -- Found assembler: GNU Tools ARM Embedded/4.9 2014q4/bin/arm-none-eabi-gcc.exe
@@ -175,9 +185,12 @@ You can build this example for any target. To see all targets available run the 
 
 ```bash
 $ yotta search target target
-frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
-st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
-frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+frdm-k64f-gcc 0.0.21: Official mbed build target 
+for the mbed frdm-k64f development board.
+st-nucleo-f401re-gcc 0.1.0: Official mbed build target 
+for the mbed st-nucleo-f401re development board.
+frdm-k64f-armcc 0.0.13: Official mbed build target 
+for the mbed frdm-k64f development board, using the armcc toolchain.
 ...
 ```
 
