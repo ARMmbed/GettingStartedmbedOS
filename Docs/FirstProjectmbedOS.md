@@ -29,12 +29,12 @@ You should now have several folders and files in the directory:
 $ ls
 blinky  module.json  source  test
 ```
-The module.json file contains all the settings for your executable; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `/source` directory contains all the source files, the `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html), and the `/blinky` directory where header files for your executable should be created.
+The module.json file contains all the settings for your application; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `/source` directory contains all the source files, the `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html), and the `/blinky` directory where header files for your application should be created.
 Tip: if you want to learn about other module types, [start here.](http://docs.yottabuild.org/)
 
 ## Step 3: select a target board
 
-Earlier, we explained that yotta can build the same code for multiple targets; it therefore needs to be told which target every build is for. So now that we have created a basic executable, let's set the target.
+Earlier, we explained that yotta can build the same code for multiple targets; it therefore needs to be told which target every build is for. So now that we have created a basic application, let's set the target.
 For a full list of available targets run the following `search` command:
 ```
 $ yotta search --limit 1000 target
@@ -65,7 +65,7 @@ If you want to learn more about mbed OS and try some other functionality, you ca
 
 ## Step 5: add source files
 
-Now that we have set up an executable module and downloaded our dependencies, let's add some source code to use the module. In the `/source` folder create a file called app.cpp with the following contents:
+Now that we have set up an aplication and downloaded our dependencies, let's add some source code to use the module. In the `/source` folder create a file called app.cpp with the following contents:
 ```
 #include "mbed/mbed.h"
 
@@ -83,7 +83,7 @@ This program will cause LED1 on the board to flash and print the status of LED1 
 
 ## Step 6: build
 
-To build the executable, run the `yotta build` command in the top level directory:
+To build the application, run the `yotta build` command in the top level directory:
 ```
 $ yt build
 info: generate for target: frdm-k64f-gcc 0.0.21 at ~\blinky\yotta_targets\frdm-k64f-gcc
@@ -145,7 +145,7 @@ The above `blinky` applications is simple and easy to understand, so chances are
 
 ## Debugging applications compiled with ARMCC
 
-To debug executables compiled with ARMCC, you'll need to install [Keil MDK](https://www.keil.com/download/product/). To debug the executable, you can use the `yotta debug` command. If the above `blinky` application was compiled with target `frdm-k64f-armcc` instead of `frdm-k64f-gcc`, you could debug it by running `yotta debug example-mbedos-blinky`. This will automatically open the uVision IDE, with your program ready for debugging.
+To debug applications compiled with ARMCC, you'll need to install [Keil MDK](https://www.keil.com/download/product/). To debug the application, you can use the `yotta debug` command. If the above `blinky` application was compiled with target `frdm-k64f-armcc` instead of `frdm-k64f-gcc`, you could debug it by running `yotta debug example-mbedos-blinky`. This will automatically open the uVision IDE, with your program ready for debugging.
 
 ## Debugging applications compiled with GCC
 
@@ -154,7 +154,7 @@ The best way to debug applications compiled with GCC is to use the `gdb` debugge
 - `arm-none-eabi-gdb`, which is automatically installed as part of the [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded) installation procedure.
 - `pyocd-gdbserver`, which is automatically installed as part of the yotta installation procedure.
 
-To debug the above `blinky` executable, you need to follow these steps:
+To debug the above `blinky` application, you need to follow these steps:
 
 1. Launch `pyocd-gdbserver` from a command prompt.
 
