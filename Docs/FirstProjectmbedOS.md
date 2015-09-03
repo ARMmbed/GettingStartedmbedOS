@@ -4,7 +4,7 @@ Ok, let's get to the nitty gritty and create your first mbed application (using 
 
 ## Step 1: install yotta and its dependencies
 
-Please see docs.yottabuild.org for operating specific installation instructions.
+Please see http://docs.yottabuild.org for operating specific installation instructions.
 
 ## Step 2: create an executable
 
