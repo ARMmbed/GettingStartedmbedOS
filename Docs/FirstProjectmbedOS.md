@@ -214,5 +214,29 @@ ___
 
 We're done with our first program. For more information, see our [mbed OS](http://mbed.com/en/development/software/mbed-os/) documentation.
 
+# Debugging in mbed OS
+
+The above `blinky` applications is simple and easy to understand, so chances are it'll work as expected right away. More complex applications might not work as expected from the very beginning. In this case, a debugger is a very useful tool. There are two main ways to debug mbed OS applications at the moment.
+
+## Debugging applications compiled with ARMCC
+
+To debug applications compiled with ARMCC, you'll need to install [Keil MDK](https://www.keil.com/download/product/). To debug the application, you can use the `yotta debug` command. If the above `blinky` application was compiled with target `frdm-k64f-armcc` instead of `frdm-k64f-gcc`, you could debug it by running `yotta debug example-mbedos-blinky`. This will automatically open the uVision IDE, with your program ready for debugging.
+
+## Debugging applications compiled with GCC
+
+The best way to debug applications compiled with GCC is to use the `gdb` debugger. You'll need:
+
+- `arm-none-eabi-gdb`, which is automatically installed as part of the [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded) installation procedure.
+- `pyocd-gdbserver`, which is automatically installed as part of the [yotta](https://github.com/ARMmbed/yotta) installation procedure.
+
+To debug the above `blinky` application, you need to follow these steps:
+
+- launch `pyocd-gdbserver` from a command prompt
+- launch `arm-none-eabi-gdb build/frdm-k64f-gcc/source/example-mbedos-blinky.elf` from another command prompt
+- after gdb (above) launches, tell it to connect to `pyocd-gdbserver`: `target remote localhost:3333`
+- at this point, `gdb` should be connected to the board, so you can start to debug your program.
+
+For more information about using GDB, check [this tutorial](http://alvarop.com/2013/02/debugging-arm-cortex-m3-devices-with-gdb-and-openocd/) and other similar tutorials.
+
 ______
 Copyright © 2015 ARM Ltd. All rights reserved.
