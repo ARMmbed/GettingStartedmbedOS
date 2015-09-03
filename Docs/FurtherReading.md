@@ -22,7 +22,7 @@ You might want to pay special attention to [mbed Client](/http://v3.mbed.com/en/
 
 ## Hardware and production
 
-* The [mbed Enabled hardware list](http://mbed.com/en/development/hardware/)
+* The [mbed Enabled hardware list](http://mbed.com/en/development/hardware/).
 
 * Moving from [prototyping to production](http://mbed.com/en/development/hardware/prototyping-production/), including an introduction to the hardware development kit (HDK).
 
