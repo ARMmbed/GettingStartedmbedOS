@@ -16,14 +16,14 @@ On the command line, run this command to install yotta:
 $ pip install yotta
 ```
 
-If you have any trouble installing yotta please see [docs.yottabuild.org](http://docs.yottabuild.org/#installing) for troubleshooting.
+If you have any trouble installing yotta please see [yottadocs.mbed.com](http://yottadocs.mbed.com/#installing) for troubleshooting.
 
 ## Step 1: create your first mbed OS program
 
 We need to create an executable yotta module so that when we run `yotta build` an executable file will be created.
 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">Tip: if you want to learn about other module types, [start here](http://docs.yottabuild.org/).</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">Tip: if you want to learn about other module types, [start here](http://yottadocs.mbed.com/).</span>
 
 First create an empty folder, then move into that folder:
 
@@ -61,7 +61,7 @@ $ ls
 example-mbedos-blinky  module.json  source  test
 ```
 
-The `module.json` file contains all the settings for your project; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `./source` directory contains all the source files, the `./test` directory contains all tests written to [test your module](docs.yottabuild.org/tutorial/testing.html), and the `./example-mbedos-blinky` directory contains all build files and dependency files.
+The `module.json` file contains all the settings for your project; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `./source` directory contains all the source files, the `./test` directory contains all tests written to [test your module](http://yottadocs.mbed.com/tutorial/testing.html), and the `./example-mbedos-blinky` directory contains all build files and dependency files.
 
 ## Step 2: select a target platform
 
@@ -227,14 +227,17 @@ To debug applications compiled with ARMCC, you'll need to install [Keil MDK](htt
 The best way to debug applications compiled with GCC is to use the `gdb` debugger. You'll need:
 
 - `arm-none-eabi-gdb`, which is automatically installed as part of the [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded) installation procedure.
-- `pyocd-gdbserver`, which is automatically installed as part of the [yotta](https://github.com/ARMmbed/yotta) installation procedure.
+- `pyocd-gdbserver`, which is automatically installed as part of the yotta installation procedure.
 
 To debug the above `blinky` application, you need to follow these steps:
 
-- launch `pyocd-gdbserver` from a command prompt
-- launch `arm-none-eabi-gdb build/frdm-k64f-gcc/source/example-mbedos-blinky.elf` from another command prompt
-- after gdb (above) launches, tell it to connect to `pyocd-gdbserver`: `target remote localhost:3333`
-- at this point, `gdb` should be connected to the board, so you can start to debug your program.
+1. Launch `pyocd-gdbserver` from a command prompt.
+
+2. Launch `arm-none-eabi-gdb build/frdm-k64f-gcc/source/example-mbedos-blinky.elf` from another command prompt.
+
+3. After GDB (above) launches, tell it to connect to `pyocd-gdbserver`: `target remote localhost:3333`.
+
+4. At this point, GDB should be connected to the board, so you can start to debug your program.
 
 For more information about using GDB, check [this tutorial](http://alvarop.com/2013/02/debugging-arm-cortex-m3-devices-with-gdb-and-openocd/) and other similar tutorials.
 
