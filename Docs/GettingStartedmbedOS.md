@@ -1,8 +1,8 @@
 # Getting started with mbed OS
 
-Ah, great, you're here! Thanks for the early interest in mbed OS. It's great to have you. Let's get started, shall we?
+Ah, great, you're here! Thanks for the early interest in mbed OS. Let's get started, shall we?
 
-The Getting Started section reviews the basics of creating a mbed OS application. We'll discuss how we write and build programs, and how they can be flashed to the boards.
+The Getting Started section reviews the basics of creating an mbed OS application. We'll discuss how we write and build programs, and how they can be flashed to the boards.
 
 Other sections on our website will introduce you to specific tools, such as the [testing,](http://mbed.com/en/development/software/tools/testing/) [security tools,](http://mbed.com/en/technologies/security/) and of course [mbed OS.](http://mbed.com/en/technologies/technology-mbed-os/)
 
@@ -17,10 +17,10 @@ yotta organises software into modules. A yotta module is a collection of source 
 The yotta registry indexes public modules and you can search the it for libraries from within the yotta command-line tool.
 To build a yotta program you can either create a new yotta executable or clone an existing one from a repository and then set the target run 'yotta build' from the command line. yotta will pull in the program’s dependencies from the web and generate the executable. Pretty cool, huh?
 
-For more information about yotta, [check this out.](http://mbed.com/en/development/software/tools/yotta/)
+For more information about yotta, [see our main site.](http://mbed.com/en/development/software/tools/yotta/)
 
 ## Working with targets
 
 Before you build anything with yotta, you select the target that you want to build for. The instructions for a particular development board tell you which target to use. You can also find target descriptions by searching the yotta registry.
 
-Now that you've been briefed, let's jump on over to the next section and get you started with [your first project.](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/FirstProjectmbedOS.md)
+Now that you've been briefed, let's jump on over to the next section and get you started with [your first project](FirstProjectmbedOS.md).
