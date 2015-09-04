@@ -188,7 +188,8 @@ This GDB was configured as "--host=x86_64-apple-darwin10 --target=arm-none-eabi"
 For bug reporting instructions, please see:
 <http://www.gnu.org/software/gdb/bugs/>...
 Reading symbols 
-from /Development/examples/example-mbedos-blinky/build/frdm-k64f-gcc/source/example-mbedos-blinky
+from 
+/examples/example-mbedos-blinky/build/frdm-k64f-gcc/source/example-mbedos-blinky
 ...done.
 info: One client connected!
 (gdb)
