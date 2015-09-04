@@ -23,7 +23,7 @@ For more information about yotta, [see our main site.](http://mbed.com/en/develo
 
 Before you build anything with yotta, you select the target that you want to build for. The instructions for a particular development board tell you which target to use. You can also find target descriptions by searching the yotta registry.
 
-Now that you've been briefed, let's jump on over to the next section and get you started with [your first project](FirstProjectmbedOS.md).
+Now that you've been briefed, let's jump on over to the next section and get you started with [your first application](FirstProjectmbedOS.md).
 
 ______
 Copyright © 2015 ARM Ltd. All rights reserved.
