@@ -4,7 +4,7 @@ Ok, let's get to the nitty gritty and create your first mbed application (using 
 
 ## Step 1: install yotta and its dependencies
 
-Please see http://docs.yottabuild.org for operating specific installation instructions.
+Please see [yottadocs.mbed.com](http://yottadocs.mbed.com) for operating specific installation instructions.
 
 ## Step 2: create an application
 
@@ -29,7 +29,8 @@ You should now have several folders and files in the directory:
 $ ls
 blinky  module.json  source  test
 ```
-The module.json file contains all the settings for your application; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `/source` directory contains all the source files, the `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html), and the `/blinky` directory where header files for your application should be created.
+The module.json file contains all the settings for your application; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `/source` directory contains all the source files, the `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html), and the `/blinky` directory is where header files for your application should be created.
+
 Tip: if you want to learn about other module types, [start here.](http://docs.yottabuild.org/)
 
 ## Step 3: select a target board
@@ -54,7 +55,7 @@ frdm-k64f-gcc,*
 
 ## Step 4: add dependencies
 
-Now let`s add the dependencies. In this application, we`ll have `mbed-drivers` as our dependency:
+Now let's add the dependencies. In this application, we'll have `mbed-drivers` as our dependency:
 ```
 $ yotta install mbed-drivers
 info: ... a bunch of messages about stuff being downloaded ...
@@ -154,7 +155,7 @@ The best way to debug applications compiled with GCC is to use the `gdb` debugge
 - `arm-none-eabi-gdb`, which is installed as part of the [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded) installation procedure.
 - `pyocd-gdbserver`, which is installed as part of the yotta installation procedure.
 
-To debug the above `example-mbedos-blinky` application, you need to follow these steps:
+To debug the above `example-mbedos-blinky` application:
 ```
 $ yt debug example-mbedos-blinky
 info: found example-mbedos-blinky at source/example-mbedos-blinky
