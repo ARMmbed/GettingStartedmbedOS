@@ -40,9 +40,12 @@ Earlier, we explained that yotta can build the same code for multiple targets; i
 For a full list of available targets run the following `search` command:
 ```
 $ yotta search --limit 1000 target
-frdm-k64f-gcc 0.0.21: Official mbed build target for the mbed frdm-k64f development board.
-st-nucleo-f401re-gcc 0.1.0: Official mbed build target for the mbed st-nucleo-f401re development board.
-frdm-k64f-armcc 0.0.13: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+frdm-k64f-gcc 0.0.21: Official mbed build target 
+for the mbed frdm-k64f development board.
+st-nucleo-f401re-gcc 0.1.0: Official mbed build target 
+for the mbed st-nucleo-f401re development board.
+frdm-k64f-armcc 0.0.13: Official mbed build target 
+for the mbed frdm-k64f development board, using the armcc toolchain.
 ...
 ```
 In this example we are going to use the Freescale FRDM-K64F board configured for building with gcc, so we'll use the `target frdm-k64f-gcc`.
@@ -91,7 +94,8 @@ This program will cause LED1 on the board to flash and print the status of LED1 
 To build the application, run the `yotta build` command in the top level directory:
 ```
 $ yt build
-info: generate for target: frdm-k64f-gcc 0.0.21 at ~\blinky\yotta_targets\frdm-k64f-gcc
+info: generate for target: frdm-k64f-gcc 0.0.21 
+at ~\blinky\yotta_targets\frdm-k64f-gcc
 GCC version is: 4.9.3
 -- The ASM compiler identification is GNU
 -- Found assembler: GNU Tools ARM Embedded/4.9 2014q4/bin/arm-none-eabi-gcc.exe
@@ -183,7 +187,9 @@ and "show warranty" for details.
 This GDB was configured as "--host=x86_64-apple-darwin10 --target=arm-none-eabi".
 For bug reporting instructions, please see:
 <http://www.gnu.org/software/gdb/bugs/>...
-Reading symbols from /Development/examples/example-mbedos-blinky/build/frdm-k64f-gcc/source/example-mbedos-blinky...done.
+Reading symbols 
+from /Development/examples/example-mbedos-blinky/build/frdm-k64f-gcc/source/example-mbedos-blinky
+...done.
 info: One client connected!
 (gdb)
 ```
