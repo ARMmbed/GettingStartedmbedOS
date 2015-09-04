@@ -6,16 +6,16 @@ The Getting Started section reviews the basics of creating an mbed OS applicatio
 
 Other sections on our website will introduce you to specific tools, such as the [testing,](http://mbed.com/en/development/software/tools/testing/) [security tools,](http://mbed.com/en/technologies/security/) and of course [mbed OS.](http://mbed.com/en/technologies/technology-mbed-os/)
 
-If you're not sure what it is you're supposed to program, [read What is mbed?](http://mbed.com/en/about-mbed/what-mbed/) and then come back.
+If you're not sure what it is you're supposed to program, read [What is mbed?](http://mbed.com/en/about-mbed/what-mbed/) and then come back.
 
 ## What's new with mbed: yotta build and registry
 
-We have created yotta. yotta is a command-line tool that takes care of building, assembling and distributing programs and libraries. It’s available on Mac, Windows and Linux. It will soon also be available pre-integrated with popular desktop and cloud IDEs.  
+We have created yotta: a command-line tool that takes care of building, assembling and distributing programs and libraries. It’s available on Mac, Windows and Linux. It will soon be available pre-integrated with popular desktop and cloud IDEs.  
 
 yotta organises software into modules. A yotta module is a collection of source files with the addition of a file called module.json. This file contains details such as the version, description, author, homepage, and a link to the repository containing the code. It also includes a list of other modules it depends on. Modules can be installed from many sources, including GitHub and other version control services.
 
-The yotta registry indexes public modules and you can search the it for libraries from within the yotta command-line tool.
-To build a yotta program you can either create a new yotta executable or clone an existing one from a repository and then set the target run 'yotta build' from the command line. yotta will pull in the program’s dependencies from the web and generate the executable. Pretty cool, huh?
+The yotta registry indexes public modules and you can search it for libraries from within the yotta command-line tool.
+To build a yotta program you can either create a new yotta executable or clone an existing one from a repository, then set the target and run 'yotta build' from the command line. yotta will pull in the program’s dependencies from the web and generate the executable. Pretty cool, huh?
 
 For more information about yotta, [see our main site.](http://mbed.com/en/development/software/tools/yotta/)
 
