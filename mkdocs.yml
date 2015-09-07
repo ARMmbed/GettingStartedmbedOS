@@ -3,7 +3,7 @@ site_name: Getting Started Guides
 docs_dir: Docs
 
 pages:
-- ['index.md','Getting Started with mbed OS']
+- ['index.md','Introduction']
 - ['GettingStartedmbedOS.md', 'Guides', 'Getting started with mbed OS']
 - ['FirstProjectmbedOS.md', 'Guides', 'Your first application']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
