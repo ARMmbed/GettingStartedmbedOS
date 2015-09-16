@@ -4,7 +4,7 @@ Ah, great, you're here! Thanks for the early interest in mbed OS. Let's get star
 
 The Getting Started section reviews the basics of creating an mbed OS application. We'll discuss how we write and build programs, and how they can be flashed to the boards.
 
-Other sections on our website will introduce you to specific tools, such as the [testing,](http://mbed.com/en/development/software/tools/testing/) [security tools,](http://mbed.com/en/technologies/security/) and of course [mbed OS.](http://mbed.com/en/technologies/technology-mbed-os/)
+Other sections on our website will introduce you to specific tools, such as the [testing,](http://mbed.com/en/development/software/tools/testing/) [security tools,](http://mbed.com/en/technologies/security/) and of course [mbed OS.](http://mbed.com/en/development/software/mbed-os//)
 
 If you're not sure what it is you're supposed to program, read [What is mbed?](http://mbed.com/en/about-mbed/what-mbed/) and then come back.
 
