@@ -25,7 +25,11 @@ Repository url:
 Homepage:
 What is the license for this project (Apache-2.0, ISC, MIT etc.)?  <Apache-2.0>
 Is this module an executable? <no> yes
+```
+
 You should now have several folders and files in the directory:
+
+```
 $ ls
 blinky  module.json  source  test
 ```
