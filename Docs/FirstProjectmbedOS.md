@@ -1,4 +1,4 @@
-# Your first application
+# Running your first mbed OS application
 
 Ok, let's get to the nitty gritty and create your first mbed application (using yotta). We're going to make the LED on our board blink, and print some commands to the terminal using mbed OS.
 
