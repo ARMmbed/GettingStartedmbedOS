@@ -4,7 +4,7 @@ docs_dir: Docs
 
 pages:
 - ['index.md','Introduction']
-- ['GettingStartedmbedOS.md', 'Guides', 'Getting started with mbed OS']
-- ['FirstProjectmbedOS.md', 'Guides', 'Your first application']
+- ['GettingStartedmbedOS.md', 'Quick Guide', 'Getting started with mbed OS']
+- ['FirstProjectmbedOS.md', 'Quick Guide', 'Your first application']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
 - ['GetTheCode.md', 'Additional Resources', 'Get the code']
