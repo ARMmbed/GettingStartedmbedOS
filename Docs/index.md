@@ -1,4 +1,4 @@
-# Introduction
+# Getting started with mbed OS
 
 Welcome to the getting started guide for ARM® mbed™ OS.
 
