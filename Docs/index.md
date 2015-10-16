@@ -8,7 +8,7 @@ The guides cover:
 
 * [Getting started with mbed OS](GettingStartedmbedOS.md): What's new with mbed OS, and how to write and build programs for it.
 
-* [Your first mbed OS application](FirstProjectmbedOS.md): a simple example to get you going.
+* [Your first mbed OS application](FirstProjectmbedOS.md): A simple example to get you going.
 
 The additional sources section offers:
 
