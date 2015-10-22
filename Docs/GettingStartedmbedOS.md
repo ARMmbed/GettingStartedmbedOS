@@ -1,12 +1,13 @@
-# Introduction to mbed OS
+# Getting started with mbed OS
 
 Ah, great, you're here! Thanks for the early interest in mbed OS. Let's get started, shall we?
 
 The Getting Started section reviews the basics of creating an mbed OS application. We'll discuss how we write and build programs, and how they can be flashed to the boards.
 
-Other sections on our website will introduce you to specific tools, such as  [testing](http://mbed.com/en/development/software/tools/testing/), [security](http://mbed.com/en/technologies/security/), and of course [mbed OS](http://mbed.com/en/development/software/mbed-os/).
+Other sections on our website will introduce you to specific tools, such as the [testing,](http://mbed.com/en/development/software/tools/testing/) [security tools,](http://mbed.com/en/technologies/security/) and of course [mbed OS.](http://mbed.com/en/development/software/mbed-os//)
 
-If you're not sure what it is you're supposed to program, read [What is mbed?](http://mbed.com/en/about-mbed/what-mbed/), and then come back.
+If you're not sure what it is you're supposed to program, read [What is mbed?](http://mbed.com/en/about-mbed/what-mbed/) and then come back.
+
 
 ## What's new with mbed: yotta build and registry
 
@@ -24,6 +25,7 @@ For more information about yotta, [see our main site](http://mbed.com/en/develop
 Before you build anything with yotta, you select the target that you want to build for. The instructions for a particular development board tell you which target to use. You can also find target descriptions by searching the yotta registry.
 
 ## A first application
+
 
 Now that you've been briefed, let's jump on over to the next section and get you started with [your first application](FirstProjectmbedOS.md).
 
