@@ -1,4 +1,4 @@
-# mbed OS applications with yotta
+#Introduction 
 
 **Note**: This is an extract from the full mbed OS User Guide. The guide itself isn't ready yet, but we're releasing chapters as stand-alones as fast as we can. 
 
@@ -157,12 +157,15 @@ yotta search --limit 1000 target
 Let's look at the top three results:
 
 ```
-frdm-k64f-gcc 0.0.24: Official mbed build target for the mbed frdm-k64f development board.
+frdm-k64f-gcc 0.0.24: Official mbed build target for the mbed frdm-k64f 
+development board.
 
-frdm-k64f-armcc 0.0.16: Official mbed build target for the mbed frdm-k64f development board, 
+frdm-k64f-armcc 0.0.16: Official mbed build target for the mbed frdm-k64f 
+development board, 
 using the armcc toolchain.
 
-bbc-microbit-classic-gcc 0.1.3: Official mbed build target for the mbed nrf51822 development board, 
+bbc-microbit-classic-gcc 0.1.3: Official mbed build target for the mbed nrf51822 
+development board, 
 using the armgcc toolchain.
 
 ```
@@ -275,7 +278,7 @@ The options are:
 
 For example, to include a privately hosted git repository from ``example.com``:
 
-```     "dependencies": {         "usefulmodule": "git+ssh://user@example.com:path/to/repo"     } ```
+```"dependencies": {"usefulmodule": "git+ssh://user@example.com:path/to/repo"}```
 
 Git URLs support branch, version and tags specifications:
 
@@ -374,13 +377,13 @@ Blinky's code is quite short, but it's enough to show a few general mbed OS appl
 #include "mbed-drivers/mbed.h"
 
 static void blinky(void) {
-    static DigitalOut led(LED1);
-    led = !led;
-    printf("LED = %d \r\n",led.read());
+static DigitalOut led(LED1);
+    led = !led;
+    printf("LED = %d \r\n",led.read());
 }
 
 void app_start(int, char**) {
-    minar::Scheduler::postCallback(blinky).period(minar::milliseconds(500));
+    minar::Scheduler::postCallback(blinky).period(minar::milliseconds(500));
 }
 ```
 ### Including headers and libraries in your application
