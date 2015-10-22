@@ -159,9 +159,11 @@ Let's look at the top three results:
 ```
 frdm-k64f-gcc 0.0.24: Official mbed build target for the mbed frdm-k64f development board.
 
-frdm-k64f-armcc 0.0.16: Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+frdm-k64f-armcc 0.0.16: Official mbed build target for the mbed frdm-k64f development board, 
+using the armcc toolchain.
 
-bbc-microbit-classic-gcc 0.1.3: Official mbed build target for the mbed nrf51822 development board, using the armgcc toolchain.
+bbc-microbit-classic-gcc 0.1.3: Official mbed build target for the mbed nrf51822 development board, 
+using the armgcc toolchain.
 
 ```
 As you can see, each target returns a name and a version, as well as a description. Note that the name includes a build toolchain - ``gcc`` or ``armgcc`` - because a target is both the board and the build toolchain we use, never just one or the other.
@@ -212,7 +214,7 @@ We saw the core modules mbed OS needs (that chapter will be published soon). Eac
 
 For example, here is a partial tree for **Blinky**. It shows Blinky's two dependencies: ``mbed-drivers`` and ``uvisor-lib``. Then it shows the start of the next level of dependencies: ``uvisor-lib`` has only one dependency, whereas ``mbed-drivers`` has several. These, in turn, have their own dependencies. And so on:
 
-![](/Images/yotta_dep.png)
+![](Images/yotta_dep.png)
 
 **Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.
 
