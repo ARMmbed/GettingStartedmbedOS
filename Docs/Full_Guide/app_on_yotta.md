@@ -16,6 +16,7 @@ This chapter covers:
 
 mbed OS applications are yotta executable modules, as opposed to yotta library modules:
 >> "There are two sorts of things that yotta builds: libraries, and executables. Libraries are reusable, and the source code for them is distributed in the yotta registry. Executables are stand-alone programs that depend on libraries, and which are not normally published themselves."
+
 This chapter focuses on yotta executables, but much of its information is also relevant for libraries.
 ### Structure of a yotta module 
 
@@ -30,15 +31,26 @@ An application and a library have similar structures:
 
 * A readme.md file summarizing the API of the module.
 
+
 ```
-mymodule   |_ module.json   |_ source   |  |_ a_file.cpp   |  \_ another.cpp   |_ mymodule   |  |_ a_header.h   |  \_ some_other_header.h   |_ test   |  |_some_test.c   |  \_subdir   |    |_supporting_file.c   |    \_main.c   \_ readme.md ```
+
+mymodule   |_ module.json   |_ source   |  |_ a_file.cpp   |  \_ another.cpp   |_ mymodule   |  |_ a_header.h   |  \_ some_other_header.h   |_ test   |  |_some_test.c   |  \_subdir   |    |_supporting_file.c   |    \_main.c   \_ readme.md 
+
+```
+
 
 **The module.json file** describes:
+
 * The name, [semantic version](http://semver.org/) and license information of this module. 
+
 * Any dependencies that this module might have. 
+
 * Executable indication. If this is missing, the module is a library. The executable indication is the parameter ``bin``, which holds the subdirectory that yotta should build into an executable.
+
 **The source directory** and any subdirectories contain the source files that yotta will automatically use to build the library. Source files in any other top-level directories will normally be ignored.
+
 **The headers directory** should have the same name as your module and should contain all (and only) the public headers that your module exposes to anyone that depends on it. The name must be the same as your module name so that `#include` directives look like `#include "modulename/a_header.h"`, which prevents conflicts between multiple modules that have headers with the same name. This directory is optional for applications, since applications don’t normally export an interface that can be used by other modules.
+
 **The test directory** contains source files and subdirectories to compile into tests. yotta strongly encourages writing tests for modules (and makes it really easy!), because thorough testing is an important part of making software truly reusable. Any source files at the top-level of the test directory will be compiled into separate test executables, and the (recursive) contents of any subdirectories will each be compiled into a single test executable. You can use the [`yotta test` subcommand](http://yottadocs.mbed.com/tutorial/testing.html) to automatically build and run these tests.
 ## How to build an application
 This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The [build target]() we'll use is the [FRDM-K64F board]() with the [gcc toolchain](). We'll be using this sample several times in the guide, so it's well worth your time to build it.
