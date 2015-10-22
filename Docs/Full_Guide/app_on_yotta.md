@@ -143,7 +143,7 @@ We could also have used ``yotta version minor`` for a minor version (0.1.0) or `
 
 ### yotta targets
 
-**Tip:** The full explanation for yotta targets is on the [yotta documentation site](http://yottadocs.mbed.com/tutorial/targets.html). Earlier in this document (that chapter will be published soon), we reviewed how yotta targets and the hardware implementation work together. Here, we'll explain only a couple of concepts and the basic yotta commands.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The full explanation for yotta targets is on the [yotta documentation site](http://yottadocs.mbed.com/tutorial/targets.html). Earlier in this document (that chapter will be published soon), we reviewed how yotta targets and the hardware implementation work together. Here, we'll explain only a couple of concepts and the basic yotta commands.</span>
 
 yotta can build your code for different targets: different boards and operating systems. It can also use different compilers. This means you don't have to re-write code every time you want to test or deploy on a new kind of board. It also means you need to explicitly identify your target to yotta. Identifying a target means naming both the hardware and build toolchain you'll be using. We'll see how to do all this in the following sections.
 
@@ -196,7 +196,7 @@ To learn about creating a new target, please see the [yotta documentation site](
 
 ### Building your project
 
-**Note:** you must set a target before building, as explained above.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** you must set a target before building, as explained above.</span>
 
 #### Module dependencies
 
@@ -452,7 +452,7 @@ Debugging and testing are subjects worthy of their own guides. Until we have tho
 
 mbed OS applications are binary files. They're built locally (in your computer's project directory) and must be flashed (copied to) the board.
 
-**Tip:** yotta builds a separate application binary for each target under you application directory. In our example, the binary will be at ``/blinky/build/frdm-k64f-gcc/source/``. The file is ``my_blink.bin``.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** yotta builds a separate application binary for each target under you application directory. In our example, the binary will be at ``/blinky/build/frdm-k64f-gcc/source/``. The file is ``my_blink.bin``.</span>
 
 To flash it to your board:
 
