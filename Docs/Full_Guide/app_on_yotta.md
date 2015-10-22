@@ -2,8 +2,6 @@
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note**: This is an extract from the full mbed OS User Guide. The guide itself isn't ready yet, but we're releasing chapters as stand-alones as fast as we can.</span>
 
-[You'll need to install yotta](http://yottadocs.mbed.com/#installing) to complete the examples in this chapter.
-
 This chapter covers:
 
 * [What a yotta executable - or mbed OS application - looks like](#mbed-OS-applications-as-yotta-executables).
@@ -11,6 +9,10 @@ This chapter covers:
 * [How to initialize and build a project with yotta](#how-to-build-an-application).
 
 * [Guidelines for mbed OS applications](#writing-applications-for-mbed-os).
+
+
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">[You'll need to install yotta](http://yottadocs.mbed.com/#installing) to complete the examples in this chapter.</span>
+
 
 ## mbed OS applications as yotta executables
 
