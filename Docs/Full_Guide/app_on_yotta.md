@@ -256,8 +256,11 @@ yotta uses a shorthand for GitHub URLs. It has two parts: <user_name>/<repo_name
 ```
 
 yotta supports GitHub formats to specify branches and tags:
- * username/reponame#<versionspec> 
+
+* username/reponame#<versionspec> 
+
 * username/reponame#<branchname> 
+
 * username/reponame#<tagname>
 
 
@@ -287,7 +290,9 @@ Git URLs support branch, version and tags specifications:
 * anything://example.com/path/to/repo.git#<versionspec, branch or tag>
 
 Currently, mercurial URLs only support a version specification:
- * hg+ssh://example.com/path/to/repo#<versionspec> 
+
+* hg+ssh://example.com/path/to/repo#<versionspec>
+
 * anything://example.com/path/to/repo.hg#<versionspec>
 
 #### Installing dependencies
