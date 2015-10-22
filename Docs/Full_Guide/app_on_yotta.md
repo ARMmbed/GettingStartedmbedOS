@@ -32,12 +32,7 @@ An application and a library have similar structures:
 * A readme.md file summarizing the API of the module.
 
 
-```
-
-mymodule   |_ module.json   |_ source   |  |_ a_file.cpp   |  \_ another.cpp   |_ mymodule   |  |_ a_header.h   |  \_ some_other_header.h   |_ test   |  |_some_test.c   |  \_subdir   |    |_supporting_file.c   |    \_main.c   \_ readme.md 
-
-```
-
+![](/Images/module_struct.png) 
 
 **The module.json file** describes:
 
@@ -71,19 +66,27 @@ To build our application with mbed OS and yotta, we need to:
 
 
 **Tip:** When working with yotta in a command line prompt or terminal, you must navigate to your module directory before calling yotta.
+
 ### Initializing a yotta executable module
 
 If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your computer, you can use ``yotta init`` to construct a new skeleton module in an empty directory by answering a simple series of questions. For example, here is how to initialize the [Blinky sample application](https://github.com/ARMmbed/example-mbedos-blinky) that we'll use later:
 **Tip:** There is only one difference between initializing a library module and an executable module, and that is the selection between library and executable. We'll see soon where that selection is made.
+
 * The first step is to create a directory called ``blinky``. In a terminal or CMD:
-``user$ mkdir blinky``
+
+	``user$ mkdir blinky``
+
 * Navigate to it, because you need to call yotta from the directory in which you expect it to work:
-``user$ cd blinky``
+
+	``user$ cd blinky``
 * Now to initialize the module:
-``user$ yotta init``
+
+	``user$ yotta init``
 * yotta begins to ask questions about the module. It offers a default answer for all questions; press Enter to accept the default, or enter a different answer and press Enter. Please note:
 ** "Enter the initial version": The default version is 0.0.0. You can use [``yotta version``]() to edit the version before every release.
+
 ** "Keywords": Enter keywords with a comma between them. Keywords help people find your module, so they should describe what it does.
+
 ** "Repository URL": The default repository address is empty, and you may leave it like that. If you want to link to a repo, please note that you can't use the simple URL - you must use the SSH clone URL that GitHub offers. In our example, that will be ``ssh://git@github.com:ARMmbed/example-mbedos-blinky.git``. Please note that this link is for information purposes only; yotta doesn't download code from the repo.
 ** "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 ** "Is this module an executable": The default setting of a project is as a library. Please enter "yes" if your project is an executable.
