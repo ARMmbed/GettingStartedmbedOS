@@ -6,11 +6,11 @@
 
 This chapter covers:
 
-* [What a yotta executable - or mbed OS application - looks like]().
+* [What a yotta executable - or mbed OS application - looks like](#mbed-OS-applications-as-yotta-executables).
 
-* [How to initialize and build a project with yotta]().
+* [How to initialize and build a project with yotta](#how-to-build-an-application).
 
-* [Guidelines for mbed OS applications]().
+* [Guidelines for mbed OS applications](#writing-applications-for-mbed-os).
 
 ## mbed OS applications as yotta executables
 
@@ -52,13 +52,13 @@ An application and a library have similar structures:
 
 ## How to build an application
 
-This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The [build target]() we'll use is the [FRDM-K64F board]() with the [gcc toolchain](). We'll be using this sample several times in the guide, so it's well worth your time to build it.
+This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The [build target]() we'll use is the [FRDM-K64F board](https://www.mbed.com/en/development/hardware/boards/freescale/frdm_k64f/) with the [gcc toolchain](https://launchpad.net/gcc-arm-embedded). We'll be using this sample several times in the guide, so it's well worth your time to build it.
 
 ### Overview
 
 To build our application with mbed OS and yotta, we need to:
 
-1. [Initialize a yotta module as an executable](#initializing-a-yotta-module).
+1. [Initialize a yotta module as an executable](#initializing-a-yotta-executable-module).
 
 1. [Set a target](#yotta-targets).
 
@@ -90,7 +90,7 @@ If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your com
 
 * yotta begins to ask questions about the module. It offers a default answer for all questions; press Enter to accept the default, or enter a different answer and press Enter. Please note:
 
- * "Enter the initial version": The default version is 0.0.0. You can use [``yotta version``]() to edit the version before every release.
+ * "Enter the initial version": The default version is 0.0.0. You can use [``yotta version``](#Versioning-an-existing-yotta-module) to edit the version before every release.
 
  * "Keywords": Enter keywords with a comma between them. Keywords help people find your module, so they should describe what it does.
 
@@ -218,7 +218,7 @@ For example, here is a partial tree for **Blinky**. It shows Blinky's two depend
 
 **Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.
 
-Our dependencies are listed in the [``module.json``]() file for our module. Below, we explain how to list dependencies from the yotta Registry, GitHub and privately hosted sources.
+Our dependencies are listed in the [``module.json``](#Structure-of-a-yotta-module) file for our module. Below, we explain how to list dependencies from the yotta Registry, GitHub and privately hosted sources.
 
 ##### module.json: dependencies from the yotta registry
 
@@ -364,7 +364,7 @@ To build our ``blinky`` project with mbed OS and yotta, we:
 
 This section shows the general structure of an application running on mbed OS, and discusses best practices for coding (coming soon).
 
-**Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please go back to [Building your project]() and follow the instructions there.
+**Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](Docs/FirstProjectmbedOS.md) and follow the instructions there.
 
 ### Blinky's code
 
@@ -427,7 +427,7 @@ All of the features that we reviewed earlier - MINAR, memory management, securit
 
 The basic include for every mbed OS application is ``mbed.h``. It starts an inclusion chain that makes all basic mbed OS features available to your application.
 
-If you're not sure whether or not you need to explicitly include something in your application, ask for advice [on the forums](). 
+If you're not sure whether or not you need to explicitly include something in your application, ask for advice [on the forums](https://forums.mbed.com). 
 
 
 ### Debugging and testing your application
@@ -457,4 +457,4 @@ To flash it to your board:
 
 ### Publishing your application
 
-You can make your code public by committing it to version control (we commit ours to GitHub). You can go one step further and [publish your module](http://yottadocs.mbed.com/tutorial/release.html) to the yotta registry (but please note that publishing an application to the registry (as opposed to a library) is not part of the regular yotta workflow and gives little to no additional benefit in practice).
+You can make your code public by committing it to version control (we commit ours to GitHub). You can go one step further and [publish your module](http://yottadocs.mbed.com/tutorial/release.html) to the yotta registry (but please note that publishing an application (as opposed to a library) to the registry is not part of the regular yotta workflow and gives little to no additional benefit in practice).
