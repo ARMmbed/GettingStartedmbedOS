@@ -52,7 +52,7 @@ An application and a library have similar structures:
 
 ## How to build an application
 
-This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The [build target]() we'll use is the [FRDM-K64F board](https://www.mbed.com/en/development/hardware/boards/freescale/frdm_k64f/) with the [gcc toolchain](https://launchpad.net/gcc-arm-embedded). We'll be using this sample several times in the guide, so it's well worth your time to build it.
+This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The build target we'll use is the [FRDM-K64F board](https://www.mbed.com/en/development/hardware/boards/freescale/frdm_k64f/) with the [gcc toolchain](https://launchpad.net/gcc-arm-embedded). We'll be using this sample several times in the guide, so it's well worth your time to build it.
 
 ### Overview
 
@@ -364,7 +364,7 @@ To build our ``blinky`` project with mbed OS and yotta, we:
 
 This section shows the general structure of an application running on mbed OS, and discusses best practices for coding (coming soon).
 
-**Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](Docs/FirstProjectmbedOS.md) and follow the instructions there.
+**Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](https://docs.mbed.com/docs/getting-started-mbed-os/en/latest/FirstProjectmbedOS/) and follow the instructions there.
 
 ### Blinky's code
 
