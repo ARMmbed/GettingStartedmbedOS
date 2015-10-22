@@ -15,9 +15,11 @@ This chapter covers:
 ## mbed OS applications as yotta executables
 
 mbed OS applications are yotta executable modules, as opposed to yotta library modules:
+
 >> "There are two sorts of things that yotta builds: libraries, and executables. Libraries are reusable, and the source code for them is distributed in the yotta registry. Executables are stand-alone programs that depend on libraries, and which are not normally published themselves."
 
 This chapter focuses on yotta executables, but much of its information is also relevant for libraries.
+
 ### Structure of a yotta module 
 
 An application and a library have similar structures:
@@ -32,7 +34,7 @@ An application and a library have similar structures:
 * A readme.md file summarizing the API of the module.
 
 
-![](../Images/module_struct.png) 
+![](Images/module_struct.png) 
 
 **The module.json file** describes:
 
@@ -47,7 +49,9 @@ An application and a library have similar structures:
 **The headers directory** should have the same name as your module and should contain all (and only) the public headers that your module exposes to anyone that depends on it. The name must be the same as your module name so that `#include` directives look like `#include "modulename/a_header.h"`, which prevents conflicts between multiple modules that have headers with the same name. This directory is optional for applications, since applications don’t normally export an interface that can be used by other modules.
 
 **The test directory** contains source files and subdirectories to compile into tests. yotta strongly encourages writing tests for modules (and makes it really easy!), because thorough testing is an important part of making software truly reusable. Any source files at the top-level of the test directory will be compiled into separate test executables, and the (recursive) contents of any subdirectories will each be compiled into a single test executable. You can use the [`yotta test` subcommand](http://yottadocs.mbed.com/tutorial/testing.html) to automatically build and run these tests.
+
 ## How to build an application
+
 This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The [build target]() we'll use is the [FRDM-K64F board]() with the [gcc toolchain](). We'll be using this sample several times in the guide, so it's well worth your time to build it.
 
 ### Overview
@@ -128,12 +132,10 @@ To change the version:
 For example:
 
 ```
-
 user$ cd Blinky
 user$ yotta version
 info: @0.0.0 //current version of Blinky
 user$ yotta version patch // new patch version (the version is now 0.0.1)
-
 ```
 
 We could also have used ``yotta version minor`` for a minor version (0.1.0) or ``yotta version major`` for a major version (1.0.0).
@@ -175,6 +177,7 @@ yotta target
 frdm-k64f-gcc 0.0.24
 mbed-gcc 0.0.14
 ```
+
 * Used with a target name, ``target`` sets a new target:
 
 ```
@@ -186,6 +189,7 @@ yotta target bbc-microbit-classic-armcc
 To learn about creating a new target, please see the [yotta documentation site](http://yottadocs.mbed.com/tutorial/targets.html).
 
 ### Building your project
+
 **Note:** you must set a target before building, as explained above.
 
 #### Module dependencies
@@ -224,8 +228,6 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
 "mbed-drivers": "~0.8.3",
 	"my_dependency": "0.1"
   },
-
-
 ```
 
 **Tip:** Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers``.
@@ -238,20 +240,14 @@ You can use modules from GitHub repositories - private or public:
 
 
 ```
-
 "dependencies": {         "my_github_dependency": "username/reponame"     }
-
-
 ```
 
 yotta uses a shorthand for GitHub URLs. It has two parts: <user_name>/<repo_name>. For example, to include yotta itself:
 
 
 ```
-
 "dependencies": {         "yotta": "ARMmbed/yotta"     }
-
-
 ```
 
 yotta supports GitHub formats to specify branches and tags:
@@ -301,6 +297,7 @@ user$ yotta install mbed-drivers
 ```
 
 We need to be online for the installation to work, because yotta downloads the modules from the yotta Registry. 
+
 #### Adding project code
 
 To complete the build, please copy the ``blinky.cpp`` file from the [example directory](https://github.com/ARMmbed/example-mbedos-blinky). Place it in the ``source`` directory under your ``blinky`` directory.
@@ -319,7 +316,6 @@ For example, if I'm working with the ``blinky`` directory we saw above:
 user$ cd blinky
 user$ yotta target frdm-k64f-gcc
 user$ yotta build
-
 ```
 
 The built executable (a binary) will be created at ``./build/<target_name>/source/<module_name>``. So the result of that build will be at ``blinky/build/frdm-k64f-gcc/source/``.
@@ -335,6 +331,7 @@ The file you need to flash onto the mbed-enabled board is ``my_blinky.bin``:
 1. From your file explorer, drag and drop the file onto the board.
 
 1. The application is now on your board and should start working immediately. Note that some boards need a reset.
+
 ## Building a project: summary
 
 To build our ``blinky`` project with mbed OS and yotta, we:
@@ -359,7 +356,10 @@ To build our ``blinky`` project with mbed OS and yotta, we:
 	1. ``yotta build``.
 
 1. Copied our binary to the board over micro-USB.
+
+
 ## Writing applications for mbed OS
+
 This section shows the general structure of an application running on mbed OS, and discusses best practices for coding (coming soon).
 
 **Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please go back to [Building your project]() and follow the instructions there.
@@ -427,6 +427,7 @@ The basic include for every mbed OS application is ``mbed.h``. It starts an incl
 
 If you're not sure whether or not you need to explicitly include something in your application, ask for advice [on the forums](). 
 
+
 ### Debugging and testing your application
 
 Debugging and testing are subjects worthy of their own guides. Until we have those written, please see:
@@ -434,6 +435,7 @@ Debugging and testing are subjects worthy of their own guides. Until we have tho
 * [Our current debugging articles](docs.mbed.com/docs/debugging-on-mbed/en/latest/). Note that they currently focus on mbed Classic, but many of the ideas they present are applicable to mbed OS.
 
 * Our testing suite, Greentea. It is currently documented only in its [GitHub repoistories](https://github.com/ARMmbed/greentea). We're working on a new guide for it.
+
 ### Flashing an application to the board
 
 mbed OS applications are binary files. They're built locally (in your computer's project directory) and must be flashed (copied to) the board.
