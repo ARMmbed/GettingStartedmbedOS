@@ -1,4 +1,4 @@
-# Get the code
+# Key code repositories
 
 For a list of key code repositories and the documentation they contain, see [our main site](http://mbed.com/en/development/getting-started/get-code/).
 
