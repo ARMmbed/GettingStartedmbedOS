@@ -1,6 +1,6 @@
 #Introduction 
 
-**Note**: This is an extract from the full mbed OS User Guide. The guide itself isn't ready yet, but we're releasing chapters as stand-alones as fast as we can. 
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note**: This is an extract from the full mbed OS User Guide. The guide itself isn't ready yet, but we're releasing chapters as stand-alones as fast as we can.</span>
 
 [You'll need to install yotta](http://yottadocs.mbed.com/#installing) to complete the examples in this chapter.
 
@@ -23,6 +23,7 @@ This chapter focuses on yotta executables, but much of its information is also r
 ### Structure of a yotta module 
 
 An application and a library have similar structures:
+
 * A module.json file.
 
 * A source directory containing source files to compile.
@@ -69,13 +70,13 @@ To build our application with mbed OS and yotta, we need to:
 1. [Build the module](#building-the-module).
 
 
-**Tip:** When working with yotta in a command line prompt or terminal, you must navigate to your module directory before calling yotta.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** When working with yotta in a command line prompt or terminal, you must navigate to your module directory before calling yotta.</span>
 
 ### Initializing a yotta executable module
 
 If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your computer, you can use ``yotta init`` to construct a new skeleton module in an empty directory by answering a simple series of questions. For example, here is how to initialize the [Blinky sample application](https://github.com/ARMmbed/example-mbedos-blinky) that we'll use later:
 
-**Tip:** There is only one difference between initializing a library module and an executable module, and that is the selection between library and executable. We'll see soon where that selection is made.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** There is only one difference between initializing a library module and an executable module, and that is the selection between library and executable. We'll see soon where that selection is made.</span>
 
 * The first step is to create a directory called ``blinky``. In a terminal or CMD:
 
@@ -109,7 +110,7 @@ user$ ls
 module.json	my_blinky	source		test
 ```
 
-**Tip:** you can use ``yotta init`` in an existing module to modify it at any time. Your previous answers will be shown as the default, so you can edit only the ones that need to change; simply press Enter to accept all other answers. 
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** you can use ``yotta init`` in an existing module to modify it at any time. Your previous answers will be shown as the default, so you can edit only the ones that need to change; simply press Enter to accept all other answers.</span>
 
 ### Versioning an existing yotta module
 
@@ -209,7 +210,7 @@ When we build our application, yotta will download from the yotta Registry:
 
 * For each of the modules we listed, the other modules that module itself lists in its ``module.json``.
 
-**Note:** Because yotta downloads dependencies from the yotta Registry, you must be online the first time you build.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** Because yotta downloads dependencies from the yotta Registry, you must be online the first time you build.</span>
 
 #### mbed-drivers
 
@@ -219,7 +220,7 @@ For example, here is a partial tree for **Blinky**. It shows Blinky's two depend
 
 ![](Images/yotta_dep.png)
 
-**Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.</span>
 
 Our dependencies are listed in the [``module.json``](#Structure-of-a-yotta-module) file for our module. Below, we explain how to list dependencies from the yotta Registry, GitHub and privately hosted sources.
 
@@ -235,9 +236,9 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
   },
 ```
 
-**Tip:** Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers``.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The yotta documentation site explains how to [specify dependency versions](http://yottadocs.mbed.com/reference/module.html).</span>
 
-**Tip:** The yotta documentation site explains how to [specify dependency versions](http://yottadocs.mbed.com/reference/module.html).
+Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers``.
 
 ##### module.json: dependencies from GitHub repositories
 
@@ -349,7 +350,7 @@ To build our ``blinky`` project with mbed OS and yotta, we:
 1. Created a new directory and navigated to it in our Terminal or other command-line tool.
 
 1. Initialized a yotta module:
-	1. ``yotta init`.
+	1. ``yotta init``.
 
 1. Set a target:
 	1. ``yotta search`` to search for one.
@@ -372,7 +373,7 @@ To build our ``blinky`` project with mbed OS and yotta, we:
 
 This section shows the general structure of an application running on mbed OS, and discusses best practices for coding (coming soon).
 
-**Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](https://docs.mbed.com/docs/getting-started-mbed-os/en/latest/FirstProjectmbedOS/) and follow the instructions there.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** We'll be using Blinky, the same application we used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](https://docs.mbed.com/docs/getting-started-mbed-os/en/latest/FirstProjectmbedOS/) and follow the instructions there.</span>
 
 ### Blinky's code
 
@@ -405,7 +406,7 @@ Note that including requires the full path to the file:
 #include "mbed-drivers/mbed.h"
 ```
 
-**Note:** There are limitations on the path and file names. For more information about this, please see the [yotta documentation](http://yottadocs.mbed.com/tutorial/tutorial.html).
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** There are limitations on the path and file names. For more information about this, please see the [yotta documentation](http://yottadocs.mbed.com/tutorial/tutorial.html).</span>
 
 Please remember that for the compilation to work correctly, yotta has to know where the included file comes from. That requires listing dependencies in the ``module.json`` file, as [explained above](). In our case, ``mbed.h`` is part of ``mbed-drivers``, which we installed earlier, so yotta has no problem using it in the build.
 
@@ -443,6 +444,7 @@ If you're not sure whether or not you need to explicitly include something in yo
 Debugging and testing are subjects worthy of their own guides. Until we have those written, please see:
 
 * [Our current debugging articles](docs.mbed.com/docs/debugging-on-mbed/en/latest/). Note that they currently focus on mbed Classic, but many of the ideas they present are applicable to mbed OS.
+
 
 * Our testing suite, Greentea. It is currently documented only in its [GitHub repoistories](https://github.com/ARMmbed/greentea). We're working on a new guide for it.
 
