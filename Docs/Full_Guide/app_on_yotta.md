@@ -438,7 +438,7 @@ All of the features that we reviewed earlier - MINAR, memory management, securit
 
 The basic include for every mbed OS application is ``mbed.h``. It starts an inclusion chain that makes all basic mbed OS features available to your application.
 
-If you're not sure whether or not you need to explicitly include something in your application, ask for advice [on the forums](https://forums.mbed.com). 
+If you're not sure whether or not you need to explicitly include something in your application, ask for advice [on the forums](https://developer.mbed.org/forum/). 
 
 
 ### Debugging and testing your application
