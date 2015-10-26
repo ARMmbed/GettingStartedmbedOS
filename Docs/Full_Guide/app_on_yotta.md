@@ -338,6 +338,8 @@ user$ yotta build
 
 The built executable (a binary) will be created at ``./build/<target_name>/source/<module_name>``. So the result of that build will be at ``blinky/build/frdm-k64f-gcc/source/``.
 
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Some targets require a HEX file, not a BIN. yotta knows which file type to build based on the target description.</span>
+
 #### Flashing the application to the board
 
 The file you need to flash onto the mbed-enabled board is ``my_blinky.bin``:
@@ -457,7 +459,7 @@ Debugging and testing are subjects worthy of their own guides. Until we have tho
 
 ### Flashing an application to the board
 
-mbed OS applications are binary files. They're built locally (in your computer's project directory) and must be flashed (copied to) the board.
+mbed OS applications are binary files (or HEX). They're built locally (in your computer's project directory) and must be flashed (copied to) the board.
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** yotta builds a separate application binary for each target under you application directory. In our example, the binary will be at ``/blinky/build/frdm-k64f-gcc/source/``. The file is ``my_blink.bin``.</span>
 
