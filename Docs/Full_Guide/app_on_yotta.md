@@ -244,7 +244,7 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
 ```
 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers`` with a correct version.</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers`` with a correct version.</span>
 
 Selecting the dependency version:
 
