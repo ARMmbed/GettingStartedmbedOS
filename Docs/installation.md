@@ -30,7 +30,7 @@ We’ve built a yotta Docker container - a yocker - and a bash script (yotta.sh)
 	docker pull mbed/yotta
 	```
 
-1. Save the [yotta script](Scripts/yotta.sh) on your computer. You’ll need to refer to its path when you use it in Docker later, so remember where it is.
+1. Save the [yotta script](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/Scripts/yotta.sh) on your computer. You’ll need to refer to its path when you use it in Docker later, so remember where it is.
 
 ### Using the yotta Docker to build projects
 
