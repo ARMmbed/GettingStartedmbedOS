@@ -239,13 +239,25 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
 ```
   "dependencies": {
 "mbed-drivers": "~0.8.3",
-	"my_dependency": "0.1"
+	"my_dependency_latest": "^1.2.3"
+	"another_dependency_versioned": "~0.1"
   },
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The yotta documentation site explains how to [specify dependency versions](http://yottadocs.mbed.com/reference/module.html).</span>
 
-Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers``.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers`` with a correct version.</span>
+
+Selecting the dependency version:
+
+* When you add a dependency to ``module.json``, you want to list the current version number, for example 1.2.3.
+
+* In front of the version number, you can add a specifier (^ or ~, or even something like ">=1.2.3,<2.3.4") which controls which versions yotta will allow updates to if you use ``yotta update``.
+ * ^: Update to any semantic-version compatible module (matching major version for >=1.x versions).
+ * ~: Accept patch-version updates only.
+
+Using ``yotta install <dependency_name>``, rather than manually editing ``module.json``, will use the correct version specifier automatically. 
+
+For modules with a 0.x version number, we recommend using ``~`` rather than ^. Even though semantic versioning specifies that any update may break compatibility, if you are using 0.x versions of something you're accepting some breakage anyway, and using ^ will prevent you from getting any updates
 
 ##### module.json: dependencies from GitHub repositories
 
