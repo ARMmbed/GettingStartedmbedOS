@@ -2,7 +2,7 @@
 
 mbed OS works on your board, so you don't install it on your computer. What you need is a tool that takes your application code and the mbed OS code, then builds it into a single file that you can put on your board. That tool is called yotta, so yotta is what you need to install on your computer.
 
-Once you've installed yotta, you can start building your applications. We explain the full process [in our review of yotta projects](app_on_yotta.md).
+Once you've installed yotta, you can start building your applications. We explain the full process [in our review of yotta projects](Full_Guide/app_on_yotta.md).
 
 There are two ways to install yotta: a regular local installation on your computer, or a Docker container.
 
@@ -30,11 +30,11 @@ We’ve built a yotta Docker container - a yocker - and a bash script (yotta.sh)
 	docker pull mbed/yotta
 	```
 
-1. Save the [yotta script](Scripts/yotta) on your computer. You’ll need to refer to its path when you use it in Docker later, so remember where it is.
+1. Save the [yotta script](Scripts/yotta.sh) on your computer. You’ll need to refer to its path when you use it in Docker later, so remember where it is.
 
 ### Using the yotta Docker to build projects
 
-yotta needs to [work in the project directory](). So to build a project:
+yotta needs to [work in the project directory](Full_Guide/app_on_yotta.md). So to build a project:
 
 1. Start Docker.
 
@@ -45,7 +45,7 @@ yotta needs to [work in the project directory](). So to build a project:
 	cd <mbedos project>
 	```
 
-1. You can now use the standard [yotta commands](). Note that you'll have to precede each command with the path to the bash script you saved in the previous section. For example:
+1. You can now use the standard [yotta commands](http://yottadocs.mbed.com/reference/commands.html). Note that you'll have to precede each command with the path to the bash script you saved in the previous section. For example:
 
 	```
 	../<path containing script>/yotta target frdm-k64f-gcc
