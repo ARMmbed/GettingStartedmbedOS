@@ -32,42 +32,31 @@ We’ve built a yotta Docker container - a yocker - and a bash script (yotta.sh)
 
 1. Save the [yotta script](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/Scripts/yotta.sh) on your computer. You’ll need to refer to its path when you use it in Docker later, so remember where it is.
 
-### Using the yotta Docker to build projects
+### Using the yotta Docker and script to build projects
 
-yotta needs to [work in the project directory](Full_Guide/app_on_yotta.md). So to build a project:
-
-1. Start Docker.
-
-1. Create a project and navigate to it. Here’s an example of creating a local copy of a project hosted on GitHub:
-
-	```
-	git clone <mbedos project>
-	cd <mbedos project>
-	```
-
-1. You can now use the standard [yotta commands](http://yottadocs.mbed.com/reference/commands.html). Note that you'll have to precede each command with the path to the bash script you saved in the previous section. For example:
+There is one difference between a regular installation and a Docker Container: in Docker, you'll have to precede each yotta command with the path to the bash script you saved in the previous section. For example:
 	
-	```
-	../<path containing script>/yotta target frdm-k64f-gcc
-	../<path containing script>/yotta build
-	```
+```
+../<path containing script>/yotta target frdm-k64f-gcc 	//sets the target
+../<path containing script>/yotta build			//builds our project for the target
+```
 
-	**Tip:** If you saved your script under a name other than ``yotta``, you may need to enter the script’s full name, including extension. Our example will become ``../<path containing script>/<name.extension> target frdm-k64f-gcc``.
+**Note:** If you saved your script under a name other than ``yotta``, you may need to enter the script’s full name, including extension. Our example will become ``../<path containing script>/<name.extension> target frdm-k64f-gcc``.
 
-1. You can add the yotta script’s path to your system’s ``path`` variable (Windows) or create a symbolic link (symlink) to your bin directory (Linux and Mac OS X). Then you’ll be able to use yotta commands without specifying the full path to the script. For example, to create a symlink:
+If you want to use yotta commands without specifying the full path to the script, you can add the yotta script’s path to your system’s ``path`` variable (Windows) or create a symbolic link (symlink) to your bin directory (Linux and Mac OS X). For example, to create a symlink: 
 	
-	```
-	ln -s <path to your yotta.sh> /usr/bin/yotta
-	```
+```
+ln -s <path to your yotta.sh> /usr/bin/yotta
+```
+
+Now you can use yotta directly:
 	
-	Now you can use yotta directly:
-	
-	```
-	git clone <mbedos project>
-	cd <mbedos project>
-	yotta target frdm-k64f-gcc
-	yotta build
-	```
+```
+git clone <mbedos project>
+cd <mbedos project>
+yotta target frdm-k64f-gcc
+yotta build
+```
 
 
 
