@@ -10,6 +10,8 @@ Working with mbed OS means we use yotta to combine our own application code with
 
 So these guides will walk you through working with yotta, then show you how to write an application that can work with the mbed OS code base. 
 
+For yotta installation instructions, see the [installation section](installation.md).
+
 ## The quick guides
 
 * [Getting started with mbed OS](GettingStartedmbedOS.md): What's new with mbed OS, and how to write and build programs for it.
