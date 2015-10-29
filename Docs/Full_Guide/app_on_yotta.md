@@ -239,8 +239,7 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
 ```
   "dependencies": {
 "mbed-drivers": "~0.8.3",
-	"my_dependency_latest": "^1.2.3"
-	"another_dependency_versioned": "~0.1"
+	"my_dependency": "^1.2.3"
   },
 ```
 
