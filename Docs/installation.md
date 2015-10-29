@@ -38,7 +38,7 @@ There is one difference between a regular installation and a Docker Container: i
 	
 ```
 ../<path containing script>/yotta target frdm-k64f-gcc 	//sets the target
-../<path containing script>/yotta build			//builds our project for the target
+../<path containing script>/yotta build			//builds our project
 ```
 
 **Note:** If you saved your script under a name other than ``yotta``, you may need to enter the script’s full name, including extension. Our example will become ``../<path containing script>/<name.extension> target frdm-k64f-gcc``.
