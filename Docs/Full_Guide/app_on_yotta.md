@@ -250,7 +250,7 @@ Selecting the dependency version:
 
 * When you add a dependency to ``module.json``, you want to list the current version number, for example 1.2.3.
 
-* In front of the version number, you can add a specifier (^ or ~, or even something like ">=1.2.3,<2.3.4") which controls which versions yotta will allow updates to if you use ``yotta update``.
+* In front of the version number, you can add a specifier (^ or ~, or even something like ">=1.2.3,<2.3.4") that controls version updates. It limits the versions yotta will allow updates to when using ``yotta update``:
  * ^: Update to any semantic-version compatible module (matching major version for >=1.x versions).
  * ~: Accept patch-version updates only.
 
