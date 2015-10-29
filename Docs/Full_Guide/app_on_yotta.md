@@ -256,7 +256,9 @@ Selecting the dependency version:
 
 Using ``yotta install <dependency_name>``, rather than manually editing ``module.json``, will use the correct version specifier automatically. 
 
-For modules with a 0.x version number, we recommend using ``~`` rather than ^. Even though semantic versioning specifies that any update may break compatibility, if you are using 0.x versions of something you're accepting some breakage anyway, and using ^ will prevent you from getting any updates
+For modules with a 0.x version number, we recommend using ``~`` rather than ^. Even though semantic versioning specifies that any update may break compatibility, if you are using 0.x versions of something you're accepting some breakage anyway, and using ^ will prevent you from getting any updates.
+
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** For more information about versions and specifiers, see the [yotta documentation site](http://yottadocs.mbed.com/reference/module.html#dependencies).</span>
 
 ##### module.json: dependencies from GitHub repositories
 
