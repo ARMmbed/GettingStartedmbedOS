@@ -46,7 +46,7 @@ yotta needs to [work in the project directory](Full_Guide/app_on_yotta.md). So t
 	```
 
 1. You can now use the standard [yotta commands](http://yottadocs.mbed.com/reference/commands.html). Note that you'll have to precede each command with the path to the bash script you saved in the previous section. For example:
-
+	
 	```
 	../<path containing script>/yotta target frdm-k64f-gcc
 	../<path containing script>/yotta build
@@ -55,12 +55,13 @@ yotta needs to [work in the project directory](Full_Guide/app_on_yotta.md). So t
 	**Tip:** If you saved your script under a name other than ``yotta``, you may need to enter the script’s full name, including extension. Our example will become ``../<path containing script>/<name.extension> target frdm-k64f-gcc``.
 
 1. You can add the yotta script’s path to your system’s ``path`` variable (Windows) or create a symbolic link (symlink) to your bin directory (Linux and Mac OS X). Then you’ll be able to use yotta commands without specifying the full path to the script. For example, to create a symlink:
+	
 	```
 	ln -s <path to your yotta.sh> /usr/bin/yotta
 	```
 	
 	Now you can use yotta directly:
-
+	
 	```
 	git clone <mbedos project>
 	cd <mbedos project>
