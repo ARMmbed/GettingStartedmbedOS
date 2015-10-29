@@ -36,7 +36,7 @@ We’ve built a yotta Docker container - a yocker - and a bash script (yotta.sh)
 
 There is one difference between a regular installation and a Docker Container: in Docker, you'll have to precede each yotta command with the path to the bash script you saved in the previous section. For example:
 	
-```
+```shell
 ../<path containing script>/yotta target frdm-k64f-gcc 	//sets the target
 ../<path containing script>/yotta build			//builds our project
 ```
