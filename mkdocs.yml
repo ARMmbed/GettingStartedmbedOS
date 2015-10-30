@@ -11,3 +11,4 @@ pages:
 - ['Full_Guide/app_on_yotta.md', 'mbed OS User Guide', 'mbed OS applications with yotta']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
 - ['GetTheCode.md', 'Additional Resources', 'Get the code']
+- ['docker_install.md','','']
