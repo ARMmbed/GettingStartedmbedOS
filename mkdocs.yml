@@ -5,7 +5,7 @@ docs_dir: Docs
 pages:
 - ['index.md','Introduction']
 - ['installation.md','Installation']
-- ['GettingStartedmbedOS.md', 'Quick Guides', 'Getting started with mbed OS']
+- ['GettingStartedmbedOS.md', 'Quick Guides', 'Short introduction to mbed OS']
 - ['FirstProjectmbedOS.md', 'Quick Guides', 'Your first application']
 - ['Full_Guide/guide_index.md', 'mbed OS User Guide', 'Introduction to the mbed OS User Guide']
 - ['Full_Guide/app_on_yotta.md', 'mbed OS User Guide', 'mbed OS applications with yotta']
