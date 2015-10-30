@@ -4,7 +4,7 @@ mbed OS works on your board, so you don't install it on your computer. What you 
 
 Once you've installed yotta, you can start building your applications. We explain the full process [in our review of yotta projects](Full_Guide/app_on_yotta.md).
 
-There are two ways to install yotta: a regular local installation on your computer, or a Docker container.
+There are two ways to install yotta: a regular local installation on your computer, and a Docker container.
 
 ## Regular local installation
 
