@@ -1,13 +1,6 @@
-# Short introduction to mbed OS
+# mbed OS overview
 
-Ah, great, you're here! Thanks for the early interest in mbed OS. Let's get started, shall we?
-
-The Getting Started section reviews the basics of creating an mbed OS application. We'll discuss how we write and build programs, and how they can be flashed to the boards.
-
-Other sections on our website will introduce you to specific tools, such as the [testing,](http://mbed.com/en/development/software/tools/testing/) [security tools,](http://mbed.com/en/technologies/security/) and of course [mbed OS.](http://mbed.com/en/development/software/mbed-os//)
-
-If you're not sure what it is you're supposed to program, read [What is mbed?](http://mbed.com/en/about-mbed/what-mbed/) and then come back.
-
+This section is a short introduction to mbed OS. It's followed by a sample application that you can build and run on your board.
 
 ## What's new with mbed: yotta build and registry
 
