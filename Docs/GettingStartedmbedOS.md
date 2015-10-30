@@ -1,4 +1,4 @@
-# Getting started with mbed OS
+# Short introduction to mbed OS
 
 Ah, great, you're here! Thanks for the early interest in mbed OS. Let's get started, shall we?
 
