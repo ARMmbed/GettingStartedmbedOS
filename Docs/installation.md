@@ -1,12 +1,13 @@
-# Installation
+## Getting mbed OS
 
-mbed OS works on your board, so you don't install it on your computer. What you need is a tool that takes your application code and the mbed OS code, then builds it into a single file that you can put on your board. That tool is called yotta, so yotta is what you need to install on your computer.
+We don't "get" mbed OS in the same way that we get a new app on our phone. There is no mbed OS download and no way to install it on our machine.
 
-Once you've installed yotta, you can start building your applications. We explain the full process [in our review of yotta projects](Full_Guide/app_on_yotta.md).
+Working with mbed OS means we use yotta to combine our own application code with the mbed OS code base. yotta gets the relevant parts of mbed OS for us from its own registry.
 
-There are two ways to work with yotta: 
+So these guides will walk you through working with yotta, then show you how to write an application that can work with the mbed OS code base. 
+
+There are two ways to get yotta: 
 
 * [Install it on your machin](http://yottadocs.mbed.com/#installing).
 
 * [Run it in a Docker container](docker_install.md).
-
