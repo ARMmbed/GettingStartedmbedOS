@@ -6,7 +6,7 @@ Welcome to the getting started guides for ARM® mbed™ OS.
 
 * [Setting up your machine](installation.md): installing yotta, the build tool for mbed OS.
 
-* [An introudction to mbed OS](GettingStartedmbedOS.md): What's new with mbed OS, and how to write and build programs for it.
+* [An introudction to mbed OS](GettingStartedmbedOS.md): what's new with mbed OS, and how to write and build programs for it.
 
 * [Your first mbed OS application](FirstProjectmbedOS.md): a simple example to get you going.
 
