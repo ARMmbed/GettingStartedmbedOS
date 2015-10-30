@@ -4,7 +4,9 @@ Welcome to the getting started guides for ARM® mbed™ OS.
 
 ## The quick guides
 
-* [Getting started with mbed OS](GettingStartedmbedOS.md): What's new with mbed OS, and how to write and build programs for it.
+* [Setting up your machine to work with mbed OS](installation.md).
+
+* [An introudction to mbed OS](GettingStartedmbedOS.md): What's new with mbed OS, and how to write and build programs for it.
 
 * [Your first mbed OS application](FirstProjectmbedOS.md): a simple example to get you going.
 
