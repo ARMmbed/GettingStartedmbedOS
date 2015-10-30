@@ -10,4 +10,4 @@ There are two ways to get yotta:
 
 * [Install it on your machin](http://yottadocs.mbed.com/#installing).
 
-* [Run it in a Docker container](docker_install.md).
+* [Run it in a Docker container](../docker_install.md).
