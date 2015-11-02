@@ -93,7 +93,7 @@ If you want to learn more about mbed OS and try some other functionality, you ca
 Now that we have set up an application and downloaded our dependencies, let's add some source code to use the module. In the `/source` folder create a file called `app.cpp` with the following contents:
 
 ```
-#include "mbed/mbed.h"
+#include "mbed-drivers/mbed.h"
 
 static void blinky(void) {
     static DigitalOut led(LED1);
