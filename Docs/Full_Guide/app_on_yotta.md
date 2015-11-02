@@ -11,7 +11,7 @@ This chapter covers:
 * [Guidelines for mbed OS applications](#writing-applications-for-mbed-os).
 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">[You'll need to install yotta](http://yottadocs.mbed.com/#installing) to complete the examples in this chapter.</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">[You'll need to install yotta](../installation.md) to complete the examples in this chapter.</span>
 
 
 ## mbed OS applications as yotta executables
