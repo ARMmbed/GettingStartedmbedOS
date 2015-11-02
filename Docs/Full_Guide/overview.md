@@ -115,7 +115,9 @@ yotta combines our code (application) with the mbed OS code-base and any other m
 What this all means is that to build applications that can run on top of mbed OS, you need:
 
 * yotta.
+
 * mbed OS modules and optional additional libraries, which yotta gets for you.
+
 * Your own application code.
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
