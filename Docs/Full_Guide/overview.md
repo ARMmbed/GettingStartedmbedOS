@@ -119,6 +119,6 @@ What this all means is that to build applications that can run on top of mbed OS
 * Your own application code.
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
-![Images/mbed_OS_app.png]()</span>
+![](Images/mbed_OS_app.png)</span>
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** IDE support is not available yet. If you're interested in a particular IDE, talk to us on [the forum](forums.mbed.com).</span>
