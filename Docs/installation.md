@@ -8,6 +8,6 @@ So these guides will walk you through working with yotta, then show you how to w
 
 There are two ways to get yotta: 
 
-* [Install it on your machin](http://yottadocs.mbed.com/#installing).
+* [Install it on your machine](http://yottadocs.mbed.com/#installing).
 
 * [Run it in a Docker container](docker_install.md).
