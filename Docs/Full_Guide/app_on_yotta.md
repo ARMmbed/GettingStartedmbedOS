@@ -105,7 +105,7 @@ If you have [yotta installed](../installation.md) on your computer, you can use 
  * "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 
 
-<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
+<span style="display:block; text-align:center; padding:5px;">
 ![](Images/yotta_init.png)</span>
 
 * When you've answered all of the questions, yotta will create the basic file structure you need. You can view it with the command ``ls``:
