@@ -34,7 +34,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_minar_](github.com/ARMmbed/minar): The mbed OS event scheduler.
 
-* [_ualloc_](https://github.com/ARMmbed/ualloc) and [__dlmalloc__](https://github.com/ARMmbed/dlmalloc): Memory allocation for mbed OS.
+* [_ualloc_](https://github.com/ARMmbed/ualloc) and [_dlmalloc_](https://github.com/ARMmbed/dlmalloc): Memory allocation for mbed OS.
 
 * [_uvisor_](https://github.com/ARMmbed/uvisor): mbed OS uVisor is a supervisory kernel for security on mbed OS.
 
