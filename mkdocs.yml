@@ -11,5 +11,5 @@ pages:
 - ['Full_Guide/app_on_mbed_os.md', 'mbed OS User Guide', 'Writing applications for mbed OS']
 - ['Full_Guide/Debugging.md', 'mbed OS User Guide', 'Debugging mbed OS applications']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
-- ['GetTheCode.md', 'Additional Resources', 'Get the code']
+- ['GetTheCode.md', 'Additional Resources', 'Examples and code']
 - ['docker_install.md','','']
