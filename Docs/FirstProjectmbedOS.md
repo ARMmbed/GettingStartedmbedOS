@@ -4,7 +4,7 @@ Ok, let's get to the nitty gritty and create your first mbed application (using 
 
 ## Step 1: install yotta and its dependencies
 
-Please see [yottadocs.mbed.com](http://yottadocs.mbed.com/#installing) for installation instructions.
+See yotta's [installation instructions](installation.md).
 
 ## Step 2: create an application
 
