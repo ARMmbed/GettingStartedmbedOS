@@ -10,6 +10,7 @@ pages:
 - ['Full_Guide/overview.md', 'mbed OS User Guide', 'Overview of mbed OS']
 - ['Full_Guide/app_on_yotta.md', 'mbed OS User Guide', 'mbed OS applications with yotta']
 - ['Full_Guide/app_on_mbed_os.md', 'mbed OS User Guide', 'Writing applications for mbed OS']
+- ['Full_Guide/Debugging.md', 'mbed OS User Guide', 'Debugging mbed OS applications']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
 - ['GetTheCode.md', 'Additional Resources', 'Get the code']
 - ['docker_install.md','','']
