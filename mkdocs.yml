@@ -5,7 +5,6 @@ docs_dir: Docs
 pages:
 - ['index.md','Introduction']
 - ['installation.md','Installation']
-- ['GettingStartedmbedOS.md', 'Quick Guides', 'Short introduction to mbed OS']
 - ['FirstProjectmbedOS.md', 'Quick Guides', 'Your first application']
 - ['Full_Guide/guide_index.md', 'mbed OS User Guide', 'Introduction to the mbed OS User Guide']
 - ['Full_Guide/overview.md', 'mbed OS User Guide', 'Overview of mbed OS']
