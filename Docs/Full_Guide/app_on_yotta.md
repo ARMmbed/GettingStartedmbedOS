@@ -76,7 +76,7 @@ To build our application with mbed OS and yotta, we need to:
 
 ### Initializing a yotta executable module
 
-If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your computer, you can use ``yotta init`` to construct a new skeleton module in an empty directory by answering a simple series of questions. For example, here is how to initialize the [Blinky sample application](https://github.com/ARMmbed/example-mbedos-blinky) that we'll use later:
+If you have [yotta installed](../installation.md) on your computer, you can use ``yotta init`` to construct a new skeleton module in an empty directory by answering a simple series of questions. For example, here is how to initialize the [Blinky sample application](https://github.com/ARMmbed/example-mbedos-blinky) that we'll use later:
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** There is only one difference between initializing a library module and an executable module, and that is the selection between library and executable. We'll see soon where that selection is made.</span>
 
@@ -87,6 +87,7 @@ If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your com
 * Navigate to it, because you need to call yotta from the directory in which you expect it to work:
 
 	``user$ cd blinky``
+
 * Now to initialize the module:
 
 	``user$ yotta init``
@@ -95,11 +96,11 @@ If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your com
 
  * "Enter the initial version": The default version is 0.0.0. You can use [``yotta version``](#Versioning-an-existing-yotta-module) to edit the version before every release.
 
- * "Is this an executable?": The default setting of a project is as a library. Please enter "yes" if your project is an executable. Only library modules can be re-used by other modules and executables, so choose "no" if you're writing a re-usable module.
+ * "Is this an executable?": The default setting of a project is as a library. Please enter "yes" if your project is an executable. Only library modules can be reused by other modules and executables, so choose "no" if you're writing a reusable module.
 
  * "Keywords": Enter keywords with a comma between them. Keywords help people find your module, so they should describe what it does.
 
- * "Repository URL": This is where people can find your code to help improve your module or suggest changes. The default repository address is empty, and you may leave it like that. For a Github repository note that you must use the SSH clone URL,  in our example that will be ``ssh://git@github.com:ARMmbed/example-mbedos-blinky.git``. The repository URL is for information purposes only; yotta doesn't download code from the repo.
+ * "Repository URL": This is where people can find your code to help improve your module or suggest changes. The default repository address is empty, and you may leave it like that. For a Github repository note that you must use the SSH clone URL. In our example that will be ``ssh://git@github.com:ARMmbed/example-mbedos-blinky.git``. The repository URL is for information purposes only; yotta doesn't download code from the repo.
 
  * "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 
@@ -132,20 +133,19 @@ To change the version:
 
 1. Use ``yotta version`` to check the current version of your module.
 
-1. Use ``yotta version <action>`` to bump the version number. The ``patch``, ``minor`` and ``major`` actions each increase relevant part of the version number by 1, and set the less significant parts to zero. For example ``yotta version minor`` in a module with version ``1.2.3`` will increase the version number to ``1.3.0``.
+1. Use ``yotta version <action>`` to bump the version number. The ``patch``, ``minor`` and ``major`` actions each increase the relevant part of the version number by 1, and set the less significant parts to zero. For example ``yotta version minor`` in a module with version ``1.2.3`` will increase the version number to ``1.3.0``:
 
-For example:
 
 ```
 user$ cd Blinky
 user$ yotta version
-info: @0.0.0 //current version of Blinky
-user$ yotta version patch // new patch version (goes up by 1)
+info: @1.2.3 //current version of Blinky
+user$ yotta version minor // new minor version (goes up by 1)
 user$ yotta version
-info: @0.0.1
+info: @1.3.0 // minor went up by 1, and patch changed to 0
 ```
 
-We could also have used ``yotta version minor`` for a minor version (0.1.0) or ``yotta version major`` for a major version (1.0.0).
+We could also have used ``yotta version major`` for a major version (2.0.0) or ``yotta version patch`` for a patch version (1.2.4).
 
 ### yotta targets
 
@@ -155,11 +155,13 @@ yotta can build your code for different targets: different boards and operating 
 
 #### Searching for targets
 
-The yotta registry has a list of targets. You can search it using ``yotta search target <query>``. You can use the ``--limit`` option to change the number of results displayed:
+The yotta registry has a list of targets. You can search it using ``yotta search target <query>``:
 
 ```
 yotta search target "k64f"
 ```
+
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can use the ``--limit`` option to change the number of results displayed.</span>
 
 Let's look at the top two results:
 
@@ -218,7 +220,7 @@ When we build our application, yotta will download from the yotta Registry:
 
 #### mbed-drivers
 
-We saw the core modules mbed OS needs (that chapter will be published soon). Each of these modules depends on other modules. All mbed OS modules are available on the yotta Registry.
+We saw the [core modules mbed OS needs](overview.md). Each of these modules depends on other modules. All mbed OS modules are available on the yotta Registry.
 
 For example, here is a partial tree for **Blinky**. It shows Blinky's two dependencies: ``mbed-drivers`` and ``uvisor-lib``. Then it shows the start of the next level of dependencies: ``uvisor-lib`` has only one dependency, whereas ``mbed-drivers`` has several. These, in turn, have their own dependencies. And so on:
 
@@ -241,9 +243,6 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
   },
 ```
 
-
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers`` with a correct version.</span>
-
 Selecting the dependency version:
 
 * When you add a dependency to ``module.json``, you want to list the current version number, for example 1.2.3.
@@ -252,7 +251,7 @@ Selecting the dependency version:
  * ^: Update to any semantic-version compatible module (matching major version for >=1.x versions).
  * ~: Accept patch-version updates only.
 
-Using ``yotta install <dependency_name>``, rather than manually editing ``module.json``, will use the correct version specifier automatically. 
+Using ``yotta install <dependency_name>``, rather than manually editing ``module.json``, will use the correct version specifier automatically. So you can run ``yotta install mbed-drivers`` in your project's directory to automatically include ``mbed-drivers`` with a correct version
 
 For modules with a 0.x version number, we recommend using ``~`` rather than ^. Even though semantic versioning specifies that any update may break compatibility, if you are using 0.x versions of something you're accepting some breakage anyway, and using ^ will prevent you from getting any updates.
 
