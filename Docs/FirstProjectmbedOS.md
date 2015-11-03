@@ -4,6 +4,8 @@ Ok, let's get to the nitty gritty and create your first mbed application (using 
 
 ## Step 1: install yotta and its dependencies
 
+yotta is the build system we use for mbed OS. We'll get into the details of it later, but what you need to understand at this point is that mbed OS applications cannot be built without yotta.
+
 See yotta's [installation instructions](installation.md).
 
 ## Step 2: create an application
