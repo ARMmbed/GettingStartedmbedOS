@@ -44,7 +44,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_cmsis-core_](https://github.com/ARMmbed/cmsis-core): ARM's official low level hardware abstraction for Cortex-M.
 
-* [_mbed-hal_](https://github.com/ARMmbed/mbed-hal): The mbed Hardware Abstraction Layer (HAL). This is explored in greater detail [below]().
+* [_mbed-hal_](https://github.com/ARMmbed/mbed-hal): The mbed Hardware Abstraction Layer (HAL).
 
 ### Networking and connectivity
 
