@@ -28,81 +28,47 @@ mbed OS also works with other ARM mbed tools, like our testing tool (Greentea) a
 As explained above, mbed OS is modular. This section gives a short review of the main modules. Some of these will be reviewed in greater detail later.
 
 ### Core modules
-[__compiler-polyfill__](https://github.com/ARMmbed/compiler-polyfill)
+* [__compiler-polyfill__](https://github.com/ARMmbed/compiler-polyfill): Common compiler intrinsics and attributes made portable across toolchains.
 
-Common compiler intrinsics and attributes made portable across toolchains.
+* [__core-util__](https://github.com/ARMmbed/core-util): Core data structures and primitives for the OS.
 
-[__core-util__](https://github.com/ARMmbed/core-util)
+* [__minar__](github.com/ARMmbed/minar): The mbed OS event scheduler.
 
-Core data structures and primitives for the OS.
+* [__ualloc__](https://github.com/ARMmbed/ualloc) and [__dlmalloc__](https://github.com/ARMmbed/dlmalloc): Memory allocation for mbed OS.
 
-[__minar__](github.com/ARMmbed/minar)
-
-The mbed OS event scheduler.
-
-[__ualloc__](https://github.com/ARMmbed/ualloc) and [__dlmalloc__](https://github.com/ARMmbed/dlmalloc)
-
-Memory allocation for mbed OS.
-
-[__uvisor__](https://github.com/ARMmbed/uvisor)
-
-mbed OS uVisor is a supervisory kernel for security on mbed OS.
+* [__uvisor__](https://github.com/ARMmbed/uvisor): mbed OS uVisor is a supervisory kernel for security on mbed OS.
 
 ### Hardware abstraction and drivers
-[__mbed-drivers__](https://github.com/ARMmbed/mbed-drivers)
 
-Abstract drivers for common hardware peripherals and communications interfaces such as SPI and I2C. Provides a higher level interface than the mbed HAL; these are the APIs that applications should use.
+* [__mbed-drivers__](https://github.com/ARMmbed/mbed-drivers): Abstract drivers for common hardware peripherals and communications interfaces such as SPI and I2C. Provides a higher level interface than the mbed HAL; these are the APIs that applications should use.
 
-[__cmsis-core__](https://github.com/ARMmbed/cmsis-core)
+* [__cmsis-core__](https://github.com/ARMmbed/cmsis-core): ARM's official low level hardware abstraction for Cortex-M.
 
-ARM's official low level hardware abstraction for Cortex-M.
-
-
-[__mbed-hal__](https://github.com/ARMmbed/mbed-hal)
-
-The mbed Hardware Abstraction Layer (HAL). This is explored in greater detail [below]().
+* [__mbed-hal__](https://github.com/ARMmbed/mbed-hal): The mbed Hardware Abstraction Layer (HAL). This is explored in greater detail [below]().
 
 ### Networking and connectivity
-[__ble__](https://github.com/ARMmbed/ble)
 
-APIs for using Bluetooth Low Energy.
+* [__ble__](https://github.com/ARMmbed/ble): APIs for using Bluetooth Low Energy.
 
-[__mbed-mesh-api__](https://github.com/ARMmbed/mbed-mesh-api)
+* [__mbed-mesh-api__](https://github.com/ARMmbed/mbed-mesh-api): APIs for initialising and using the mesh network.
 
-APIs for initialising and using the mesh network.
+* [__mbedtls__](https://github.com/ARMmbed/mbedtls): mbed TLS, the SSL/TLS stack (including cryptographic and certificates handling functionality).
 
-[__mbedtls__](https://github.com/ARMmbed/mbedtls)
+* [__sal__](https://github.com/ARMmbed/sal): The mbed OS socket abstraction layer (SAL). Provides a common interface for networking stacks from ARM and partners.
 
-mbed TLS, the SSL/TLS stack (including cryptographic and certificates handling functionality).
+* [__sal-stack-nanostack__](https://github.com/ARMmbed/sal-stack-nanostack): Our IPv6/6LoWPAN stack.
 
-[__sal__](https://github.com/ARMmbed/sal)
-
-The mbed OS socket abstraction layer (SAL). Provides a common interface for networking stacks from ARM and partners.
-
-[__sal-stack-nanostack__](https://github.com/ARMmbed/sal-stack-nanostack)
-
-Our IPv6/6LoWPAN stack.
-
-[__sockets__](https://github.com/ARMmbed/sockets)
-
-High level portable socket layer (sitting on top of the SAL).
+* [__sockets__](https://github.com/ARMmbed/sockets): High level portable socket layer (sitting on top of the SAL).
 
 ### mbed Client
-[__mbed-client-c__](https://github.com/ARMmbed/mbed-client-c)
 
-Core library in C.
+* [__mbed-client-c__](https://github.com/ARMmbed/mbed-client-c): Core library in C.
 
-[__mbed-client__](https://github.com/ARMmbed/mbed-client)
+* [__mbed-client__](https://github.com/ARMmbed/mbed-client): C++ API (use this one rather than the C one, as it's much easier to use correctly).
 
-C++ API (use this one rather than the C one, as it's much easier to use correctly).
+* [__mbed-client-mbed-os__](https://github.com/ARMmbed/mbed-client-mbed-os): mbed OS-specific implementation for mbed Client.
 
-[__mbed-client-mbed-os__](https://github.com/ARMmbed/mbed-client-mbed-os)
-
-mbed OS-specific implementation for mbed Client.
-
-[__mbed-client-mbedtls__](https://github.com/ARMmbed/mbed-client-mbed-tls)
-
-mbed TLS-specific implementation for mbed Client.
+* [__mbed-client-mbedtls__](https://github.com/ARMmbed/mbed-client-mbed-tls): mbed TLS-specific implementation for mbed Client.
 
 ## mbed OS and yotta
 
