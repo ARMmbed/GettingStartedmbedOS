@@ -10,6 +10,7 @@ Currently available:
 
 * [Writing applications for mbed OS](app_on_mbed_os.md): Lists some general principles of mbed OS applications.
 
+* [Debugging mbed OS applications](Debugging.md): A short introduction to debugging applications built with ARMCC and GCC.
 
 ## Prerequisites
 
