@@ -104,7 +104,6 @@ If you have [yotta installed](../installation.md) on your computer, you can use 
 
  * "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 
-
 <span style="display:block; text-align:center; padding:5px;">
 ![](Images/yotta_init.png)</span>
 
@@ -171,7 +170,8 @@ frdm-k64f-gcc 1.0.1:
     mbed-target:k64f, mbed-official, mbed, k64f, frdm-k64f, gcc
     
 frdm-k64f-armcc 1.0.0:
-    Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+    Official mbed build target for the mbed frdm-k64f development board, 
+    using the armcc toolchain.
     mbed-target:k64f, mbed-official, mbed, k64f, frdm-k64f, armcc
 
 ```
