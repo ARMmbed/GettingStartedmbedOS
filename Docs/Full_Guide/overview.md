@@ -1,4 +1,4 @@
-# mbed OS overview
+# mbed OS
 
 mbed OS is the operating system we created for mbed-enabled boards. It allows your C++ applications to run on these boards by providing APIs that you can use from your application to control the hardware.
 
@@ -23,11 +23,11 @@ We designed mbed OS specifically for constrained devices, so it works behind the
 mbed OS also works with other ARM mbed tools, like our testing tool (Greentea) and mbed Device Server. To learn more about these tools, see the [main site](https://www.mbed.com/en/).
 
 
-## mbed OS code base
+## Code base
 
 As explained above, mbed OS is modular. This section gives a short review of the main modules. Some of these will be reviewed in greater detail later.
 
-### Core OS modules
+### Core modules
 [__compiler-polyfill__](https://github.com/ARMmbed/compiler-polyfill)
 
 Common compiler intrinsics and attributes made portable across toolchains.
@@ -110,7 +110,7 @@ yotta is the build system we use for mbed OS. We'll get into the details of it [
 
 yotta combines our code (application) with the mbed OS code-base and any other module (reusable library) that we may need. To tell yotta what our application needs, we add a list of dependencies to each application we write. The easiest way to add mbed OS to our application when we build it is to describe the component ``mbed-drivers`` as a dependency of our application, because ``mbed-drivers`` has most other components as its own dependencies, so yotta will build what we need.
 
-**Tip:** Some components must be manually included; we'll tell you about that when we review them in this guide.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Some components must be manually included; we'll tell you about that when we review them in this guide.</span>
 
 What this all means is that to build applications that can run on top of mbed OS, you need:
 
