@@ -76,7 +76,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 ## mbed OS and yotta
 
-yotta is the build system we use for mbed OS. We'll get into the details of it [later](app_on_yotta.md), but what you need to understand at this point is that mbed OS applications cannot be built without yotta. 
+yotta is the build system we use for mbed OS. We'll get into the details of it [later](Full_Guide/app_on_yotta.md), but what you need to understand at this point is that mbed OS applications cannot be built without yotta. 
 
 yotta combines our code (application) with the mbed OS code-base and any other module (reusable library) that we may need. To tell yotta what our application needs, we add a list of dependencies to each application we write. The easiest way to add mbed OS to our application when we build it is to describe the component ``mbed-drivers`` as a dependency of our application, because ``mbed-drivers`` has most other components as its own dependencies, so yotta will build what we need.
 
@@ -91,7 +91,7 @@ What this all means is that to build applications that can run on top of mbed OS
 * Your own application code.
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
-![](Images/mbed_OS_app.png)</span>
+![](Full_Guide/Images/mbed_OS_app.png)</span>
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** IDE support is not available yet. If you're interested in a particular IDE, talk to us on [the forum](forums.mbed.com).</span>
 
