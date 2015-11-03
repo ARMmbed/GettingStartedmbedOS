@@ -4,11 +4,11 @@
 
 This chapter covers:
 
-* [What a yotta executable - or mbed OS application - looks like](#mbed-OS-applications-as-yotta-executables).
+* [What a yotta executable - or mbed OS application - looks like](#mbed-os-applications-as-yotta-executables).
 
 * [How to initialize and build a project with yotta](#how-to-build-an-application).
 
-* [How to handle dependencies](#Building-your-project).
+* [How to handle dependencies](#how-to-build-an-application).
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">[You'll need to install yotta](../installation.md) to complete the examples in this chapter.</span>
 
