@@ -95,13 +95,14 @@ If you have [yotta installed](http://yottadocs.mbed.com/#installing) on your com
 
  * "Enter the initial version": The default version is 0.0.0. You can use [``yotta version``](#Versioning-an-existing-yotta-module) to edit the version before every release.
 
+ * "Is this an executable?": The default setting of a project is as a library. Please enter "yes" if your project is an executable. Only library modules can be re-used by other modules and executables, so choose "no" if you're writing a re-usable module.
+
  * "Keywords": Enter keywords with a comma between them. Keywords help people find your module, so they should describe what it does.
 
- * "Repository URL": The default repository address is empty, and you may leave it like that. If you want to link to a repo, please note that you can't use the simple URL - you must use the SSH clone URL that GitHub offers. In our example, that will be ``ssh://git@github.com:ARMmbed/example-mbedos-blinky.git``. Please note that this link is for information purposes only; yotta doesn't download code from the repo.
+ * "Repository URL": This is where people can find your code to help improve your module or suggest changes. The default repository address is empty, and you may leave it like that. For a Github repository note that you must use the SSH clone URL,  in our example that will be ``ssh://git@github.com:ARMmbed/example-mbedos-blinky.git``. The repository URL is for information purposes only; yotta doesn't download code from the repo.
 
  * "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 
- * "Is this module an executable": The default setting of a project is as a library. Please enter "yes" if your project is an executable.
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
 ![](Images/yotta_init.png)</span>
@@ -131,7 +132,7 @@ To change the version:
 
 1. Use ``yotta version`` to check the current version of your module.
 
-1. Use ``yotta version <flag> <new_number>`` to edit the version. Use ``patch``, ``minor`` and ``major`` flags to change only the relevant part of the version number. yotta increments it by 1, to prevent mistakes.
+1. Use ``yotta version <action>`` to bump the version number. The ``patch``, ``minor`` and ``major`` actions each increase relevant part of the version number by 1, and set the less significant parts to zero. For example ``yotta version minor`` in a module with version ``1.2.3`` will increase the version number to ``1.3.0``.
 
 For example:
 
@@ -154,28 +155,25 @@ yotta can build your code for different targets: different boards and operating 
 
 #### Searching for targets
 
-The yotta registry has a list of targets. You can search it using ``yotta search target``. You might want to use the ``--limit`` option and specify a number of results:
+The yotta registry has a list of targets. You can search it using ``yotta search target <query>``. You can use the ``--limit`` option to change the number of results displayed:
 
 ```
-yotta search --limit 1000 target
+yotta search target "k64f"
 ```
 
-Let's look at the top three results:
+Let's look at the top two results:
 
 ```
-frdm-k64f-gcc 0.0.24: Official mbed build target for the mbed frdm-k64f 
-development board.
-
-frdm-k64f-armcc 0.0.16: Official mbed build target for the mbed frdm-k64f 
-development board, 
-using the armcc toolchain.
-
-bbc-microbit-classic-gcc 0.1.3: Official mbed build target for the mbed nrf51822 
-development board, 
-using the armgcc toolchain.
+frdm-k64f-gcc 1.0.1:
+    Official mbed build target for the mbed frdm-k64f development board.
+    mbed-target:k64f, mbed-official, mbed, k64f, frdm-k64f, gcc
+    
+frdm-k64f-armcc 1.0.0:
+    Official mbed build target for the mbed frdm-k64f development board, using the armcc toolchain.
+    mbed-target:k64f, mbed-official, mbed, k64f, frdm-k64f, armcc
 
 ```
-As you can see, each target returns a name and a version, as well as a description. Note that the name includes a build toolchain - ``gcc`` or ``armgcc`` - because a target is both the board and the build toolchain we use, never just one or the other.
+As you can see, each target returns a name and a version, as well as a description. Note that the name includes a build toolchain - ``gcc`` or ``armcc`` - because a target description includes everything about how modules must be compiled to run on the target, including how to run the compiler.
 
 #### Setting a target
 
@@ -185,7 +183,8 @@ The ``target`` command has two uses: to check what the current target is, and to
 
 ```
 yotta target
-frdm-k64f-gcc 0.0.24
+frdm-k64f-gcc 1.0.1
+kinetis-k64-gcc 1.0.0
 mbed-gcc 0.0.14
 ```
 
