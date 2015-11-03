@@ -12,9 +12,7 @@ Welcome to the getting started guides for ARM® mbed™ OS.
 
 ## The mbed OS user guide
 
-This guide isn't ready yet, but we're publishing stand-alone chapters as fast as we can. 
-
-Currently only one chapter is available: [mbed OS applications with yotta](Full_Guide/app_on_yotta.md). It explains the relation between yotta and mbed OS, and how you can create yotta-based mbed OS applications.
+This guide isn't ready yet, but we're publishing stand-alone chapters as fast as we can. The [guide's introduction](guide_index.md) reviews the available content.
 
 ## Additional sources
 
