@@ -12,7 +12,7 @@ Welcome to the getting started guides for ARM® mbed™ OS.
 
 ## The mbed OS user guide
 
-This guide isn't ready yet, but we're publishing stand-alone chapters as fast as we can. The [guide's introduction](guide_index.md) reviews the available content.
+This guide isn't ready yet, but we're publishing stand-alone chapters as fast as we can. The [guide's introduction](Full_Guide/guide_index.md) reviews the available content.
 
 ## Additional sources
 
