@@ -111,7 +111,7 @@ This guide isn't ready yet, but we're publishing stand-alone chapters as fast as
 
 * [Further reading sources](FurtherReading.md) about other mbed tools, hardware, community and partners.
 
-* Links to [our main code repositories and their documentation](GetTheCode.md).
+* Links to [our main code repositories and their documentation, as well as examples](GetTheCode.md).
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** For more details about mbed, start [here](http://mbed.com/en/about-mbed/what-mbed/).</span>
 
