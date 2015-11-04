@@ -1,4 +1,4 @@
-#Introduction 
+# Creating mbed OS applications with yotta
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note**: This is an extract from the full mbed OS User Guide. The guide itself isn't ready yet, but we're releasing chapters as stand-alones as fast as we can.</span>
 
