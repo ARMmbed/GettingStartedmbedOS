@@ -8,17 +8,11 @@ Using these three high level APIs, it is possible to create rich connected appli
 Networking in mbed OS is broken down into several components:
 
 * The application.
-
 * (optionally) The mbed Client API.
-
 * The C++ Socket API.
-
 * The Socket Abstraction Layer (SAL).
-
 * The IP stack.
-
 * The network driver.
-
 * The network interface.
  
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">![](../Full_Guide/Images/networkstacks.png)</span>
@@ -30,11 +24,8 @@ Some parts of this infrastructure are still in development but most of it is qui
 The application is the user's program. The application layer is responsible for:
 
 * Initializing the IP stack (Note: when yotta supports module init, this requirement will be removed).
-
 * Initializing the network interface.
-
 * Sending data.
-
 * Reacting to received data.
 
 ### The C++ Socket API
@@ -102,48 +93,48 @@ There are several complete examples provided in [mbed-example-network](https://g
 This is a simple example of resolving an address with DNS:
 
 
-```
+```C++
 #include “sockets/v0/UDPSocket.h”
 using namespace mbed::Sockets::v0; class Resolver {
 private:
-	UDPSocket _sock;
+    UDPSocket _sock;
 public:
-	Resolver() : _sock(SOCKET_STACK_LWIP_IPV4) { _sock.open(SOCKET_AF_INET4);
-	}
-/**
-* A handler to call when DNS resolution completes
-* @param[in] s The socket that was used to initiate the DNS request
-* @param[in] addr The address of the resolved domain
-* @param[in] domain The domain name that was resolved
-*/
-void onDNS(Socket *s, struct socket_addr addr, const char *domain) {
-	SocketAddr sa;
-	char buf[16];
-	// Set the address of sa so that it can be formated to a text IPv4 address
-	sa.setAddr(&addr);
-	sa.fmtIPv4(buf,sizeof(buf));
-	printf("Resolved Address: %s\r\n", buf);
-	}
-/**
-* Resolve a domain name
-* @param[in] address A string containing the address to resolve
-* @return A socket_error_t; SOCKET_ERROR_NONE on success, or an error code if resolve fails immediately.
-*/
-	socket_error_t resolve(const char * address) {
-		// Start resolving the address.  Call onDNS when complete.
-		return sock.resolve(address,UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
-	}
+    Resolver() : _sock(SOCKET_STACK_LWIP_IPV4) { _sock.open(SOCKET_AF_INET4);
+    }
+    /**
+    * A handler to call when DNS resolution completes
+    * @param[in] s The socket that was used to initiate the DNS request
+    * @param[in] addr The address of the resolved domain
+    * @param[in] domain The domain name that was resolved
+    */
+    void onDNS(Socket *s, struct socket_addr addr, const char *domain) {
+        SocketAddr sa;
+        char buf[16];
+        // Set the address of sa so that it can be formated to a text IPv4 address
+        sa.setAddr(&addr);
+        sa.fmtIPv4(buf,sizeof(buf));
+        printf("Resolved Address: %s\r\n", buf);
+    }
+    /**
+    * Resolve a domain name
+    * @param[in] address A string containing the address to resolve
+    * @return A socket_error_t; SOCKET_ERROR_NONE on success, or an error code if resolve fails immediately.
+    */
+    socket_error_t resolve(const char * address) {
+        // Start resolving the address.  Call onDNS when complete.
+        return sock.resolve(address,UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
+    }
 }
 Resolver *r;
 void app_start(int argc, char *argv) {
-	// Register the LwIP stack.
-	lwipv4_socket_init();
-	/* 
-	* Create the resolver object.  This must occur after the stack has been initialized because
-	* Resolver contains a socket.
-	*/
-	r = new Resolver();
-	r->resolve("mbed.org");
+    // Register the LwIP stack.
+    lwipv4_socket_init();
+    /* 
+    * Create the resolver object.  This must occur after the stack has been initialized because
+    * Resolver contains a socket.
+    */
+    r = new Resolver();
+    r->resolve("mbed.org");
 }
 ```
 
