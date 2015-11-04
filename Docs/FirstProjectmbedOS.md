@@ -17,20 +17,11 @@ $ mkdir blinky
 $ cd blinky
 ```
 
-Next initialize the module with `yotta init` and fill in the details. Make sure you select **executable** as the module type at the end:
+Next initialize the module with `yotta init` and fill in the details. Make sure you select **executable** as the module type:
 
-```
-$ yotta init
-Enter the module name: <blinky>
-Enter the initial version: <0.0.0>
-Short description: Having fun and blinking LEDs
-Keywords:  <blinky>
-Author: username
-Repository url:
-Homepage:
-What is the license for this project (Apache-2.0, ISC, MIT etc.)?  <Apache-2.0>
-Is this module an executable? <no> yes
-```
+
+<span style="display:block; text-align:center; padding:5px;">
+![](../Docs/Full_Guide/Images/yotta_init.png)</span>
 
 You should now have several folders and files in the directory:
 
