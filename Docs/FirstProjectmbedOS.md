@@ -21,7 +21,7 @@ Next initialize the module with `yotta init` and fill in the details. Make sure 
 
 
 <span style="display:block; text-align:center; padding:5px;">
-![](../Docs/Full_Guide/Images/yotta_init.png)</span>
+![](Full_Guide/Images/yotta_init.png)</span>
 
 You should now have several folders and files in the directory:
 
