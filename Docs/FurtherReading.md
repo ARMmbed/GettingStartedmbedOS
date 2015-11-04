@@ -41,6 +41,3 @@ Learn how to [get help](http://mbed.com/en/development/community-help/) from oth
 ## Partner program
 
 Learn about [our partners or become a partner](http://mbed.com/en/partners/).
-
-______
-Copyright © 2015 ARM Ltd. All rights reserved.
