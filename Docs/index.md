@@ -115,5 +115,4 @@ This guide isn't ready yet, but we're publishing stand-alone chapters as fast as
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** For more details about mbed, start [here](http://mbed.com/en/about-mbed/what-mbed/).</span>
 
-______
-Copyright © 2015 ARM Ltd. All rights reserved.
+
