@@ -21,7 +21,7 @@ Networking in mbed OS is broken down into several components:
 
 * The network interface.
  
-<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">![](Full_Guide/Images/networkstacks.png)</span>
+<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">![](../Full_Guide/Images/networkstacks.png)</span>
 
 Some parts of this infrastructure are still in development but most of it is quite stable.
 
