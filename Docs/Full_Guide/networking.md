@@ -8,11 +8,17 @@ Using these three high level APIs, it is possible to create rich connected appli
 Networking in mbed OS is broken down into several components:
 
 * The application.
+
 * (optionally) The mbed Client API.
+
 * The C++ Socket API.
+
 * The Socket Abstraction Layer (SAL).
+
 * The IP stack.
+
 * The network driver.
+
 * The network interface.
  
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">![](../Full_Guide/Images/networkstacks.png)</span>
@@ -24,8 +30,11 @@ Some parts of this infrastructure are still in development but most of it is qui
 The application is the user's program. The application layer is responsible for:
 
 * Initializing the IP stack (Note: when yotta supports module init, this requirement will be removed).
+
 * Initializing the network interface.
+
 * Sending data.
+
 * Reacting to received data.
 
 ### The C++ Socket API
