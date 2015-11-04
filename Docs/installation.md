@@ -1,6 +1,4 @@
-# Installation guide
-
-## Getting mbed OS
+# Getting mbed OS
 
 We don't "get" mbed OS in the same way that we get a new app on our phone. There is no mbed OS download and no way to install it on our machine.
 
