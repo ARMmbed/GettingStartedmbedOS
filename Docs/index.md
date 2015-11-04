@@ -1,12 +1,12 @@
 # Introduction
 
-Welcome to the getting started guides for ARM® mbed™ OS. This page provides a review of [mbed OS](#introduction-to-mbed-os) and of the [available documentation](#introduction-to-the-documentation).
+Welcome to the getting started guides for ARM® mbed™ OS. This page provides a review of [mbed OS](#mbed-os) and of the [available documentation](#the-documentation).
 
-# Introduction to mbed OS
+## mbed OS
 
 mbed OS is the operating system we created for mbed-enabled boards. It allows your C++ applications to run on these boards by providing APIs that you can use from your application to control the hardware.
 
-## Features
+### Features
 
 We designed mbed OS specifically for constrained devices, so it works behind the scenes to automatically make the most of the limited hardware and network resources available:
 
@@ -27,11 +27,11 @@ We designed mbed OS specifically for constrained devices, so it works behind the
 mbed OS also works with other ARM mbed tools, like our testing tool (Greentea) and mbed Device Server. To learn more about these tools, see the [main site](https://www.mbed.com/en/).
 
 
-## Code base
+### Code base
 
 As explained above, mbed OS is modular. This section gives a short review of the main modules. Some of these will be reviewed in greater detail later.
 
-### Core modules
+#### Core modules
 * [_compiler-polyfill_](https://github.com/ARMmbed/compiler-polyfill): Common compiler intrinsics and attributes made portable across toolchains.
 
 * [_core-util_](https://github.com/ARMmbed/core-util): Core data structures and primitives for the OS.
@@ -42,7 +42,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_uvisor_](https://github.com/ARMmbed/uvisor): mbed OS uVisor is a supervisory kernel for security on mbed OS.
 
-### Hardware abstraction and drivers
+#### Hardware abstraction and drivers
 
 * [_mbed-drivers_](https://github.com/ARMmbed/mbed-drivers): Abstract drivers for common hardware peripherals and communications interfaces such as SPI and I2C. Provides a higher level interface than the mbed HAL; these are the APIs that applications should use.
 
@@ -50,7 +50,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_mbed-hal_](https://github.com/ARMmbed/mbed-hal): The mbed Hardware Abstraction Layer (HAL).
 
-### Networking and connectivity
+#### Networking and connectivity
 
 * [_ble_](https://github.com/ARMmbed/ble): APIs for using Bluetooth Low Energy.
 
@@ -64,7 +64,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_sockets_](https://github.com/ARMmbed/sockets): High level portable socket layer (sitting on top of the SAL).
 
-### mbed Client
+#### mbed Client
 
 * [_mbed-client-c_](https://github.com/ARMmbed/mbed-client-c): Core library in C.
 
@@ -74,7 +74,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_mbed-client-mbedtls_](https://github.com/ARMmbed/mbed-client-mbed-tls): mbed TLS-specific implementation for mbed Client.
 
-## mbed OS and yotta
+### mbed OS and yotta
 
 yotta is the build system we use for mbed OS. We'll get into the details of it [later](Full_Guide/app_on_yotta.md), but what you need to understand at this point is that mbed OS applications cannot be built without yotta. 
 
@@ -95,19 +95,19 @@ What this all means is that to build applications that can run on top of mbed OS
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** IDE support is not available yet. If you're interested in a particular IDE, talk to us on [the forum](forums.mbed.com).</span>
 
-# Introduction to the documentation
+## The documentation
 
-## The quick guides
+### The quick guides
 
 * [Setting up your machine](installation.md): installing yotta, the build tool for mbed OS.
 
 * [Your first mbed OS application](FirstProjectmbedOS.md): a simple example to get you going.
 
-## The mbed OS user guide
+### The mbed OS user guide
 
 This guide isn't ready yet, but we're publishing stand-alone chapters as fast as we can. The [guide's introduction](Full_Guide/guide_index.md) reviews the available content.
 
-## Additional sources
+### Additional sources
 
 * [Further reading sources](FurtherReading.md) about other mbed tools, hardware, community and partners.
 
