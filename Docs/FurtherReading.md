@@ -2,6 +2,14 @@
 
 To learn more about mbed, see our [main site](http://mbed.com).
 
+## Release notes
+
+All of our release notes are available on the main site:
+
+* [mbed OS](https://www.mbed.com/en/development/software/mbed-os/releases/).
+
+* [mbed Client](https://www.mbed.com/en/development/software/mbed-client/releases/).
+
 ## Software
 
 To learn about our [software](http://mbed.com/en/development/software/): 
