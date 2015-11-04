@@ -2,13 +2,15 @@
 
 Ok, let's get to the nitty gritty and create your first mbed application (using yotta). We're going to use mbed OS to make the LED on our board blink, and print some commands to the terminal.
 
-## Step 1: install yotta and its dependencies
+## Using yotta as a command-line tool
+
+### Step 1: install yotta and its dependencies
 
 yotta is the build system we use for mbed OS. We'll get into the details of it later, but what you need to understand at this point is that mbed OS applications cannot be built without yotta.
 
 See yotta's [installation instructions](installation.md).
 
-## Step 2: create an application
+### Step 2: create an application
 
 First create an empty folder, then move into that folder:
 
@@ -34,7 +36,7 @@ The `module.json` file contains all the settings for your application; everythin
 
 **Tip:** if you want to learn about other module types, [start here](http://docs.yottabuild.org/).
 
-## Step 3: select a target board
+### Step 3: select a target board
 
 Earlier, we explained that yotta can build the same code for multiple targets; it therefore needs to be told which target every build is for. So now that we have created a basic application, let's set the target.
 
@@ -66,7 +68,7 @@ frdm-k64f-gcc,*
 
 *The information for this target has been downloaded to a directory named `/yotta_targets`. Do not edit or modify files here because they can be modified without your knowledge.*
 
-## Step 4: install dependencies
+### Step 4: install dependencies
 
 Now let's install the dependencies. In this application, we'll have `mbed-drivers` as our dependency:
 
@@ -81,7 +83,7 @@ The modules are downloaded and installed in a directory named `/yotta_modules`. 
 
 If you want to learn more about mbed OS and try some other functionality, you can [start here](http://mbed.com/en/development/software/mbed-os/).
 
-## Step 5: add source files
+### Step 5: add source files
 
 Now that we have set up an application and downloaded our dependencies, let's add some source code to use the module. In the `/source` folder create a file called `app.cpp` with the following contents:
 
@@ -101,7 +103,7 @@ void app_start(int, char**) {
 
 This program will cause LED1 on the board to flash and print the status of LED1 to the terminal. The default terminal speed is 9600 baud at 8-N-1.
 
-## Step 6: build
+### Step 6: build
 
 To build the application, run the `yotta build` command in the top level directory:
 ```
@@ -129,11 +131,11 @@ LED = 0
 ...
 ```
 
-# Alternative method - cloning an existing application
+## Alternative method - cloning an existing application
 
 Instead of setting up your own application from scratch, you could clone an existing one and modify it. We have published the above [blinky example application](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/www.github.com/armmbed/example-mbedos-blinky) on GitHub so you can clone to repo and build it.
 
-## Step 1: clone the repo
+### Step 1: clone the repo
 
 Clone the repository from GitHub:
 
@@ -142,13 +144,13 @@ $ git clone https://github.com/ARMmbed/example-mbedos-blinky.git
 $ cd example-mbedos-blinky
 ```
 
-## Step 2: select a target platform
+### Step 2: select a target platform
 
 ```
 $ yotta target frdm-k64f-gcc
 ```
 
-## Step 3: build it
+### Step 3: build it
 
 ```
 $ yotta build
