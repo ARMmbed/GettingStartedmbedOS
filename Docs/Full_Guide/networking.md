@@ -92,27 +92,6 @@ This component provides the IP stack with the interface it needs to control the 
 
 The network interface provides management functions for the interface hardware, such as power up/down and configuration. It is currently bound to the IP stack, but future development of the SAL will permit the network interface to be decoupled from the IP stack.
 
-### Network configuration
-
-You don't normally need to manually configure network stack selections. However, if you need to override your target's defaults, you might have to. For example, if you're working with FRDM-K64F, its default network stack is Ethernet. If you want to use 6LoWPAN instead, you'll have to manually disable LwIP and enable nanostack.
-
-We can choose the network stack in our application's ``config.json``. Here is an example of disabling LwIP and enabling nanostack (on the FRDM-K64F):
-
-
-```JSON
-
-{
-  "mbed-os" : {
-   "net" : {
-    "stacks" : {
-     "lwip" : false,
-     "nanostack" : true
-   }
-  }
- }
-}
-
-```
 
 ### Examples
 
