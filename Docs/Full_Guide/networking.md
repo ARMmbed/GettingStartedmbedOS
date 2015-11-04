@@ -119,7 +119,8 @@ public:
     void onDNS(Socket *s, struct socket_addr addr, const char *domain) {
         SocketAddr sa;
         char buf[16];
-        // Set the address of sa so that it can be formated to a text IPv4 address
+        // Set the address of sa so that it can be formated 
+        // to a text IPv4 address
         sa.setAddr(&addr);
         sa.fmtIPv4(buf,sizeof(buf));
         printf("Resolved Address: %s\r\n", buf);
@@ -127,7 +128,8 @@ public:
     /**
     * Resolve a domain name
     * @param[in] address A string containing the address to resolve
-    * @return A socket_error_t; SOCKET_ERROR_NONE on success, or an error code if resolve fails immediately.
+    * @return A socket_error_t; SOCKET_ERROR_NONE on success, or an error code 
+    * if resolve fails immediately.
     */
     socket_error_t resolve(const char * address) {
         // Start resolving the address.  Call onDNS when complete.
@@ -139,7 +141,8 @@ void app_start(int argc, char *argv) {
     // Register the LwIP stack.
     lwipv4_socket_init();
     /* 
-    * Create the resolver object.  This must occur after the stack has been initialized because
+    * Create the resolver object.  This must occur after the stack has been 
+    * initialized because
     * Resolver contains a socket.
     */
     r = new Resolver();
@@ -149,7 +152,7 @@ void app_start(int argc, char *argv) {
 
 
 
-### IPv6 (6LoWPAN)
+## IPv6 (6LoWPAN)
 
 6LoWPAN stack is a robust, scalable and self-healing mesh networking stack for low power, less complex constrained devices. The 6LoWPAN stack [ documentation](http://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/) is giving overview of the 6LoWPAN technology and reference to 6LoWPAN stack C API.
 
@@ -159,10 +162,10 @@ The mbed C++ Socket API is not fully supported by 6LoWPAN adaptation layer. To s
 
 The mbed-mesh-api is in experimental state, it is using static configuration. It does not provide API for selecting the node operating mode, security option, radio channel or other options that are needed for connecting to 6LoWPAN network. Support for these configurations will be available later.
 
-#### Thread
+## Thread
 
 Thread support is built-in to the 6LoWPAN stack. See [Introduction to Thread](https://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/thread_overview/index.html) for more information.
 
-### Bluetooth Low Energy (BLE)
+## Bluetooth Low Energy (BLE)
 
 Will be published soon.
