@@ -37,7 +37,7 @@ An application and a library have similar structures:
 
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
-![](Images/module_struct.png)</span>
+![](../Full_Guide/Images/module_struct.png)</span>
 
 **The module.json file** describes:
 
@@ -105,7 +105,7 @@ If you have [yotta installed](../installation.md) on your computer, you can use 
  * "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 
 <span style="display:block; text-align:center; padding:5px;">
-![](Images/yotta_init.png)</span>
+![](../Full_Guide/Images/yotta_init.png)</span>
 
 * When you've answered all of the questions, yotta will create the basic file structure you need. You can view it with the command ``ls``:
 
@@ -225,7 +225,7 @@ We saw the [core modules mbed OS needs](overview.md). Each of these modules depe
 For example, here is a partial tree for **Blinky**. It shows Blinky's two dependencies: ``mbed-drivers`` and ``uvisor-lib``. Then it shows the start of the next level of dependencies: ``uvisor-lib`` has only one dependency, whereas ``mbed-drivers`` has several. These, in turn, have their own dependencies. And so on:
 
 <span style="display:block; text-slign:center; padding:5px; border:1px solid #000;">
-![](Images/yotta_dep.png)</span>
+![](../Full_Guide/Images/yotta_dep.png)</span>
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.</span>
 
