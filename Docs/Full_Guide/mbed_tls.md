@@ -2,7 +2,7 @@
 
 mbed TLS makes it trivially easy for developers to include cryptographic and SSL/TLS capabilities in their embedded products, with a minimal code footprint. It offers an SSL library with an intuitive API and readable source code.
 
-<span style="background-color:#FFCC00;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The current release of mbed TLS for mbed OS is beta, and implements no secure source of random numbers, weakening its security. We therefore consider it an evaluation version, not a production version. If you want a production version, please consider the standalone available at [https://tls.mbed.org/](https://tls.mbed.org/)</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The current release of mbed TLS for mbed OS is beta, and implements no secure source of random numbers, weakening its security. We therefore consider it an evaluation version, not a production version. If you want a production version, please consider the standalone available at [https://tls.mbed.org/](https://tls.mbed.org/)</span>
 
 Currently the only supported yotta targets are:
 
