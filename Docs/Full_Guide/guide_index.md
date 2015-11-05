@@ -10,6 +10,8 @@ Currently available:
 
 * [Debugging mbed OS applications](Debugging.md): Introduces debugging for applications built with ARMCC and GCC.
 
+* [Memory in mbed OS](memory.md): Reviews memory management and allocation in mbed OS. 
+
 * [Networking with mbed OS](networking.md): Explains networking options and structure on mbed OS.
 
 ## Prerequisites
