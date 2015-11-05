@@ -35,6 +35,7 @@ The `mbed-tls-sockets` module includes a complete [example TLS client](https://g
 mbed TLS makes it easy to disable any feature during compilation, if that feature isn't required for a particular project. The default configuration:
 
 * Enables all modern and widely-used features, to meet the needs of new projects.
+
 * Disables all features that are older or less common, to minimize the code footprint.
 
 The list of compilation flags is available in the fully documented [``config.h`` file](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/config.h).
