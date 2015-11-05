@@ -76,9 +76,11 @@ If you want to use mbed TLS from the GitHub repo:
 1. Create a local clone.
 1. From the root of the clone, run the shell script:
 
+	```
 	yotta/create-module.sh
 	cd yotta/module
-
+	```
+	
 You can then run any [yotta command](app_on_yotta.md) you would normally run, such as [`yotta build`] or [`yotta link`].
 
 
