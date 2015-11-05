@@ -133,7 +133,8 @@ public:
     */
     socket_error_t resolve(const char * address) {
         // Start resolving the address.  Call onDNS when complete.
-        return sock.resolve(address,UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
+        return sock.resolve(address,
+                UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
     }
 }
 Resolver *r;
