@@ -98,10 +98,8 @@ These examples are integrated as yotta tests, so they are built automatically wh
 
 ## Other resources
 
-The [mbed TLS website](https://tls.mbed.org) contains many other useful
-resources for developerz, such as [developer
-documentation](https://tls.mbed.org/dev-corner), [knowledge base
-articles](https://tls.mbed.org/kb), and a [support forum](https://tls.mbed.org/discussions).
+The [mbed TLS website](https://tls.mbed.org) contains many other useful resources for developerz, such as [developer
+documentation](https://tls.mbed.org/dev-corner), [knowledge base articles](https://tls.mbed.org/kb), and a [support forum](https://tls.mbed.org/discussions).
 
 ## Contributing
 
