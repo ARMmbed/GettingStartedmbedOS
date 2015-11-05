@@ -4,15 +4,17 @@ This is the mbed OS User Guide. We're publishing it one chapter at a time.
 
 Currently available: 
 
-* [mbed OS applications with yotta](app_on_yotta.md): Explains the relation between yotta and mbed OS, and how you can create yotta-based mbed OS applications. 
+* [mbed OS applications with yotta](app_on_yotta.md): The relation between yotta and mbed OS, and how you can create yotta-based mbed OS applications. 
 
-* [Writing applications for mbed OS](app_on_mbed_os.md): Lists some general principles of mbed OS applications.
+* [Writing applications for mbed OS](app_on_mbed_os.md): Some general principles of mbed OS applications.
 
-* [Debugging mbed OS applications](Debugging.md): Introduces debugging for applications built with ARMCC and GCC.
+* [Debugging mbed OS applications](Debugging.md): Debugging for applications built with ARMCC and GCC.
 
-* [Memory in mbed OS](memory.md): Reviews memory management and allocation in mbed OS. 
+* [Security with mbed TLS](mbed_tls.md): using mbed TLS for communication security in mbed OS.
 
-* [Networking with mbed OS](networking.md): Explains networking options and structure on mbed OS.
+* [Memory in mbed OS](memory.md): Memory management and allocation in mbed OS. 
+
+* [Networking with mbed OS](networking.md): Networking options and structure on mbed OS.
 
 ## Prerequisites
 
