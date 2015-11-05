@@ -2,7 +2,7 @@
 
 mbed TLS makes it trivially easy for developers to include cryptographic and SSL/TLS capabilities in their embedded products, with a minimal code footprint. It offers an SSL library with an intuitive API and readable source code.
 
-<span style="background-color:#FFCC00;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The current release is beta, and implements no secure source of random numbers, weakening its security.</span>
+<span style="background-color:#FFCC00;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The current release of mbed TLS for mbed OS is beta, and implements no secure source of random numbers, weakening its security. We therefore consider it an evaluation version, not a production version. If you want a production version, please consider the standalone available at [https://tls.mbed.org/](https://tls.mbed.org/)</span>
 
 Currently the only supported yotta targets are:
 
@@ -17,7 +17,7 @@ mbed TLS has a standalone version for devices that are not running mbed OS. Howe
 
 The key differences are:
 
-* To reduce its footprint, the mbed OS edition enables a smaller set of features in `config.h` bu default. While the default configuration of the standalone edition puts more emphasize on maintaining interoperability with old peers, the mbed OS edition only enables the most modern ciphers and the latest version of (D)TLS.
+* To reduce its footprint, the mbed OS edition enables a smaller set of features in `config.h` by default. While the default configuration of the standalone edition puts more emphasize on maintaining interoperability with old peers, the mbed OS edition only enables the most modern ciphers and the latest version of TLS and DTLS.
 
 * The following components of mbed TLS are disabled in the mbed OS edition: `net.c` and `timing.c`. This is because mbed OS includes their equivalents.
 
@@ -53,7 +53,7 @@ If you need to adjust those flags, you can provide your own configuration-adjust
 For example, in an application called `myapp`, if you want to enable the EC J-PAKE key exchange and disable the CBC cipher mode, you can create a file named  `mbedtls-config-changes.h` in the `myapp` directory containing the following lines:
 
 	#define MBEDTLS_ECJPAKE_C
- 	define MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED
+ 	#define MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED
 
 	#undef MBEDTLS_CIPHER_MODE_CBC
 
@@ -74,7 +74,7 @@ Like most components of mbed OS, mbed TLS is developed in the open and its sourc
 If you want to use mbed TLS from the GitHub repo:
 
 1. Create a local clone.
-1. From the root of the clone, run:
+1. From the root of the clone, run the shell script:
 
 	yotta/create-module.sh
 	cd yotta/module
