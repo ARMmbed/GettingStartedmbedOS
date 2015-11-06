@@ -101,56 +101,34 @@ There are several complete examples provided in [mbed-example-network](https://g
 
 This is a simple example of resolving an address with DNS:
 
-
 ```C++
-#include “sockets/v0/UDPSocket.h”
-using namespace mbed::Sockets::v0; class Resolver {
+using namespace mbed::Sockets::v0;
+class Resolver {
 private:
-    UDPSocket _sock;
+    UDPaSocket _sock;
 public:
-    Resolver() : _sock(SOCKET_STACK_LWIP_IPV4) { _sock.open(SOCKET_AF_INET4);
+    Resolver() : _sock(SOCKET_STACK_LWIP_IPV4) {
+        _sock.open(SOCKET_AF_INET4);
     }
-    /**
-    * A handler to call when DNS resolution completes
-    * @param[in] s The socket that was used to initiate the DNS request
-    * @param[in] addr The address of the resolved domain
-    * @param[in] domain The domain name that was resolved
-    */
     void onDNS(Socket *s, struct socket_addr addr, const char *domain) {
         SocketAddr sa;
         char buf[16];
-        // Set the address of sa so that it can be formated 
-        // to a text IPv4 address
         sa.setAddr(&addr);
         sa.fmtIPv4(buf,sizeof(buf));
         printf("Resolved Address: %s\r\n", buf);
     }
-    /**
-    * Resolve a domain name
-    * @param[in] address A string containing the address to resolve
-    * @return A socket_error_t; SOCKET_ERROR_NONE on success, or an error code 
-    * if resolve fails immediately.
-    */
     socket_error_t resolve(const char * address) {
-        // Start resolving the address.  Call onDNS when complete.
-        return sock.resolve(address,
-                UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
+        return sock.resolve(address,UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
     }
 }
+
 Resolver *r;
 void app_start(int argc, char *argv) {
-    // Register the LwIP stack.
     lwipv4_socket_init();
-    /* 
-    * Create the resolver object.  This must occur after the stack has been 
-    * initialized because
-    * Resolver contains a socket.
-    */
     r = new Resolver();
     r->resolve("mbed.org");
 }
 ```
-
 
 
 ## IPv6 (6LoWPAN)
