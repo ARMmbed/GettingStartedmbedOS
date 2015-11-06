@@ -9,7 +9,7 @@ This section shows the general structure of an application running on mbed OS, a
 
 Blinky's code is quite short, but it's enough to show a few general mbed OS application concepts:
 
-```
+```c++
 #include "mbed-drivers/mbed.h"
 
 static void blinky(void) {
@@ -32,7 +32,7 @@ Including other functionality might require more complicated inclusion lists, al
 
 Note that including requires the full path to the file:
 
-```
+```c++
 #include "mbed-drivers/mbed.h"
 ```
 
@@ -45,7 +45,7 @@ Please remember that for the compilation to work correctly, yotta has to know wh
 To start an application in mbed OS, we need an ``app_start()`` function, replacing the standard ``main()`` of other CPP programs:
 
 
-```
+```c++
 void app_start(int, char**) {
 
 }
