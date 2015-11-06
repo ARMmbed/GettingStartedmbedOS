@@ -1,5 +1,5 @@
 # Networking and connectivity
-mbed OS provides several facilities for networking and connectivity.  For high level applications, mbed OS provides mbed Client, the C++ Socket API, and the BLE API.  mbed Client is a high level communication mechanism designed for working directly with mbed Device Server over CoAP. The C++ Socket API is a fully non-blocking, event-based, object-oriented socket API.  The BLE API is a C++ API for creating Bluetooth Low Energy applications.  These APIs abstract several protocols, including Ethernet, 6LoWPAN over 802.15.4, and Bluetooth Low Energy.
+mbed OS provides several facilities for networking and connectivity. For high level applications, mbed OS provides mbed Client, the C++ Socket API, and the BLE API. mbed Client is a high level communication mechanism designed for working directly with mbed Device Server over CoAP. The C++ Socket API is a fully non-blocking, event-based, object-oriented socket API. The BLE API is a C++ API for creating Bluetooth Low Energy applications. These APIs abstract several protocols, including Ethernet, 6LoWPAN over 802.15.4, and Bluetooth Low Energy.
 
 Using these three high level APIs, it is possible to create rich connected applications.
 
@@ -63,7 +63,7 @@ The SAL is not complete: an interface abstraction API is still in development. T
 
 The SAL contains very little code - it is mostly a set of API definitions. The SAL depends on an IP stack to implement its APIs. The IP stack is selected via the [yotta config mechanism](http://yottadocs.mbed.com/reference/config.html).
 
-For example, when using a Freescale FRDM-K64F, LwIP is enabled by default.  If 6LoWPAN is the target for the application, then application-level config can override this choice in an application-supplied ```config.json```:
+For example, when using a Freescale FRDM-K64F, LwIP is enabled by default. If 6LoWPAN is the target for the application, then application-level config can override this choice in an application-supplied ```config.json```:
 
 
 ```JSON
@@ -95,7 +95,7 @@ The network interface provides management functions for the interface hardware, 
 
 ### Examples
 
-There are several complete examples provided in [mbed-example-network](https://github.com/ARMmbed/mbed-example-network).  In addition to these examples, a plain DNS resolution is provided below.
+There are several complete examples provided in [mbed-example-network](https://github.com/ARMmbed/mbed-example-network). In addition to these examples, a plain DNS resolution is provided below.
 
 #### DNS example
 
