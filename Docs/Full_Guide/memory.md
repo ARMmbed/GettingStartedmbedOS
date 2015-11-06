@@ -41,4 +41,40 @@ The standard heap is a typical dlmalloc heap, which grows upwards from the botto
 #### The never free heap
 The never free heap grows downwards from the end of memory. The never free heap is intended for use with data that need not be freed, such as memory pools. Memory is allocated from the never free heap using the reverse sbrk function (```krbs```) provided by the [core-util](https://github.com/ARMmbed/core-util) module.
 
+## Memory Allocation in mbed OS
+mbed OS provides several memory allocation services, including a traits allocator, a typical dlmalloc heap, a never free heap, a pool allocator and an extendable pool allocator. These facilities are built on top of two trivial, but lock-free, allocators: ```sbrk()``` and ```krbs()``` (a reverse ```sbrk```).
+
+### Usage Notes
+In general, you should use ```mbed_ualloc()``` where malloc-type allocation is necessary. Standard library functions, such as ```malloc()```, ```realloc()```, and ```calloc``` can also be used, but they are not as flexible as ```mbed_ualloc()```. You should avoid using ```sbrk()``` and ```krbs()``` where possible; these are low-level functions, intended for use by other memory allocators. 
+
+Where memory is allocated in interrupt context, or similarly sized memory is used frequently, it can be advantageous to use ```PoolAllocator``` or ```ExtendablePoolAllocator```. ```malloc()```, ```realloc()```, and ```calloc``` should not be called from an interrupt context. ```mbed_ualloc()``` should only be called from an interrupt context with the ```UALLOC_TRAITS_NEVER_FREE``` trait set.
+
+
+### ualloc traits allocator
+In mbed OS, all memory allocation is done through a traits allocator, [ualloc](https://github.com/ARMmbed/ualloc). ualloc provides features that support both the dlmalloc heap and the never free heap. Currently, only two traits are supported in ualloc: ```UALLOC_TRAITS_NEVER_FREE```, which allocates from the never-free region, and ```UALLOC_TRAITS_ZERO_FILL```, which zeros the allocated space prior to returning it, much like ```calloc```. ```ualloc``` hooks several of the standard library functions:
+
+* ```malloc```
+* ```calloc```
+* ```realloc```
+* ```free```
+
+This is to ensure that all allocations are done via ualloc, which in turn ensures that all compilers with all libc's will produce the same memory behavior. Using ualloc as a the channel for all memory allocations also provides a common point for memory allocation analysis. By analyzing calls to ualloc functions, it is possible to monitor all memory allocation behavior.
+
+For allocations with the ```UALLOC_TRAITS_NEVER_FREE``` trait, ualloc calls ```krbs()``` directly. Without the never-free trait, ualloc calls dlmalloc functions.
+
+### The standard heap
+The standard heap is managed by [dlmalloc](https://github.com/ARMmbed/dlmalloc). For standard heap operations, ualloc forwards operations to dlmalloc. dlmalloc, in turn, uses ```sbrk()``` to obtain more memory.
+
+### The pool allocator
+mbed OS provides a pool allocator in the [core-util](https://github.com/ARMmbed/core-util) module, called ```PoolAllocator```. This allocator divides its block of memory into 4-byte aligned regions of fixed size. The pool allocator is lock-free and very fast, so it is suitable for use in interrupt context. ```PoolAllocator``` can run out of memory, however, so for some operations, ```ExtendablePoolAllocator``` is more useful.
+
+### The extendable pool allocator
+mbed OS also provides an extendable pool allocator in the [core-util](https://github.com/ARMmbed/core-util) module, called ```ExtendablePoolAllocator```. It is built on top of PoolAllocator, with the sole difference that, when ```ExtendablePoolAllocator``` runs out of pool elements to allocate, it can request more from the never free heap, using ```ualloc()```, with the ```UALLOC_TRAITS_NEVER_FREE``` flag set.
+
+### sbrk
+sbrk is a trivial allocator implemented in the [core-util](https://github.com/ARMmbed/core-util) module. It supports linear allocation and deallocation. It is completely lock-free.
+
+### krbs
+krbs is effectively the reverse of ```sbrk()```, allocating memory from the end of a section, rather than the beginning. The one exception in behavior is that ```krbs()``` does not support deallocation.
+
 
