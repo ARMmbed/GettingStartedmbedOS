@@ -123,7 +123,8 @@ public:
     }
     socket_error_t resolve(const char * address) {
         printf("Resolving %s...\r\n", address);
-        return _sock.resolve(address,UDPSocket::DNSHandler_t(this, &Resolver::onDNS));
+        return _sock.resolve(address,
+        	UDPSocket::DNSHandler_t(this, &Resolver::onDNS));
     }
 };
 
