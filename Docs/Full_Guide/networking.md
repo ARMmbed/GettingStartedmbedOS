@@ -97,7 +97,7 @@ The network interface provides management functions for the interface hardware, 
 
 There are several complete examples provided in [mbed-example-network](https://github.com/ARMmbed/mbed-example-network).  In addition to these examples, a plain DNS resolution is provided below.
 
-#### DNS Example
+#### DNS example
 
 This is a simple example of resolving an address with DNS:
 
