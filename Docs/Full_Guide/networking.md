@@ -170,3 +170,59 @@ Thread support is built-in to the 6LoWPAN stack. See [Introduction to Thread](ht
 ## Bluetooth Low Energy (BLE)
 
 Will be published soon.
+
+## Including networking headers in your code
+
+All mbed OS applications need ``mbed-drivers``, which includes most mbed OS functionality. However, for networking, you will have to explicitly include additional headers.
+
+__For IPv4:__
+
+```c++
+#include "sal-iface-eth/EthernetInterface.h"
+#include "sockets/UDPSocket.h" //if you want UDP
+#include "sockets/TCPStream.h" //if you want a TCP Client
+#include "sockets/TCPListener.h" //if you want a TCP Server
+#include "sal-stack-lwip/lwipv4_init.h"
+```
+
+And please ensure that you have the following call in your code:
+
+```c++
+void app_start(int argc, char *argv[])
+{
+    socket_error_t err = lwipv4_socket_init();
+   ...
+}
+```
+
+__For 6LoWPAN and Thread:__
+
+```c++
+#include "mbed-mesh-api"
+#include "mbedclient.h"
+#include "sockets.h" // if you are using network modules other than mbed Client.
+```
+
+You might need to include board specific drivers, for example ``#include "atmel-rf-driver"``.
+
+__For BLE:__
+
+```c++
+#include "ble/BLE.h"
+#include "ble/services/iBeacon.h" // If you're using a standard service, include its header
+```
+
+__module.json updates__
+
+You will need to add these dependencies to your project's ``module.json`` file. For example:
+
+
+```json
+"dependencies": {
+	"mbed-drivers": "*",
+	"mbed-client": "^1.0.0",
+	"atmel-rf-driver": "^1.0.0", //for 6LoWAPAN
+	"mbed-mesh-api": "^1.0.0", //for 6LoWAPAN
+	"ble": "^2.0.0" //for BLE
+}
+```
