@@ -214,15 +214,22 @@ __For BLE:__
 
 __module.json updates__
 
-You will need to add these dependencies to your project's ``module.json`` file. For example:
-
+You will need to add these dependencies to your project's ``module.json`` file. The following example shows includes for 6LoWPAN:
 
 ```json
 "dependencies": {
 	"mbed-drivers": "*",
 	"mbed-client": "^1.0.0",
-	"atmel-rf-driver": "^1.0.0", //for 6LoWAPAN
-	"mbed-mesh-api": "^1.0.0", //for 6LoWAPAN
-	"ble": "^2.0.0" //for BLE
+	"atmel-rf-driver": "^1.0.0",
+	"mbed-mesh-api": "^1.0.0"
+}
+```
+
+And these are for BLE:
+
+```json
+"dependencies": {
+	"mbed-drivers": "*",
+	"ble": "^2.0.0" 
 }
 ```
