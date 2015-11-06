@@ -6,9 +6,9 @@ This chapter covers:
 
 * [What a yotta executable - or mbed OS application - looks like](#mbed-os-applications-as-yotta-executables).
 
-* [How to initialize and build a project with yotta](#how-to-build-an-application).
+* [Initializing and building a project with yotta](#how-to-build-an-application).
 
-* [How to handle dependencies](#how-to-build-an-application).
+* [Handling dependencies](#how-to-build-an-application).
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">[You'll need to install yotta](../installation.md) to complete the examples in this chapter.</span>
 
@@ -53,7 +53,7 @@ An application and a library have similar structures:
 
 **The test directory** contains source files and subdirectories to compile into tests. yotta strongly encourages writing tests for modules (and makes it really easy!), because thorough testing is an important part of making software truly reusable. Any source files at the top-level of the test directory will be compiled into separate test executables, and the (recursive) contents of any subdirectories will each be compiled into a single test executable. You can use the [`yotta test` subcommand](http://yottadocs.mbed.com/tutorial/testing.html) to automatically build and run these tests.
 
-## How to build an application
+## Building an application
 
 This section builds the sample application ``blinky``, which turns a LED on our boards on and off. The build target we'll use is the [FRDM-K64F board](https://www.mbed.com/en/development/hardware/boards/freescale/frdm_k64f/) with the [gcc toolchain](https://launchpad.net/gcc-arm-embedded). We'll be using this sample several times in the guide, so it's well worth your time to build it.
 
