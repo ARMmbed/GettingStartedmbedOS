@@ -102,32 +102,47 @@ There are several complete examples provided in [mbed-example-network](https://g
 This is a simple example of resolving an address with DNS:
 
 ```C++
+#include "sockets/v0/UDPSocket.h"
+#include "sal-stack-lwip/lwipv4_init.h"
+#include "sal-iface-eth/EthernetInterface.h"
 using namespace mbed::Sockets::v0;
 class Resolver {
 private:
-    UDPaSocket _sock;
+    UDPSocket _sock;
 public:
     Resolver() : _sock(SOCKET_STACK_LWIP_IPV4) {
         _sock.open(SOCKET_AF_INET4);
     }
     void onDNS(Socket *s, struct socket_addr addr, const char *domain) {
+        (void) s;
         SocketAddr sa;
         char buf[16];
         sa.setAddr(&addr);
         sa.fmtIPv4(buf,sizeof(buf));
-        printf("Resolved Address: %s\r\n", buf);
+        printf("Resolved %s to %s\r\n", domain, buf);
     }
     socket_error_t resolve(const char * address) {
-        return sock.resolve(address,UDPaSocket::DNSHandler_t(this, &Resolver::onDNS));
+        printf("Resolving %s...\r\n", address);
+        return _sock.resolve(address,UDPSocket::DNSHandler_t(this, &Resolver::onDNS));
     }
-}
+};
 
+EthernetInterface eth;
 Resolver *r;
-void app_start(int argc, char *argv) {
+void app_start(int argc, char *argv[]) {
+    (void) argc;
+    (void) argv;
+    static Serial pc(USBTX, USBRX);
+    pc.baud(115200);
+    printf("Connecting to network...\r\n");
+    eth.init();
+    eth.connect();
+    printf("Connected\r\n");
     lwipv4_socket_init();
     r = new Resolver();
     r->resolve("mbed.org");
 }
+
 ```
 
 
