@@ -194,7 +194,9 @@ __For 6LoWPAN and Thread:__
 ```c++
 #include "mbed-mesh-api"
 #include "mbedclient.h"
-#include "sockets.h" // if you are using network modules other than mbed Client.
+
+// if you are using network modules other than mbed Client:
+#include "sockets.h" 
 ```
 
 You might need to include board specific drivers, for example ``#include "atmel-rf-driver"``.
@@ -203,7 +205,9 @@ __For BLE:__
 
 ```c++
 #include "ble/BLE.h"
-#include "ble/services/iBeacon.h" // If you're using a standard service, include its header
+
+// If you're using a standard service, include its header:
+#include "ble/services/iBeacon.h" 
 ```
 
 __module.json updates__
