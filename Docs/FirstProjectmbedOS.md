@@ -1,26 +1,28 @@
 # Running your first mbed OS application
 
-Ok, let's get to the nitty gritty and create your first mbed application (using yotta). We're going to use mbed OS to make the LED on our board blink, and print some commands to the terminal.
+Your first application makes the LED on your board blink, and prints some commands to the terminal. You use yotta to build your application for mbed OS.
 
 ## Using yotta as a command-line tool
 
-### Step 1: install yotta and its dependencies
-
 yotta is the build system we use for mbed OS. We'll get into the details of it later, but what you need to understand at this point is that mbed OS applications cannot be built without yotta.
 
-See yotta's [installation instructions](installation.md).
+If you haven't already installed yotta, please follow these [installation instructions](installation.md).
 
-### Step 2: create an application
 
-First create an empty folder, then move into that folder:
+### Regular method: creating a new application
 
-```
-$ mkdir blinky
-$ cd blinky
-```
+This method uses yotta to initialize an application and manually add our code to it.
 
-Next initialize the module with `yotta init` and fill in the details. Make sure you select **executable** as the module type:
+#### Step 1: create an application
 
+1. Create an empty folder, then move into that folder:
+
+	```
+	$ mkdir blinky
+	$ cd blinky
+	```
+
+1. Initialize the module with `yotta init` and fill in the details. Make sure you select **executable** as the module type:
 
 <span style="display:block; text-align:center; padding:5px;">
 ![](Full_Guide/Images/yotta_init.png)</span>
@@ -32,13 +34,19 @@ $ ls
 blinky  module.json  source  test
 ```
 
-The `module.json` file contains all the settings for your application; everything you just entered can be found in that file, so if you want to add a repository URL later you can. The `/source` directory contains all the source files. The `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html). The `/blinky` directory is where header files for your application should be created.
+* The `module.json` file contains all the settings for your application; everything you just entered can be found in that file, so if you want to edit it later, for example to add a repository URL, that's not a problem. 
+
+* The `/source` directory contains all the source files. 
+
+* The `/test` directory contains all tests you'll write to [test your module](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/docs.yottabuild.org/tutorial/testing.html). 
+
+* The `/blinky` directory is where header files for your application will be created.
 
 **Tip:** if you want to learn about other module types, [start here](http://docs.yottabuild.org/).
 
-### Step 3: select a target board
+#### Step 2: select a target board
 
-Earlier, we explained that yotta can build the same code for multiple targets; it therefore needs to be told which target every build is for. So now that we have created a basic application, let's set the target.
+yotta can build the [same code for multiple targets](Full_Guide/app_on_yotta/#yotta-targets); it therefore needs to be told which target every build is for. So now that you have created a basic application, you need to set the target.
 
 For a full list of available targets run the following `search` command:
 
@@ -53,13 +61,13 @@ for the mbed frdm-k64f development board, using the armcc toolchain.
 ...
 ```
 
-In this example we are going to use the Freescale FRDM-K64F board configured for building with gcc, so we'll use the `target frdm-k64f-gcc`.
+In this example you are going to use the Freescale FRDM-K64F board configured for building with gcc, so you use `target frdm-k64f-gcc`.
 
 ```
 $ yotta target frdm-k64f-gcc
 ```
 
-To check that the target has been set correctly run the target command. It shows what yotta is currently targeting for its builds:
+To check that the target has been set correctly run the target command without parameters. It shows what yotta is currently targeting for its builds:
 
 ```
 $ yotta target
@@ -68,24 +76,24 @@ frdm-k64f-gcc,*
 
 *The information for this target has been downloaded to a directory named `/yotta_targets`. Do not edit or modify files here because they can be modified without your knowledge.*
 
-### Step 4: install dependencies
+#### Step 3: install dependencies
 
-Now let's install the dependencies. In this application, we'll have `mbed-drivers` as our dependency:
+Now you need to install the dependencies. In this application, you have `mbed-drivers` as your dependency:
 
 ```
 $ yotta install mbed-drivers
-info: ... a bunch of messages about stuff being downloaded ...
+info: ... messages about stuff being downloaded ...
 ```
 
-You could at this point add other yotta modules. Check out the `yotta search` command to search for other available modules.
+You could at this point add other yotta modules. Check out the `yotta search` command above to search for other available modules.
 
-The modules are downloaded and installed in a directory named `/yotta_modules`. Do not edit or modify files here as they can be modified without your knowing.
+yotta downloads and installs the modules to a directory named `/yotta_modules`. Do not edit or modify files here as they can be modified without your knowing.
 
-If you want to learn more about mbed OS and try some other functionality, you can [start here](http://mbed.com/en/development/software/mbed-os/).
+#### Step 4: add source files
 
-### Step 5: add source files
+Now that you have an application and its dependencies, you need source code to make the module useful. 
 
-Now that we have set up an application and downloaded our dependencies, let's add some source code to use the module. In the `/source` folder create a file called `app.cpp` with the following contents:
+In the `/source` folder, create a file called `app.cpp` with the following contents:
 
 ```c++
 #include "mbed-drivers/mbed.h"
@@ -101,56 +109,68 @@ void app_start(int, char**) {
 }
 ```
 
-This program will cause LED1 on the board to flash and print the status of LED1 to the terminal. The default terminal speed is 9600 baud at 8-N-1.
+This application causes LED1 on the board to flash and prints the status of LED1 to the terminal. 
 
-### Step 6: build
+**Tip:** When setting up your terminal, note that the default terminal speed is 9600 baud at 8-N-1.
 
-To build the application, run the `yotta build` command in the top level directory:
-```
-$ yt build
-info: generate for target: frdm-k64f-gcc 0.0.21 
-at ~\blinky\yotta_targets\frdm-k64f-gcc
-GCC version is: 4.9.3
--- The ASM compiler identification is GNU
--- Found assembler: GNU Tools ARM Embedded/4.9 2014q4/bin/arm-none-eabi-gcc.exe
--- Configuring done
--- Generating done
--- Build files have been written to: ~/blinky/build/frdm-k64f-gcc
-[135/135] Linking CXX executable source/blinky
-```
+#### Step 5: build
 
-The compiled binary will be located in the `/build` folder. Copy the binary `/build/frdm-k64f-gcc/source/blinky.bin` to your mbed board and see the LED blink. 
+To build the application:
 
-If you hook up a terminal to the board, you can see the output being printed. It should look like this:.
+1. Run the `yotta build` command in the top level directory:
 
-```
-LED = 1
-LED = 0
-LED = 1
-LED = 0
-...
-```
+	```
+	$ yt build
+	info: generate for target: frdm-k64f-gcc 0.0.21 
+	at ~\blinky\yotta_targets\frdm-k64f-gcc
+	GCC version is: 4.9.3
+	-- The ASM compiler identification is GNU
+	-- Found assembler: GNU Tools ARM Embedded/4.9 2014q4/bin/arm-none-eabi-gcc.exe
+	-- Configuring done
+	-- Generating done
+	-- Build files have been written to: ~/blinky/build/frdm-k64f-gcc
+	[135/135] Linking CXX executable source/blinky
+	```
 
-## Alternative method - cloning an existing application
+1. yotta compiles the binary to the `/build` folder. 
 
-Instead of setting up your own application from scratch, you could clone an existing one and modify it. We have published the above [blinky example application](https://github.com/ARMmbed/GettingStartedmbedOS/blob/master/Docs/www.github.com/armmbed/example-mbedos-blinky) on GitHub so you can clone to repo and build it.
+#### Step 6: run the application on your board
 
-### Step 1: clone the repo
+1. Connect your board to your computer over USB. It should appear as removable storage.
 
-Clone the repository from GitHub:
+1. Copy the binary `/build/frdm-k64f-gcc/source/blinky.bin` to your mbed board and see the LED blink. 
+
+1. If you hook up a terminal to the board, you can see the output being printed. It should look like this:.
+
+	```
+	LED = 1
+	LED = 0
+	LED = 1
+	LED = 0
+	...
+	```
+
+### Alternative method: cloning an existing application
+
+Instead of setting up your own application from scratch, you could clone an existing one and modify it. We have published the above [blinky example application](https://github.com/armmbed/example-mbedos-blinky) on GitHub so you can clone the repo and build it.
+
+#### Step 1: clone the repo
+
 
 ```
 $ git clone https://github.com/ARMmbed/example-mbedos-blinky.git
 $ cd example-mbedos-blinky
 ```
 
-### Step 2: select a target platform
+**Note:** This repo includes ``mbed-drivers`` as a dependency, so there is no need to manually install it as you did in the previous method (yotta will install it when you build the application).
+
+#### Step 2: select a target platform
 
 ```
 $ yotta target frdm-k64f-gcc
 ```
 
-### Step 3: build it
+#### Step 3: build the application to your target
 
 ```
 $ yotta build
@@ -158,15 +178,4 @@ $ yotta build
 [135/135] Linking CXX executable source/example-mbedos-blinky
 ```
 
-The compiled binary will be located in the `/build` folder. Copy the binary  `/build/frdm-k64f-gcc/source/example-mbedos-blinky.bin` to your mbed board and see the LED blink. 
-
-If you hook up a terminal to the board, you can see the output being printed. It should look like this:
-```
-LED = 1
-LED = 0
-LED = 1
-LED = 0
-...
-```
-
-
+As in the previous method, the compiled binary is at `/build/frdm-k64f-gcc/source/example-mbedos-blinky.bin`. You can copy it to your board to run it, and hook your board up to a terminal to see the output, as explained in step 6 above.

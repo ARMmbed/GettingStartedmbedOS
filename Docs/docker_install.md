@@ -2,7 +2,7 @@
 
 Docker containers let you run an application such as yotta, with all of its dependencies (like Python), without installing anything directly on your machine. This protects you from version conflicts and other installation problems. 
 
-We’ve built a yotta Docker container - a yocker - and a bash script (yotta.sh). The script allows you to use the yotta Docker container to mimic a yotta installation on your system; yotta will be fully functional.
+We’ve built a yotta Docker container - a yocker - and a bash script (``yotta.sh``). The script allows you to use the yotta Docker container to mimic a yotta installation on your system; yotta will be fully functional.
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ We’ve built a yotta Docker container - a yocker - and a bash script (yotta.sh)
 
 ### Using the yotta Docker and script to build projects
 
-There is one difference between a regular installation and a Docker Container: in Docker, you'll have to precede each yotta command with the path to the bash script you saved in the previous section. For example:
+There is one difference between a regular installation and a Docker Container: in Docker, you have to precede each yotta command with the path to the bash script you saved in the previous section. For example:
 	
 ```shell
 ../<path containing script>/yotta target frdm-k64f-gcc 	//sets the target
