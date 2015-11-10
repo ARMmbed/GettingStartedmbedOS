@@ -1,8 +1,8 @@
 # Getting mbed OS
 
-We don't "get" mbed OS in the same way that we get a new app on our phone. There is no mbed OS download and no way to install it on our machine.
+You don't "get" mbed OS in the same way that you get a new app on your phone. There is no mbed OS download and no way to install it on your machine.
 
-Working with mbed OS means we use yotta to combine our own application code with the mbed OS code base. yotta gets the relevant parts of mbed OS for us from its own registry.
+Working with mbed OS means you use yotta to combine your own application code with the mbed OS code base. yotta gets the relevant parts of mbed OS for you from its own registry.
 
 So these guides will walk you through working with yotta, then show you how to write an application that can work with the mbed OS code base. 
 
@@ -24,7 +24,7 @@ If your'e interested in specific yotta modules:
 
 * [``mbed-client``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/mbed-client/) is best explored through its [getting started guide](https://docs.mbed.com/docs/mbed-client-guide/en/latest/).
 
-* [``mbedtls``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/mbedtls/) is our connectivity security module, and explored in greater detail in [the user guide chapter covering its use in mbed OS](Full_Guide/mbed_tls.md).
+* [``mbedtls``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/mbedtls/) is the mbed connectivity security module, and explored in greater detail in [the user guide chapter covering its use in mbed OS](Full_Guide/mbed_tls.md).
 
 * Some other modules that might interest you are [``sockets``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/sockets/), [``ble``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/ble/) and [``sal-stack-nanostack``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/sal-stack-nanostack/) for connectivity.
 

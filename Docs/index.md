@@ -99,9 +99,9 @@ What this all means is that to build applications that can run on top of mbed OS
 
 ### The quick guides
 
-* [Setting up your machine](installation.md): installing yotta, the build tool for mbed OS.
+* [Setting up your machine](installation.md): Installing yotta, the build tool for mbed OS.
 
-* [Your first mbed OS application](FirstProjectmbedOS.md): a simple example to get you going.
+* [Your first mbed OS application](FirstProjectmbedOS.md): A simple example to get you going.
 
 ### The mbed OS user guide
 

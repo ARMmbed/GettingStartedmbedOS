@@ -1,19 +1,25 @@
 # Debugging in mbed OS
 
-The [`example-mbedos-blinky`](../FirstProjectmbedOS.md) application we use in this guide is simple and easy to understand, so chances are it'll work as expected right away. More complex applications might not work as expected. In that case, a debugger is a very useful tool. There are two main ways to debug mbed OS applications at the moment, depending on how they were compiled.
+The [`example-mbedos-blinky`](../FirstProjectmbedOS.md) application you've used in this guide is simple and easy to understand, so it should work as expected right away. More complex applications might not work as expected. In that case, a debugger is a very useful tool. There are two main ways to debug mbed OS applications at the moment, depending on how they were compiled.
 
 ## Debugging applications compiled with ARMCC
 
-To debug applications compiled with ARMCC, you'll need to install [Keil MDK](https://www.keil.com/download/product/). To debug the application, you can use the `yotta debug` command. If the above `example-mbedos-blinky` application was compiled with target `frdm-k64f-armcc` instead of `frdm-k64f-gcc`, you could debug it by running `yotta debug example-mbedos-blinky`. This will automatically open the uVision IDE, with your program ready for debugging.
+To debug applications compiled with ARMCC:
+
+1. Install [Keil MDK](https://www.keil.com/download/product/). 
+
+1. Use the `yotta debug` command. 
+
+For example, If you build `example-mbedos-blinky` for the target `frdm-k64f-armcc` (instead of `frdm-k64f-gcc`), you can debug it by running `yotta debug example-mbedos-blinky`. This automatically opens the uVision IDE, with your program ready for debugging.
 
 ## Debugging applications compiled with GCC
 
-The best way to debug applications compiled with GCC is to use the `gdb` debugger. You'll need:
+The best way to debug applications compiled with GCC is to use the `gdb` debugger. You need:
 
 - `arm-none-eabi-gdb`, which is installed as part of the [GCC ARM Embedded](https://launchpad.net/gcc-arm-embedded) installation procedure.
 - `pyocd-gdbserver`, which is installed as part of the yotta installation procedure.
 
-To debug the above `example-mbedos-blinky` application:
+For example, to debug `example-mbedos-blinky`:
 
 ```
 $ yt debug example-mbedos-blinky
