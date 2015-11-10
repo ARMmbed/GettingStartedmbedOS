@@ -21,12 +21,12 @@ The key differences are:
 
 * The following components of mbed TLS are disabled in the mbed OS edition: `net.c` and `timing.c`. This is because mbed OS includes their equivalents.
 
-* The mbed OS edition comes with a fully integrated API for (D)TLS connections in a companion module: [mbed-tls-sockets](https://github.com/ARMmbed/mbed-tls-sockets). See ["Performing TLS and DTLS connections"](#Performing-TLS-and-DTLS-connections).
+* The mbed OS edition comes with a fully integrated API for TLS and DTLS connections in a companion module: [mbed-tls-sockets](https://github.com/ARMmbed/mbed-tls-sockets). See ["Performing TLS and DTLS connections"](#Performing-TLS-and-DTLS-connections).
 
 
 ## Performing TLS and DTLS connections
 
-mbed TLS provides a high-level API for performing TLS and DTLS connections in mbed OS. The API is in a separate yotta module: [mbed-tls-sockets](https://github.com/ARMmbed/mbed-tls-sockets). We recommend using this API for TLS and DTLS connections. It is very similar to the API provided by the [sockets](https://github.com/ARMmbed/sockets) module for unencrypted TCP and UDP connections.
+mbed TLS provides a high-level API for performing TLS and DTLS connections in mbed OS. The API is in a separate yotta module: [mbed-tls-sockets](https://github.com/ARMmbed/mbed-tls-sockets). We recommend using this API for TLS and DTLS connections. It is very similar to the API provided by the [``sockets``](https://github.com/ARMmbed/sockets) module for unencrypted TCP and UDP connections.
 
 The `mbed-tls-sockets` module includes a complete [example TLS client](https://github.com/ARMmbed/mbed-tls-sockets/blob/master/test/tls-client/main.cpp) with [usage instructions](https://github.com/ARMmbed/mbed-tls-sockets/blob/master/test/tls-client/README.md).
 
@@ -40,16 +40,16 @@ mbed TLS makes it easy to disable any feature during compilation, if that featur
 
 The list of compilation flags is available in the fully documented [``config.h`` file](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/config.h).
 
-If you need to adjust those flags, you can provide your own configuration-adjustment file. 
+If you need to adjust those flags, you can provide your own configuration-adjustment file: 
 
 1. Create a configuration file. You can name it freely.
 1. Put the file in your application's ``include`` directory.
 1. Add suitable `#define` and `#undef` statements in your file.
 1. mbed TLS needs to know your file's name. To do that, you need to use yotta's [configuration system](http://docs.yottabuild.org/reference/config.html):
  - In your ``config.json`` file, under ``mbedtls``, fine the key ``user-config-file``.
- - Enter your file name as the value of that key.
+ - Enter your filename as the value of that key.
 
-``config.h`` will include your file between the default definitions and the sanity checks. 
+``config.h``  includes your file between the default definitions and the sanity checks. 
 
 For example, in an application called `myapp`, if you want to enable the EC J-PAKE key exchange and disable the CBC cipher mode, you can create a file named  `mbedtls-config-changes.h` in the `myapp` directory containing the following lines:
 
@@ -66,7 +66,7 @@ And then create a file named `config.json` at the root of your application with 
 		}	
 	}
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** you need to provide the exact name that will be used in the `#include` directive, including the `<>` or quotes around the name.</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** You need to provide the exact name that you use in the `#include` directive, including the `<>` or quotes around the name.</span>
 
 ## Getting mbed TLS from GitHub
 
@@ -75,6 +75,7 @@ Like most components of mbed OS, mbed TLS is developed in the open and its sourc
 If you want to use mbed TLS from the GitHub repo:
 
 1. Create a local clone.
+
 1. From the root of the clone, run the shell script:
 
 	```
@@ -84,24 +85,23 @@ If you want to use mbed TLS from the GitHub repo:
 	
 You can then run any [yotta command](app_on_yotta.md) you would normally run, such as [`yotta build`] or [`yotta link`].
 
-
 ## Sample programs
 
 This release includes the following examples:
 
-1. [**Self test:**](https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-selftest)  Tests different basic functions in the mbed TLS library.
+1. [**Self test:**](https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-selftest) Tests different basic functions in the mbed TLS library.
 
 2. [**Benchmark:**](https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-benchmark) Measures the time taken to perform basic cryptographic functions used in the library.
 
 3. [**Hashing:**](https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-hashing) Demonstrates the various APIs for computing hashes of data (also known as message digests) with SHA-256.
 
-4. [**Authenticated encryption:**](https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-authcrypt) Demonstrates usage of the Cipher API for encrypting and authenticating data with AES-CCM.
+4. [**Authenticated encryption:**](https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-authcrypt) Demonstrates using the Cipher API for encrypting and authenticating data with AES-CCM.
 
 These examples are integrated as yotta tests, so they are built automatically when you build mbed TLS. Each of them comes with complete usage instructions as a Readme file in the repository.
 
 ## Other resources
 
-The [mbed TLS website](https://tls.mbed.org) contains many other useful resources for developerz, such as [developer
+The [mbed TLS website](https://tls.mbed.org) contains many other useful resources for developers, such as [developer
 documentation](https://tls.mbed.org/dev-corner), [knowledge base articles](https://tls.mbed.org/kb), and a [support forum](https://tls.mbed.org/discussions).
 
 ## Contributing
