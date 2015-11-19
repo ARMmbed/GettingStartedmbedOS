@@ -34,7 +34,7 @@ There is one difference between a regular installation and a Docker Container: i
 If you want to use yotta commands without specifying the full path to the script, you can add the yotta script’s path to your system’s ``path`` variable (Windows) or create a symbolic link (symlink) to your bin directory (Linux and Mac OS X). For example, to create a symlink: 
 	
 ```
-ln -s <path to your yotta.sh> /usr/bin/yotta
+ln -s <path to your yotta.sh> /usr/local/bin/yotta
 ```
 
 Now you can use yotta directly:
