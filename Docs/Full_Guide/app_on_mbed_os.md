@@ -36,7 +36,7 @@ Note that including requires the full path to the file:
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** There are limitations on the path and file names. For more information about this, please see the [yotta documentation](http://yottadocs.mbed.com/tutorial/tutorial.html).</span>
 
-Please remember that for the compilation to work correctly, yotta has to know where the included file comes from. That requires listing dependencies in the ``module.json`` file, as [explained in the yotta chapter](Full_Guide/app_on_yotta/#installing-dependencies). In this example, ``mbed.h`` is part of ``mbed-drivers``, which you installed when you built your code.
+Please remember that for the compilation to work correctly, yotta has to know where the included file comes from. That requires listing dependencies in the ``module.json`` file, as [explained in the yotta chapter](app_on_yotta/#installing-dependencies). In this example, ``mbed.h`` is part of ``mbed-drivers``, which you installed when you built your code.
 
 ### Including mbed OS functionality
 
@@ -64,13 +64,13 @@ void app_start(int, char**) {
 
 mbed OS starts MINAR (that chapter will be published soon) implicitly; you only need to call it explicitly if you want to pass to it a particular function that will be executed later (using ``postCallback``).
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** MINAR will be reviewed in detail in a future chapter of the guide. Until then, you can read the [explanation in the MINAR repository](github.com/ARMmbed/minar).</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** MINAR will be reviewed in detail in a future chapter of the guide. Until then, you can read the [explanation in the MINAR repository](https://github.com/ARMmbed/minar).</span>
 
 ## Debugging and testing your application
 
 Debugging and testing are subjects worthy of their own guides. Until we have those written, please see:
 
-* [The current debugging articles](docs.mbed.com/docs/debugging-on-mbed/en/latest/). Note that they currently focus on mbed Classic, but many of the ideas they present are applicable to mbed OS.
+* [The current debugging articles](https://docs.mbed.com/docs/debugging-on-mbed/en/latest/). Note that they currently focus on mbed Classic, but many of the ideas they present are applicable to mbed OS.
 
 * The testing suite, Greentea. It is currently documented only in its [GitHub repositories](https://github.com/ARMmbed/greentea). We're working on a new guide for it.
 
