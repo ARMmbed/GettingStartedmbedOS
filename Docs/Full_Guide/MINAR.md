@@ -6,15 +6,13 @@ In async programming we don't wait for blocking tasks to finish, but we also don
 
 The following diagram shows a system handling three tasks in a single thread:
 
-![](../Full_Guide/Images/async.png)
-
-
+<span style="background-color: #F0F0F5; display:block; height:100%; padding:10px;">![](../Full_Guide/Images/async.png)</span>
 
 ### An introduction to async on mbed OS
 
 mbed OS is by default a single-threaded, event driven architecture. It relies on MINAR, a simple event scheduler that provides services for user and system events. Your application uses async by creating callbacks (functions that will be executed at a later time). Callbacks are scheduled using MINAR, which executes the callbacks based on [their schedule parameters]() and [other considerations](), and puts the MCU to sleep if there's nothing to run.
 
-**Note:** For most IoT applications, an event-driven paradigm is a very natural fit. However, for those applications that do require multithreading functionality, we intend to re-introduce it in 2016, after integrating it with our security and power management components. 
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** For most IoT applications, an event-driven paradigm is a very natural fit. However, for those applications that do require multithreading functionality, we intend to re-introduce it in 2016, after integrating it with our security and power management components.</span> 
 
 
 ### MINAR and event handlers
@@ -32,7 +30,7 @@ A blocking function is one that can potentially run for a very long time, with t
 
 app_start() {
 
-ask_server_for_info;		// the application will hang here, waiting for the server
+ask_server_for_info;			// the application will hang here, waiting for the server
 respond_to_server_information;
 
 call to some_other_function; 		// we won't get to this function until 
@@ -53,7 +51,6 @@ With asynchronous functions, a typical use case is to “split” any blocking a
 
 1. Completion: MINAR calls the callback specified by the user in the first step. At this point, the asynchronous action is finished.
 
-
 This is what the previous piece of code would have looked like if `ask_server_for_info` was an asynchronous operation:
 
 ```C++
@@ -66,7 +63,8 @@ ask_server_for_info(completion_callback);
 }
 
 completion_callback() {
-// the operation completed, an interrupt was fired and `completion_callback` was scheduled into MINAR as a result. Program flow resumes here.
+// the operation completed, an interrupt was fired and `completion_callback` was scheduled into MINAR as a result. 
+// Program flow resumes here.
 call to some_other_function;
 call to some_other_function;
 call to some_other_function;
@@ -76,7 +74,6 @@ call to some_other_function;
 #### Inputs and interrupt handlers for MINAR
 
 To avoid blocking functions, we don't trigger a function until we get the input it needs. Instead, we use interrupt handlers : events triggered by a physical interrupt from an MCU peripheral. The input's arrival is the very action that adds the function to MINAR:
-
 
 ```C++
 
@@ -106,7 +103,9 @@ In MINAR, an event is a pointer to a function, plus a specific binding of the fu
 
 ```C++
 FunctionPointer1<void, const char*> fp(cb_msg_and_increment);
+
 // Schedule this one to run after a while
+
 minar::Scheduler::postCallback(fp.bind("postCallbackWithDelay..."))
 	.delay(minar::milliseconds(5000))
 	.tolerance(minar::milliseconds(200))
@@ -156,8 +155,10 @@ private:
 void test() {
  	A a(10);
  	// The intention is to call a.f() after 100ms
+ 	
  	minar::Scheduler::postCallback(FunctionPointer0<void>(&a, &A::f).bind()).
  		delay(minar::milliseconds(100));
+ 	
  	// 'test' will exit immediately after `postCallback` above finishes
 	// and 'a' will go out of scope. 100ms later, MINAR will try to call
 	// 'A::f' on an instance that does not exist anymore ('a'), which leads
@@ -195,6 +196,7 @@ The implications are:
 #### Managing the queue
 
 It's important to understand how MINAR manages the queue before writing applications. MINAR is designed to optimize power consumption, but because it also tries not to take control of the application away from you, it is programmable - leaving you with some responsibility. 
+
 ##### Scheduling parameters (event attributes) and ticks
 
 When we add a task to MINAR's queue, we can use three parameters that give MINAR more information about scheduling the task:
@@ -203,7 +205,7 @@ When we add a task to MINAR's queue, we can use three parameters that give MINAR
 * ``delay``: the event will be executed after the specified delay.
 * ``tolerance``: how long before or after the desired execution time the event can run. This helps MINAR optimize power consumption. Please note that the default tolerance value - the one used if you do not specify one yourself - is not 0; the value is set in ``minar.cpp``.
 
-**Tip**: The parameters are expressed in ticks (see below).
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip**: The parameters are expressed in ticks (see below).</span>
 
 The call to MINAR treats the parameters as attributes of the [callback event](). Our [code samples]() will show how to use these correctly.
 
@@ -213,9 +215,10 @@ Boards measure intervals with ticks. Because different boards have different tic
 
 To show how to use interrupts with MINAR, we're going to create an application that uses a GPIO input (a button) to turn the LED on our board on and off. Because we don't know when we'll press the button, we can't simply schedule the function that blinks the LED to run as soon as the app starts - we'll get stuck in that function. Instead, we'll create an interrupt handler to respond to the physical interrupt coming from a button press. The interrupt handler itself will send the LED toggle function to MINAR, and MINAR will schedule it to run. 
 
-**Tip:** Get the [code for this example here](https://github.com/ARMmbed/example-mbedos-interruptin). The code is functional and you can [build and run it on your board]().
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Get the [code for this example here](https://github.com/ARMmbed/example-mbedos-interruptin). The code is functional and you can [build and run it on your board]().</span>
 
 #### A single event from an interrupt handler
+
 This is the complete code for an application that turns the LED on our board on and off when we press a button.
 
 ##### The code
@@ -233,14 +236,14 @@ static void toggle_led(void) {
 static void switch_pressed(void) {
 
 	/* Each time the switch is pressed, MINAR calls toggle_led.
-		Since it's called by MINAR, toggle_led will run in user context,
-		unlike 'switch_pressed' which runs in interrupt context. */
+	Since it's called by MINAR, toggle_led will run in user context,
+	unlike 'switch_pressed' which runs in interrupt context. */
 
 	minar::Scheduler::postCallback(toggle_led);
 
 	/* In this case, calling 'toggled_led' directly from this function
-		(in an interrupt context) would've worked fine, since that's a	
-		very fast function and doesn't introduce race conditions. */
+	(in an interrupt context) would've worked fine, since that's a	
+	very fast function and doesn't introduce race conditions. */
 }
 
 void app_start(int, char**) {
@@ -248,14 +251,14 @@ void app_start(int, char**) {
 	user_sw.rise(switch_pressed);
 
 	/* 'app_start' will exit at this point, but MINAR will continue to run
-		after 'app_start' exits. Note though that 'user_sw' needs to be
-		declared 'static', otherwise it'll get out of scope when 'app_start'
-		exits, which is clearly not what we want. */
+	after 'app_start' exits. Note though that 'user_sw' needs to be
+	declared 'static', otherwise it'll get out of scope when 'app_start'
+	exits, which is clearly not what we want. */
 }
 
 ```
 
-**Note:** Including ``mbed.h`` implicitly includes ``minar.h``; there is no need to explicitly include any MINAR libraries and headers.
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** Including ``mbed.h`` implicitly includes ``minar.h``; there is no need to explicitly include any MINAR libraries and headers.</span>
 
 ##### Using postCallback to add an event to the queue
 
@@ -269,7 +272,6 @@ minar::Scheduler::postCallback(toggle_led);
 ``postCallback`` adds the event to MINAR's queue. 
 
 This is a very simple call, because the ``toggle_led`` function doesn't accept parameters, and we didn't want to send event parameters to MINAR, either. Our [next example]() will show a more complicated use of ``postCallback``.
-
 
 ##### Potential blocking functions
 
@@ -321,9 +323,9 @@ Blinky isn't waiting on input, so the first (and only) action of the main functi
 In mbed Classic, waiting for an event was only possible while ``main`` (or some other function in the application) was running. To be able to work with event handlers, we kept ``main`` running using infinite loops:
 
 ```C++
-	while (true) {
-		object.waitForEvent();
-	}
+while (true) {
+	object.waitForEvent();
+}
 
 ```
 
@@ -392,7 +394,7 @@ void app_start(int, char*[]) {
 
 ```
 
-**Note:** This example shows only the sections of the code relevant to MINAR. If you want to see the full code, please see the [GitHub repository](https://github.com/ARMmbed/minar/blob/master/test/complex_dispatch.cpp).
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** This example shows only the sections of the code relevant to MINAR. If you want to see the full code, please see the [GitHub repository](https://github.com/ARMmbed/minar/blob/master/test/complex_dispatch.cpp).</span>
 
 ##### Function pointers with different argument numbers
 
@@ -409,9 +411,9 @@ We could then use ``FunctionPointer0`` and ``FunctionPointer1`` as shorthand:
 
 ```C++
 	minar::Scheduler::postCallback(FunctionPointer0<void>
-(&led1, &LED::callback_no_increment).bind())
-.delay(minar::milliseconds(500))
-.tolerance(minar::milliseconds(100));
+		(&led1, &LED::callback_no_increment).bind())
+		.delay(minar::milliseconds(500))
+		.tolerance(minar::milliseconds(100));
 
 ```
 
@@ -425,7 +427,7 @@ This example uses the attributes we introduced [earlier]() to schedule a series 
 		.delay(minar::milliseconds(500))
 		.tolerance(minar::milliseconds(100));
 
-	// The next callback will run periodically
+// The next callback will run periodically
 	minar::Scheduler::postCallback(FunctionPointer0<void>(&led2, &LED::callback_and_increment).bind())
 		.period(minar::milliseconds(650))
 		.tolerance(minar::milliseconds(100));
