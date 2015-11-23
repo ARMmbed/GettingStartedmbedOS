@@ -73,7 +73,7 @@ call to some_other_function;
 ```
 #### Inputs and interrupt handlers for MINAR
 
-To avoid blocking functions, we don't trigger a function until we get the input it needs. Instead, we use interrupt handlers : events triggered by a physical interrupt from an MCU peripheral. The input's arrival is the very action that adds the function to MINAR:
+To avoid blocking functions, we don't trigger a function until we get the input it needs. Instead, we use interrupt handlers: events triggered by a physical interrupt from an MCU peripheral. The input's arrival is the very action that adds the function to MINAR:
 
 ```C++
 
@@ -89,7 +89,7 @@ void app_start(int, char**){
 
 // Set up the interrupt handler for the button and return. No need to wait for the
 // button to be pressed in a busy waiting loop.
-{
+}
 
 ```
 
@@ -336,7 +336,7 @@ Our use of event handlers and function pointers (which we'll explore again in th
 So although we used a very simple example, we saw a few important MINAR principles, not least that MINAR saves us the trouble of writing infinite loops (in fact, MINAR can't work properly if there's an infinite loop in our code). The next example will show more complicated calls.
 #### Multiple events
 
-To see a bit of the potential of async programming with MINAR, let's look at the one of MINAR's [test programmes - the complex dispatch](https://github.com/ARMmbed/minar/blob/master/test/complex_dispatch.cpp). 
+To see a bit of the potential of async programming with MINAR, let's look at the one of MINAR's test programs - [the complex dispatch](https://github.com/ARMmbed/minar/blob/master/test/complex_dispatch.cpp). 
 
 ##### The code
 
