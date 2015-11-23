@@ -12,6 +12,8 @@ Currently available:
 
 * [Security with mbed TLS](mbed_tls.md): Using mbed TLS for communication security in mbed OS.
 
+* [Scheduling with MINAR](MINAR.md): Using the mbed OS schedular MINAR for asynchronous programming. 
+
 * [Memory in mbed OS](memory.md): Memory management and allocation in mbed OS. 
 
 * [Networking with mbed OS](networking.md): Networking options and structure on mbed OS.
