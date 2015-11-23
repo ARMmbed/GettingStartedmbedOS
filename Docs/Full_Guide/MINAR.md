@@ -410,10 +410,10 @@ using mbed::util::FunctionPointer1; // for a function with one argument
 We could then use ``FunctionPointer0`` and ``FunctionPointer1`` as shorthand:
 
 ```C++
-	minar::Scheduler::postCallback(FunctionPointer0<void>
-		(&led1, &LED::callback_no_increment).bind())
-		.delay(minar::milliseconds(500))
-		.tolerance(minar::milliseconds(100));
+minar::Scheduler::postCallback(FunctionPointer0<void>
+	(&led1, &LED::callback_no_increment).bind())
+	.delay(minar::milliseconds(500))
+	.tolerance(minar::milliseconds(100));
 
 ```
 
