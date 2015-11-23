@@ -10,7 +10,7 @@ The following diagram shows a system handling three tasks in a single thread:
 
 ### An introduction to async on mbed OS
 
-mbed OS is by default a single-threaded, event driven architecture. It relies on MINAR, a simple event scheduler that provides services for user and system events. Your application uses async by creating callbacks (functions that will be executed at a later time). Callbacks are scheduled using MINAR, which executes the callbacks based on [their schedule parameters]() and [other considerations](), and puts the MCU to sleep if there's nothing to run.
+mbed OS is by default a single-threaded, event driven architecture. It relies on MINAR, a simple event scheduler that provides services for user and system events. Your application uses async by creating callbacks (functions that will be executed at a later time). Callbacks are scheduled using MINAR, which executes the callbacks based on their schedule parameters and [other considerations](#Managing-the-queue), and puts the MCU to sleep if there's nothing to run.
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** For most IoT applications, an event-driven paradigm is a very natural fit. However, for those applications that do require multithreading functionality, we intend to re-introduce it in 2016, after integrating it with our security and power management components.</span> 
 
@@ -20,7 +20,7 @@ mbed OS is by default a single-threaded, event driven architecture. It relies on
 [MINAR](https://github.com/ARMmbed/minar) is the mbed OS event scheduler. Applications use it to control the execution of potentially blocking functions. 
 #### MINAR and app_start()
 
-mbed OS applications start with the [function ``app_start``]() (instead of ``main``). mbed OS starts MINAR's infinite event scheduler loop before ``app_start``, and the loop continues to run even after ``app_start`` exits.
+mbed OS applications start with the [function ``app_start``](../Full_Guide/app_on_mbed_os.md#app_start-starting-the-application) (instead of ``main``). mbed OS starts MINAR's infinite event scheduler loop before ``app_start``, and the loop continues to run even after ``app_start`` exits.
 
 #### Blocking functions
 
@@ -93,13 +93,13 @@ void app_start(int, char**){
 
 ```
 
-We'll see an example of [an interrupt handler]() later.
+We'll see an example of [an interrupt handler](#a-single-event-from-an-interrupt-handler) later.
 
 #### Function pointers and binding in MINAR
 
 mbed OS uses function pointers. The functionality comes from ``core-util/FunctionPointer.h``, which includes ``FunctionPointerBase.h`` and ``FunctionPointerBind.h``.
 
-In MINAR, an event is a pointer to a function, plus a specific binding of the function's arguments. The event is created from a ``FunctionPointer`` by calling its ``bind`` method. ``bind`` takes a set of fixed values for the function's arguments (if the function has arguments) and creates a ``FunctionPointerBind`` instance. ``FunctionPointerBind`` keeps a copy of those fixed values and allows us to call the function later with those fixed arguments without having to specify them again. Here's an example [we'll review in full later]():
+In MINAR, an event is a pointer to a function, plus a specific binding of the function's arguments. The event is created from a ``FunctionPointer`` by calling its ``bind`` method. ``bind`` takes a set of fixed values for the function's arguments (if the function has arguments) and creates a ``FunctionPointerBind`` instance. ``FunctionPointerBind`` keeps a copy of those fixed values and allows us to call the function later with those fixed arguments without having to specify them again. Here's an example:
 
 ```C++
 FunctionPointer1<void, const char*> fp(cb_msg_and_increment);
@@ -119,7 +119,7 @@ A MINAR event is simply a ``FunctionPointerBind`` for functions that don't retur
 typedef FunctionPointerBind<void> Event;
 ```
 
-In conclusion, you can schedule any kind of function with various arguments by instantiating the [proper ``FunctionPointer`` class]() with that function and then calling ``bind`` on the ``FunctionPointer`` instance. This will work so long as the function doesn't return anything and the total storage space required for its arguments is less than the fixed storage size in ``FunctionPointerBind``.
+In conclusion, you can schedule any kind of function with various arguments by instantiating the [proper ``FunctionPointer`` class](#function-pointers-by-number-of-arguments-for-binding) with that function and then calling ``bind`` on the ``FunctionPointer`` instance. This will work so long as the function doesn't return anything and the total storage space required for its arguments is less than the fixed storage size in ``FunctionPointerBind``.
 
 ##### Function pointers by number of arguments for binding
 
@@ -130,7 +130,7 @@ Function pointers in mbed OS can have between zero and three arguments, and the 
 * ``FunctionPointer2`` - a class for functions with two arguments.
 * ``FunctionPointer3`` - a class for functions with three arguments.
 
-We'll explore function pointers in greater detail in [our examples]().
+We'll explore function pointers in greater detail in [our examples](#function-pointers-with-different-argument-numbers).
 
 ##### Using temporary objects as MINAR events 
 
@@ -177,7 +177,7 @@ A simplified explanation of MINAR is that, at any given time, it can do one of t
 
 * MINAR adds every task to its internal event queue as a first step. Tasks in MINAR are always ordered by their execution deadline.
 
-* MINAR will run a task that has reached the head of the queue if its execution deadline was reached. Note that tasks can ["jump" to the head of the queue](); we'll look into it below.
+* MINAR will run a task that has reached the head of the queue if its execution deadline was reached.
 
 * MINAR will put the MCU to sleep only if it can't run any task, either because the queue is empty or because it’s not yet the execution deadline for the task at the head of the queue.
 
@@ -207,7 +207,7 @@ When we add a task to MINAR's queue, we can use three parameters that give MINAR
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip**: The parameters are expressed in ticks (see below).</span>
 
-The call to MINAR treats the parameters as attributes of the [callback event](). Our [code samples]() will show how to use these correctly.
+The call to MINAR treats the parameters as attributes of the callback event. Our [code samples](#a-single-event-from-an-interrupt-handler) will show how to use these correctly.
 
 Boards measure intervals with ticks. Because different boards have different tick durations, and we want our code to work the same on every board, we don't want to use ticks directly. Instead, MINAR knows how to interpret regular time - in milliseconds - to board-specific ticks. The function `minar::milliseconds` can be used to convert between ticks and milliseconds. If you need to convert from milliseconds to ticks, you can use `minar::ticks`
 
@@ -215,7 +215,7 @@ Boards measure intervals with ticks. Because different boards have different tic
 
 To show how to use interrupts with MINAR, we're going to create an application that uses a GPIO input (a button) to turn the LED on our board on and off. Because we don't know when we'll press the button, we can't simply schedule the function that blinks the LED to run as soon as the app starts - we'll get stuck in that function. Instead, we'll create an interrupt handler to respond to the physical interrupt coming from a button press. The interrupt handler itself will send the LED toggle function to MINAR, and MINAR will schedule it to run. 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Get the [code for this example here](https://github.com/ARMmbed/example-mbedos-interruptin). The code is functional and you can [build and run it on your board]().</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Get the [code for this example here](https://github.com/ARMmbed/example-mbedos-interruptin). The code is functional and you can [build and run it on your board](../FirstProjectmbedOS.md).</span>
 
 #### A single event from an interrupt handler
 
@@ -271,7 +271,7 @@ minar::Scheduler::postCallback(toggle_led);
 
 ``postCallback`` adds the event to MINAR's queue. 
 
-This is a very simple call, because the ``toggle_led`` function doesn't accept parameters, and we didn't want to send event parameters to MINAR, either. Our [next example]() will show a more complicated use of ``postCallback``.
+This is a very simple call, because the ``toggle_led`` function doesn't accept parameters, and we didn't want to send event parameters to MINAR, either. Our [next example](#multiple-events) will show a more complicated use of ``postCallback``.
 
 ##### Potential blocking functions
 
@@ -287,9 +287,9 @@ In mbed OS applications, we don't want blocking functions. The correct way to ha
 
 ##### InterruptIn
 
-``InterruptIn.h`` is part of ``mbed-drivers``. It associates its functionality with a pin-name, based on the board's ``PinNames.h``. We'll see the details of ``PinNames.h`` in our [GPIO implementation example](). 
+``InterruptIn.h`` is part of ``mbed-drivers``. It associates its functionality with a pin-name, based on the board's ``PinNames.h``. We'll see the details of ``PinNames.h`` in our GPIO implementation example (which will be published soon). 
 
-The pin name we provided here is SW2. On the FRDM-K64F, SW2 is mapped to PTC6, which we can find on the board's pinout (see the [GPIO implementation example]() for more details).
+The pin name we provided here is SW2. On the FRDM-K64F, SW2 is mapped to PTC6, which we can find on the board's pinout.
 
 So the line ``static InterruptIn user_sw(SW2);`` creates an association between SW2/PTC6 and the functionality of ``InterruptIn``. It creates it on an instance called ``user_sw``. 
 
@@ -298,7 +298,7 @@ The InterruptIn's functionality we're using here is ``rise``: ``user_sw.rise(swi
 
 The important thing here is that the function ``switch_pressed`` isn't called at some random time; it's called only when a signal arrives from the input on SW2. In other words, ``switch_pressed`` - which requires the input to complete its run - is called only when it can run fully. 
 
-We can see this easily by comparing the main function - ``app_start`` - of this example with our [standard Blinky example]() (which turns the LED on and off periodically, without user input):
+We can see this easily by comparing the main function - ``app_start`` - of this example with our [standard Blinky example](../FirstProjectmbedOS.md) (which turns the LED on and off periodically, without user input):
 
 __Blinky__
 
@@ -398,7 +398,7 @@ void app_start(int, char*[]) {
 
 ##### Function pointers with different argument numbers
 
-This example uses two of the [function pointer classes we introduced earlier](): one for a function with zero arguments, and one for a function with a single argument.
+This example uses two of the [function pointer classes we introduced earlier](#function-pointers-by-number-of-arguments-for-binding): one for a function with zero arguments, and one for a function with a single argument.
 
 To use the functions without cluttering up the code, we start by declaring ``mbed::util``:
 
@@ -419,7 +419,7 @@ We could then use ``FunctionPointer0`` and ``FunctionPointer1`` as shorthand:
 
 ##### MINAR event attributes
 
-This example uses the attributes we introduced [earlier]() to schedule a series of callbacks.
+This example uses the attributes we introduced earlier to schedule a series of callbacks.
 
 ```C++
 // The next callback will run once, after a delay
