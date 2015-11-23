@@ -11,7 +11,7 @@ pages:
 - ['Full_Guide/app_on_mbed_os.md', 'mbed OS User Guide', 'Writing applications for mbed OS']
 - ['Full_Guide/Debugging.md', 'mbed OS User Guide', 'Debugging mbed OS applications']
 - ['Full_Guide/mbed_tls.md', 'mbed OS User Guide', 'Security with mbed TLS']
-- ['Full_Guide/MINAR.md', 'mbed OS User Guide', 'Scheduling with MINAR']
+- ['Full_Guide/MINAR.md', 'mbed OS User Guide', 'Asynchronous programming with MINAR']
 - ['Full_Guide/memory.md', 'mbed OS User Guide', 'Memory in mbed OS']
 - ['Full_Guide/networking.md', 'mbed OS User Guide', 'Networking in mbed OS']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
