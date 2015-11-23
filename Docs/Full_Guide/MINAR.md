@@ -6,7 +6,7 @@ In async programming we don't wait for blocking tasks to finish, but we also don
 
 The following diagram shows a system handling three tasks in a single thread:
 
-![](../Images/async.png)
+![](../Full_Guide/Images/async.png)
 
 
 
@@ -90,17 +90,13 @@ interrupt_handler(){
 
 void app_start(int, char**){
 
-	
-	
-	// Set up the interrupt handler for the button and return. No need to wait for the
+// Set up the interrupt handler for the button and return. No need to wait for the
 // button to be pressed in a busy waiting loop.
 {
 
 ```
 
 We'll see an example of [an interrupt handler]() later.
-
-
 
 #### Function pointers and binding in MINAR
 
@@ -109,11 +105,11 @@ mbed OS uses function pointers. The functionality comes from ``core-util/Functio
 In MINAR, an event is a pointer to a function, plus a specific binding of the function's arguments. The event is created from a ``FunctionPointer`` by calling its ``bind`` method. ``bind`` takes a set of fixed values for the function's arguments (if the function has arguments) and creates a ``FunctionPointerBind`` instance. ``FunctionPointerBind`` keeps a copy of those fixed values and allows us to call the function later with those fixed arguments without having to specify them again. Here's an example [we'll review in full later]():
 
 ```C++
-    FunctionPointer1<void, const char*> fp(cb_msg_and_increment);
-    // Schedule this one to run after a while
-    minar::Scheduler::postCallback(fp.bind("postCallbackWithDelay..."))
-        .delay(minar::milliseconds(5000))
-        .tolerance(minar::milliseconds(200))
+FunctionPointer1<void, const char*> fp(cb_msg_and_increment);
+// Schedule this one to run after a while
+minar::Scheduler::postCallback(fp.bind("postCallbackWithDelay..."))
+	.delay(minar::milliseconds(5000))
+	.tolerance(minar::milliseconds(200))
 ```
 
 The size of storage for the argument's values in ``FunctionPointerBind`` is fixed, which means that all ``FunctionPointerBind`` instances have the same size in memory. If the combined size of the arguments of ``bind`` is larger than the size of storage in ``FunctionPointerBind``, you'll get a compiler error.
@@ -121,7 +117,8 @@ The size of storage for the argument's values in ``FunctionPointerBind`` is fixe
 A MINAR event is simply a ``FunctionPointerBind`` for functions that don't return any arguments:
 
 ```C++
-typedef FunctionPointerBind<void> Event; ```
+typedef FunctionPointerBind<void> Event;
+```
 
 In conclusion, you can schedule any kind of function with various arguments by instantiating the [proper ``FunctionPointer`` class]() with that function and then calling ``bind`` on the ``FunctionPointer`` instance. This will work so long as the function doesn't return anything and the total storage space required for its arguments is less than the fixed storage size in ``FunctionPointerBind``.
 
@@ -138,7 +135,6 @@ We'll explore function pointers in greater detail in [our examples]().
 
 ##### Using temporary objects as MINAR events 
 
-
 An important thing to keep in mind is that **events are passed to MINAR by value**. When MINAR receives an event, it will make a copy of the event in an internal storage area, so even if the original event object gets out of scope, MINAR will still be able to call the corresponding function with its correct arguments later. This means that you don't have to worry if the event object goes out of scope after you call ``postCallback``, so it's safe to use temporary objects.
 
 Be careful though: MINAR only keeps a copy of the event instance itself and nothing else outside that. If the event is bound to an object that goes out of scope before the event is scheduled, your program will likely not behave as expected (and might even crash).
@@ -149,33 +145,30 @@ public:
 	A(int i): _i(i) {
 	}
 
-    int f() {
-	    printf("i = %d", _i);
-    }
+ 	int f() {
+	 	printf("i = %d", _i);
+ 	}
 
 private:
-    int _i;
+ 	int _i;
 };
 
 void test() {
-    A a(10);
-    // The intention is to call a.f() after 100ms
-    minar::Scheduler::postCallback(FunctionPointer0<void>(&a, &A::f).bind()).
-        delay(minar::milliseconds(100));
-    // 'test' will exit immediately after `postCallback` above finishes
-    // and 'a' will go out of scope. 100ms later, MINAR will try to call
-    // 'A::f' on an instance that does not exist anymore ('a'), which leads
-    // to undefined behaviour.
+ 	A a(10);
+ 	// The intention is to call a.f() after 100ms
+ 	minar::Scheduler::postCallback(FunctionPointer0<void>(&a, &A::f).bind()).
+ 		delay(minar::milliseconds(100));
+ 	// 'test' will exit immediately after `postCallback` above finishes
+	// and 'a' will go out of scope. 100ms later, MINAR will try to call
+	// 'A::f' on an instance that does not exist anymore ('a'), which leads
+	// to undefined behaviour.
 }
 ```
 
 
 ### How MINAR schedules tasks
 
-
 mbed OS uses MINAR in the background to schedule system tasks, but if you want to use it with your own functionality, you have to explicitly call it and add tasks to its queue.
-
-
 
 #### MINAR general scheduling logic
 
@@ -186,8 +179,6 @@ A simplified explanation of MINAR is that, at any given time, it can do one of t
 * MINAR will run a task that has reached the head of the queue if its execution deadline was reached. Note that tasks can ["jump" to the head of the queue](); we'll look into it below.
 
 * MINAR will put the MCU to sleep only if it can't run any task, either because the queue is empty or because it’s not yet the execution deadline for the task at the head of the queue.
-
-
 
 #### MINAR implications for application code
 
@@ -200,7 +191,6 @@ The implications are:
 * Don't use infinite loops. There is a single infinite loop in the system: the MINAR event loop. Any other infinite loop (in the user code or libraries) would cause MINAR to stop running.
 
 * Don’t queue a function that needs data that is not available yet. For example, don’t queue a function that displays data received from the serial port until the data is available, because that requires blocking until the data is read from the port.
-
 
 #### Managing the queue
 
@@ -218,10 +208,6 @@ When we add a task to MINAR's queue, we can use three parameters that give MINAR
 The call to MINAR treats the parameters as attributes of the [callback event](). Our [code samples]() will show how to use these correctly.
 
 Boards measure intervals with ticks. Because different boards have different tick durations, and we want our code to work the same on every board, we don't want to use ticks directly. Instead, MINAR knows how to interpret regular time - in milliseconds - to board-specific ticks. The function `minar::milliseconds` can be used to convert between ticks and milliseconds. If you need to convert from milliseconds to ticks, you can use `minar::ticks`
-
-
-
-
 
 ### How to add a task to MINAR's queue
 
@@ -246,28 +232,29 @@ static void toggle_led(void) {
 
 static void switch_pressed(void) {
 
-    /* Each time the switch is pressed, MINAR calls toggle_led.
-       Since it's called by MINAR, toggle_led will run in user context,
-       unlike 'switch_pressed' which runs in interrupt context. */
+	/* Each time the switch is pressed, MINAR calls toggle_led.
+		Since it's called by MINAR, toggle_led will run in user context,
+		unlike 'switch_pressed' which runs in interrupt context. */
 
-    minar::Scheduler::postCallback(toggle_led);
+	minar::Scheduler::postCallback(toggle_led);
 
-    /* In this case, calling 'toggled_led' directly from this function
-       (in an interrupt context) would've worked fine, since that's a
-       very fast function and doesn't introduce race conditions. */
+	/* In this case, calling 'toggled_led' directly from this function
+		(in an interrupt context) would've worked fine, since that's a	
+		very fast function and doesn't introduce race conditions. */
 }
 
 void app_start(int, char**) {
-    static InterruptIn user_sw(SW2);
-    user_sw.rise(switch_pressed);
+	static InterruptIn user_sw(SW2);
+	user_sw.rise(switch_pressed);
 
-    /* 'app_start' will exit at this point, but MINAR will continue to run
-       after 'app_start' exits. Note though that 'user_sw' needs to be
-       declared 'static', otherwise it'll get out of scope when 'app_start'
-       exits, which is clearly not what we want. */
+	/* 'app_start' will exit at this point, but MINAR will continue to run
+		after 'app_start' exits. Note though that 'user_sw' needs to be
+		declared 'static', otherwise it'll get out of scope when 'app_start'
+		exits, which is clearly not what we want. */
 }
 
 ```
+
 **Note:** Including ``mbed.h`` implicitly includes ``minar.h``; there is no need to explicitly include any MINAR libraries and headers.
 
 ##### Using postCallback to add an event to the queue
@@ -275,7 +262,7 @@ void app_start(int, char**) {
 To schedule an event, we call the ``postCallback`` function in MINAR. For example, in the function ``switch_pressed``:
 
 ```C++
-   minar::Scheduler::postCallback(toggle_led);
+minar::Scheduler::postCallback(toggle_led);
 
 ```
 
@@ -288,9 +275,9 @@ This is a very simple call, because the ``toggle_led`` function doesn't accept p
 
 Here's an example of a blocking function:
 
-	1.	Call ``switch_pressed`` as soon as the application starts.
-	2.	In ``switch_pressed``, define a change in the switch status as a condition for the function's completion.
-	3.	Define an action, like a LED toggle.
+1. Call ``switch_pressed`` as soon as the application starts.
+1. In ``switch_pressed``, define a change in the switch status as a condition for the function's completion.
+1. Define an action, like a LED toggle.
 
 The reason this function is blocking is that it can't get past step 2 until the user interacts with the switch and changes its status.
 
@@ -322,8 +309,8 @@ __Current example__
 
 ```C++
 void app_start(int, char**) {
-    static InterruptIn user_sw(SW2);
-    user_sw.rise(switch_pressed);
+	static InterruptIn user_sw(SW2);
+	user_sw.rise(switch_pressed);
 }
 ```
 
@@ -334,9 +321,9 @@ Blinky isn't waiting on input, so the first (and only) action of the main functi
 In mbed Classic, waiting for an event was only possible while ``main`` (or some other function in the application) was running. To be able to work with event handlers, we kept ``main`` running using infinite loops:
 
 ```C++
-    while (true) {
-        object.waitForEvent();
-    }
+	while (true) {
+		object.waitForEvent();
+	}
 
 ```
 
@@ -371,36 +358,36 @@ static void stop_scheduler() {
 
 void app_start(int, char*[]) {
 
-// [..lots of code..]
+// [lots of code]
 
-    // The next callback will run once
-    minar::Scheduler::postCallback(FunctionPointer0<void>(&led1, &LED::callback_no_increment).bind())
-        .delay(minar::milliseconds(500))
-        .tolerance(minar::milliseconds(100));
+// The next callback will run once
+	minar::Scheduler::postCallback(FunctionPointer0<void>(&led1, &LED::callback_no_increment).bind())
+		.delay(minar::milliseconds(500))
+		.tolerance(minar::milliseconds(100));
 
-    // The next callback will be the only periodic one
-    minar::Scheduler::postCallback(FunctionPointer0<void>(&led2, &LED::callback_and_increment).bind())
-        .period(minar::milliseconds(650))
-        .tolerance(minar::milliseconds(100));
+	// The next callback will be the only periodic one
+	minar::Scheduler::postCallback(FunctionPointer0<void>(&led2, &LED::callback_and_increment).bind())
+		.period(minar::milliseconds(650))
+		.tolerance(minar::milliseconds(100));
 
-    FunctionPointer1<void, const char*> fp(cb_msg_and_increment);
-    // Schedule this one to run after a while
-    minar::Scheduler::postCallback(fp.bind("postCallbackWithDelay..."))
-        .delay(minar::milliseconds(5000))
-        .tolerance(minar::milliseconds(200));
+	FunctionPointer1<void, const char*> fp(cb_msg_and_increment);
+	// Schedule this one to run after a while
+	minar::Scheduler::postCallback(fp.bind("postCallbackWithDelay..."))
+		.delay(minar::milliseconds(5000))
+		.tolerance(minar::milliseconds(200));
 
-    // Schedule this one to run immediately
-    minar::Scheduler::postCallback(fp.bind("postImmediate"))
-        .tolerance(minar::milliseconds(200));
+	// Schedule this one to run immediately
+	minar::Scheduler::postCallback(fp.bind("postImmediate"))
+		.tolerance(minar::milliseconds(200));
 
-    // Stop the scheduler after enough time has passed
-    minar::Scheduler::postCallback(stop_scheduler)
-        .delay(minar::milliseconds(30000))
-        .tolerance(minar::milliseconds(3000));
+	// Stop the scheduler after enough time has passed
+	minar::Scheduler::postCallback(stop_scheduler)
+		.delay(minar::milliseconds(30000))
+		.tolerance(minar::milliseconds(3000));
 
-    int cb_cnt = minar::Scheduler::start(); // this will return after stop_scheduler above is executed
+	int cb_cnt = minar::Scheduler::start(); // this will return after stop_scheduler above is executed
 
-// [... lots of code…]
+// [lots of code]
 }
 
 ```
@@ -434,14 +421,14 @@ This example uses the attributes we introduced [earlier]() to schedule a series 
 
 ```C++
 // The next callback will run once, after a delay
-    minar::Scheduler::postCallback(FunctionPointer0<void>(&led1, &LED::callback_no_increment).bind())
-        .delay(minar::milliseconds(500))
-        .tolerance(minar::milliseconds(100));
+	minar::Scheduler::postCallback(FunctionPointer0<void>(&led1, &LED::callback_no_increment).bind())
+		.delay(minar::milliseconds(500))
+		.tolerance(minar::milliseconds(100));
 
-    // The next callback will run periodically
-    minar::Scheduler::postCallback(FunctionPointer0<void>(&led2, &LED::callback_and_increment).bind())
-        .period(minar::milliseconds(650))
-        .tolerance(minar::milliseconds(100));
+	// The next callback will run periodically
+	minar::Scheduler::postCallback(FunctionPointer0<void>(&led2, &LED::callback_and_increment).bind())
+		.period(minar::milliseconds(650))
+		.tolerance(minar::milliseconds(100));
 ```
 
 You have to remember that MINAR will not run one callback if another callback is executing. That means that when you design the callback sequence, it's important to take into account their performance time, delay and tolerance. Because the first callback in our example has a delay of 500ms and a tolerance of 100ms, it could take up to 600ms to start running. We therefore gave the next callback a period of 650ms and a tolerance of 100ms, meaning its first run can start 750ms after the first callback without causing problems.
