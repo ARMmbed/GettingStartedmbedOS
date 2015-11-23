@@ -1,4 +1,4 @@
-## Asynchronous programming
+# Asynchronous programming
 
 Asynchronous (or *async*) programming is a solution for working with multiple, potentially blocking, tasks. Async programming is an alternative to synchronous programming, where we must wait for a task to finish before moving on to the next task; and to multithread programming, which is more complicated to implement. 
 
@@ -8,21 +8,21 @@ The following diagram shows a system handling three tasks in a single thread:
 
 <span style="background-color: #F0F0F5; display:block; height:100%; padding:10px;">![](../Full_Guide/Images/async.png)</span>
 
-### An introduction to async on mbed OS
+## An introduction to async on mbed OS
 
 mbed OS is by default a single-threaded, event driven architecture. It relies on MINAR, a simple event scheduler that provides services for user and system events. Your application uses async by creating callbacks (functions that will be executed at a later time). Callbacks are scheduled using MINAR, which executes the callbacks based on their schedule parameters and [other considerations](#Managing-the-queue), and puts the MCU to sleep if there's nothing to run.
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** For most IoT applications, an event-driven paradigm is a very natural fit. However, for those applications that do require multithreading functionality, we intend to re-introduce it in 2016, after integrating it with our security and power management components.</span> 
 
 
-### MINAR and event handlers
+## MINAR and event handlers
 
 [MINAR](https://github.com/ARMmbed/minar) is the mbed OS event scheduler. Applications use it to control the execution of potentially blocking functions. 
 #### MINAR and app_start()
 
 mbed OS applications start with the [function ``app_start``](../Full_Guide/app_on_mbed_os.md#app_start-starting-the-application) (instead of ``main``). mbed OS starts MINAR's infinite event scheduler loop before ``app_start``, and the loop continues to run even after ``app_start`` exits.
 
-#### Blocking functions
+### Blocking functions
 
 A blocking function is one that can potentially run for a very long time, with the result that other functions can't run. For example, it might depend on getting information from a network server. If the actions of waiting for the server response and responding to it are both in the same function, the application will wait for the response, and won't be able to move on to the next action until the server responds. We won't be able to do anything:
 
@@ -41,7 +41,7 @@ call to some_other_function;
 
 ```
 
-#### Using asynchronous functions to avoid blocking behaviour
+### Using asynchronous functions to avoid blocking behaviour
 
 With asynchronous functions, a typical use case is to “split” any blocking action into three phases:
 
@@ -71,7 +71,7 @@ call to some_other_function;
 }
 
 ```
-#### Inputs and interrupt handlers for MINAR
+### Inputs and interrupt handlers for MINAR
 
 To avoid blocking functions, we don't trigger a function until we get the input it needs. Instead, we use interrupt handlers: events triggered by a physical interrupt from an MCU peripheral. The input's arrival is the very action that adds the function to MINAR:
 
@@ -95,7 +95,7 @@ void app_start(int, char**){
 
 We'll see an example of [an interrupt handler](#a-single-event-from-an-interrupt-handler) later.
 
-#### Function pointers and binding in MINAR
+### Function pointers and binding in MINAR
 
 mbed OS uses function pointers. The functionality comes from ``core-util/FunctionPointer.h``, which includes ``FunctionPointerBase.h`` and ``FunctionPointerBind.h``.
 
@@ -121,7 +121,7 @@ typedef FunctionPointerBind<void> Event;
 
 In conclusion, you can schedule any kind of function with various arguments by instantiating the [proper ``FunctionPointer`` class](#function-pointers-by-number-of-arguments-for-binding) with that function and then calling ``bind`` on the ``FunctionPointer`` instance. This will work so long as the function doesn't return anything and the total storage space required for its arguments is less than the fixed storage size in ``FunctionPointerBind``.
 
-##### Function pointers by number of arguments for binding
+#### Function pointers by number of arguments for binding
 
 Function pointers in mbed OS can have between zero and three arguments, and the binding is performed in ``FunctionPointer.h`` by one of four classes: 
 
@@ -132,7 +132,7 @@ Function pointers in mbed OS can have between zero and three arguments, and the 
 
 We'll explore function pointers in greater detail in [our examples](#function-pointers-with-different-argument-numbers).
 
-##### Using temporary objects as MINAR events 
+#### Using temporary objects as MINAR events 
 
 An important thing to keep in mind is that **events are passed to MINAR by value**. When MINAR receives an event, it will make a copy of the event in an internal storage area, so even if the original event object gets out of scope, MINAR will still be able to call the corresponding function with its correct arguments later. This means that you don't have to worry if the event object goes out of scope after you call ``postCallback``, so it's safe to use temporary objects.
 
@@ -167,7 +167,7 @@ void test() {
 ```
 
 
-### How MINAR schedules tasks
+## How MINAR schedules tasks
 
 mbed OS uses MINAR in the background to schedule system tasks, but if you want to use it with your own functionality, you have to explicitly call it and add tasks to its queue.
 
@@ -181,7 +181,7 @@ A simplified explanation of MINAR is that, at any given time, it can do one of t
 
 * MINAR will put the MCU to sleep only if it can't run any task, either because the queue is empty or because it’s not yet the execution deadline for the task at the head of the queue.
 
-#### MINAR implications for application code
+### MINAR implications for application code
 
 MINAR is not a pre-emptive scheduler - it gets control back from an event only when that event exits, not while the event is running. This means it's not a real-time scheduler. 
 
@@ -193,11 +193,11 @@ The implications are:
 
 * Don’t queue a function that needs data that is not available yet. For example, don’t queue a function that displays data received from the serial port until the data is available, because that requires blocking until the data is read from the port.
 
-#### Managing the queue
+### Managing the queue
 
 It's important to understand how MINAR manages the queue before writing applications. MINAR is designed to optimize power consumption, but because it also tries not to take control of the application away from you, it is programmable - leaving you with some responsibility. 
 
-##### Scheduling parameters (event attributes) and ticks
+#### Scheduling parameters (event attributes) and ticks
 
 When we add a task to MINAR's queue, we can use three parameters that give MINAR more information about scheduling the task:
 
@@ -211,17 +211,17 @@ The call to MINAR treats the parameters as attributes of the callback event. Our
 
 Boards measure intervals with ticks. Because different boards have different tick durations, and we want our code to work the same on every board, we don't want to use ticks directly. Instead, MINAR knows how to interpret regular time - in milliseconds - to board-specific ticks. The function `minar::milliseconds` can be used to convert between ticks and milliseconds. If you need to convert from milliseconds to ticks, you can use `minar::ticks`
 
-### How to add a task to MINAR's queue
+## How to add a task to MINAR's queue
 
 To show how to use interrupts with MINAR, we're going to create an application that uses a GPIO input (a button) to turn the LED on our board on and off. Because we don't know when we'll press the button, we can't simply schedule the function that blinks the LED to run as soon as the app starts - we'll get stuck in that function. Instead, we'll create an interrupt handler to respond to the physical interrupt coming from a button press. The interrupt handler itself will send the LED toggle function to MINAR, and MINAR will schedule it to run. 
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Get the [code for this example here](https://github.com/ARMmbed/example-mbedos-interruptin). The code is functional and you can [build and run it on your board](../FirstProjectmbedOS.md).</span>
 
-#### A single event from an interrupt handler
+### A single event from an interrupt handler
 
 This is the complete code for an application that turns the LED on our board on and off when we press a button.
 
-##### The code
+#### The code
 
 ```C++
 
@@ -260,7 +260,7 @@ void app_start(int, char**) {
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** Including ``mbed.h`` implicitly includes ``minar.h``; there is no need to explicitly include any MINAR libraries and headers.</span>
 
-##### Using postCallback to add an event to the queue
+#### Using postCallback to add an event to the queue
 
 To schedule an event, we call the ``postCallback`` function in MINAR. For example, in the function ``switch_pressed``:
 
@@ -273,7 +273,7 @@ minar::Scheduler::postCallback(toggle_led);
 
 This is a very simple call, because the ``toggle_led`` function doesn't accept parameters, and we didn't want to send event parameters to MINAR, either. Our [next example](#multiple-events) will show a more complicated use of ``postCallback``.
 
-##### Potential blocking functions
+#### Potential blocking functions
 
 Here's an example of a blocking function:
 
@@ -285,7 +285,7 @@ The reason this function is blocking is that it can't get past step 2 until the 
 
 In mbed OS applications, we don't want blocking functions. The correct way to handle input-dependent functions is to schedule them only when their input arrives. In this example, we used ``InterruptIn`` to do that.
 
-##### InterruptIn
+#### InterruptIn
 
 ``InterruptIn.h`` is part of ``mbed-drivers``. It associates its functionality with a pin-name, based on the board's ``PinNames.h``. We'll see the details of ``PinNames.h`` in our GPIO implementation example (which will be published soon). 
 
@@ -294,7 +294,8 @@ The pin name we provided here is SW2. On the FRDM-K64F, SW2 is mapped to PTC6, w
 So the line ``static InterruptIn user_sw(SW2);`` creates an association between SW2/PTC6 and the functionality of ``InterruptIn``. It creates it on an instance called ``user_sw``. 
 
 The InterruptIn's functionality we're using here is ``rise``: ``user_sw.rise(switch_pressed)``. It detects a rising edge on the input. The response to that rising edge is to call the function ``switch_pressed``.
-##### Using InterruptIn to call functions in a non-blocking manner
+
+#### Using InterruptIn to call functions in a non-blocking manner
 
 The important thing here is that the function ``switch_pressed`` isn't called at some random time; it's called only when a signal arrives from the input on SW2. In other words, ``switch_pressed`` - which requires the input to complete its run - is called only when it can run fully. 
 
@@ -318,7 +319,7 @@ void app_start(int, char**) {
 
 Blinky isn't waiting on input, so the first (and only) action of the main function is to call MINAR. Our current example, on the other hand, doesn't directly call MINAR at all - it sets up an interrupt handler, which calls the function that calls MINAR (``switch_pressed``) when the button is pressed.
 
-##### MINAR when app_start() exits
+#### MINAR when app_start() exits
 
 In mbed Classic, waiting for an event was only possible while ``main`` (or some other function in the application) was running. To be able to work with event handlers, we kept ``main`` running using infinite loops:
 
@@ -334,11 +335,12 @@ But in mbed OS, as we explained earlier, the scheduler MINAR is independent of t
 Our use of event handlers and function pointers (which we'll explore again in the next example) means that MINAR will know what to do when the button on the board is pressed. 
 
 So although we used a very simple example, we saw a few important MINAR principles, not least that MINAR saves us the trouble of writing infinite loops (in fact, MINAR can't work properly if there's an infinite loop in our code). The next example will show more complicated calls.
-#### Multiple events
+
+### Multiple events
 
 To see a bit of the potential of async programming with MINAR, let's look at the one of MINAR's test programs - [the complex dispatch](https://github.com/ARMmbed/minar/blob/master/test/complex_dispatch.cpp). 
 
-##### The code
+#### The code
 
 ```C++
 
@@ -396,7 +398,7 @@ void app_start(int, char*[]) {
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** This example shows only the sections of the code relevant to MINAR. If you want to see the full code, please see the [GitHub repository](https://github.com/ARMmbed/minar/blob/master/test/complex_dispatch.cpp).</span>
 
-##### Function pointers with different argument numbers
+#### Function pointers with different argument numbers
 
 This example uses two of the [function pointer classes we introduced earlier](#function-pointers-by-number-of-arguments-for-binding): one for a function with zero arguments, and one for a function with a single argument.
 
@@ -417,7 +419,7 @@ minar::Scheduler::postCallback(FunctionPointer0<void>
 
 ```
 
-##### MINAR event attributes
+#### MINAR event attributes
 
 This example uses the attributes we introduced earlier to schedule a series of callbacks.
 
