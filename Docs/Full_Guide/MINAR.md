@@ -230,7 +230,7 @@ This is the complete code for an application that turns the LED on our board on 
 static DigitalOut led(LED1);
 
 static void toggle_led(void) {
-    led = !led;
+	led = !led;
 }
 
 static void switch_pressed(void) {
@@ -304,7 +304,7 @@ We can see this easily by comparing the main function - ``app_start`` - of this 
 __Blinky__
 
 ```C++
-void app_start(int, char**){    minar::Scheduler::postCallback(blinky).period(minar::milliseconds(500));
+void app_start(int, char**){ minar::Scheduler::postCallback(blinky).period(minar::milliseconds(500));
 }
 ```
 
@@ -356,8 +356,8 @@ using mbed::util::FunctionPointer1;
 // Lots of code that includes the functions that will be called later: callback_no_increment, callback_and_increment, cb_msg_and_increment
 
 static void stop_scheduler() {
-    printf("Stopping scheduler...\r\n");
-    minar::Scheduler::stop();
+	printf("Stopping scheduler...\r\n");
+	minar::Scheduler::stop();
 }
 
 void app_start(int, char*[]) {
