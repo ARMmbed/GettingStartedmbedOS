@@ -62,7 +62,7 @@ void app_start(int, char**) {
 
 ### MINAR
 
-mbed OS starts MINAR (that chapter will be published soon) implicitly; you only need to call it explicitly if you want to pass to it a particular function that will be executed later (using ``postCallback``).
+mbed OS starts MINAR implicitly; you only need to call it explicitly if you want to pass to it a particular function that will be executed later (using ``postCallback``).
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** See the [MINAR chapter](MINAR.md) for more information.</span>
 
