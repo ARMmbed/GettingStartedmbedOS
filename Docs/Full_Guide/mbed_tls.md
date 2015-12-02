@@ -13,7 +13,7 @@ Currently the only supported yotta targets are:
 
 ## Differences between the standalone and mbed OS editions
 
-mbed TLS has a standalone version for devices that are not running mbed OS. However, this guide focuses on the mbed OS integration. While the two editions share a code base, there are a number of differences, mainly in configuration and integration. You should keep those differences in mind when reading some articles in our [knowledge base](https://tls.mbed.org/kb), as currently all the articles are about the standalone edition.
+mbed TLS has a standalone edition for devices that are not running mbed OS. However, this guide focuses on the mbed OS integration. While the two editions share a code base, there are a number of differences, mainly in configuration and integration. You should keep those differences in mind when reading some articles in our [knowledge base](https://tls.mbed.org/kb), as currently all the articles are about the standalone edition.
 
 The key differences are:
 
