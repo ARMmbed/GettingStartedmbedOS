@@ -231,7 +231,7 @@ To add dependencies from the yotta registry, list them in the ``module.json`` fi
 
 
 ```
-  "dependencies": {
+"dependencies": {
 "mbed-drivers": "~0.8.3",
 	"my_dependency": "^1.2.3"
   },
@@ -283,13 +283,13 @@ The yotta Registry and GitHub are the two methods we recommend, but we do suppor
 
 The options are:
 
-* git+ssh:``//example.com/path/to/repo``
+* ``git+ssh://example.com/path/to/repo``
 
-* anything:``//example.com/path/to/repo.git``
+* ``anything://example.com/path/to/repo.git``
 
-* hg+ssh:``//example.com/path/to/repo`` (mercurial)
+* ``hg+ssh://example.com/path/to/repo`` (mercurial)
 
-* anything:``//example.com/path/to/repo.hg`` (mercurial)
+* ``anything://example.com/path/to/repo.hg`` (mercurial)
 
 For example, to include a privately hosted git repository from ``example.com``:
 
@@ -297,15 +297,15 @@ For example, to include a privately hosted git repository from ``example.com``:
 
 Git URLs support branch, version and tags specifications:
 
-* git+ssh:``//example.com/path/to/repo#<versionspec, branch or tag>``
+* ``git+ssh://example.com/path/to/repo#<versionspec, branch or tag>``
 
-* anything:``//example.com/path/to/repo.git#<versionspec, branch or tag>``
+* ``anything://example.com/path/to/repo.git#<versionspec, branch or tag>``
 
 Currently, mercurial URLs only support a version specification:
 
-* hg+ssh:``//example.com/path/to/repo#<versionspec>``
+* ``hg+ssh://example.com/path/to/repo#<versionspec>``
 
-* anything:``//example.com/path/to/repo.hg#<versionspec>``
+* ``anything://example.com/path/to/repo.hg#<versionspec>``
 
 #### Installing dependencies
 
@@ -332,7 +332,7 @@ To complete the build:
 
 You should now have:
 
-	``/blinky/source/main.cpp``
+	/blinky/source/main.cpp
 
 
 ### Building the module
