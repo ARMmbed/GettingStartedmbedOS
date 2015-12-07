@@ -36,7 +36,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_core-util_](https://github.com/ARMmbed/core-util): Core data structures and primitives for the OS.
 
-* [_minar_](github.com/ARMmbed/minar): The mbed OS event scheduler.
+* [_minar_](https://github.com/ARMmbed/minar): The mbed OS event scheduler.
 
 * [_ualloc_](https://github.com/ARMmbed/ualloc) and [_dlmalloc_](https://github.com/ARMmbed/dlmalloc): Memory allocation for mbed OS.
 
@@ -93,7 +93,7 @@ What this all means is that to build applications that can run on top of mbed OS
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
 ![](Full_Guide/Images/mbed_OS_app.png)</span>
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** IDE support is not available yet. If you're interested in a particular IDE, talk to us on [the forum](forums.mbed.com).</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** IDE support is not available yet. If you're interested in a particular IDE, talk to us on [the forum](http://forums.mbed.com).</span>
 
 ## The documentation
 
