@@ -1,4 +1,4 @@
-# Introduction
+# Overview of mbed OS
 
 Welcome to the getting started guides for ARM® mbed™ OS. This page provides a review of [mbed OS](#mbed-os) and of the [available documentation](#the-documentation).
 
