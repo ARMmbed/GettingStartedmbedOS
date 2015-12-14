@@ -3,13 +3,13 @@ site_name: Getting Started Guides
 docs_dir: Docs
 
 pages:
-- ['index.md','Introduction']
+- ['index.md','Overview of mbed OS']
 - ['installation.md', 'Quick Guide', 'Installation']
 - ['FirstProjectmbedOS.md', 'Quick Guide', 'Your first application']
 - ['Full_Guide/guide_index.md', 'Introduction to the mbed OS User Guide', 'Introduction to the mbed OS User Guide']
-- ['Full_Guide/app_on_yotta.md', 'Introduction to mbed OS', 'mbed OS applications with yotta']
-- ['Full_Guide/app_on_mbed_os.md', 'Introduction to mbed OS', 'Writing applications for mbed OS']
-- ['GetTheCode.md', 'Introduction to mbed OS', 'Additional examples and code']
+- ['Full_Guide/app_on_yotta.md', 'Applications on mbed OS', 'mbed OS applications with yotta']
+- ['Full_Guide/app_on_mbed_os.md', 'Applications on mbed OS', 'Writing applications for mbed OS']
+- ['GetTheCode.md', 'Applications on mbed OS', 'Additional examples and code']
 - ['Full_Guide/Debugging.md', 'mbed OS features', 'Debugging mbed OS applications']
 - ['Full_Guide/mbed_tls.md', 'mbed OS features', 'Security with mbed TLS']
 - ['Full_Guide/MINAR.md', 'mbed OS features', 'Asynchronous programming with MINAR']
