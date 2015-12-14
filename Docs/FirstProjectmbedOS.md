@@ -67,7 +67,7 @@ In this example you are going to use the Freescale FRDM-K64F board configured fo
 $ yotta target frdm-k64f-gcc
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** If this is the first time you're accessing the yotta Registry, you will be asked to log into your mbed user account.</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The first time you access the yotta Registry, you need to log into your mbed user account.</span>
 
 To check that the target has been set correctly run the target command without parameters. It shows what yotta is currently targeting for its builds:
 
