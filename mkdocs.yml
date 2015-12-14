@@ -6,7 +6,7 @@ pages:
 - ['index.md','Introduction']
 - ['installation.md', 'Quick Guide', 'Installation']
 - ['FirstProjectmbedOS.md', 'Quick Guide', 'Your first application']
-- ['Full_Guide/guide_index.md', 'Introduction to mbed OS', 'Introduction to the mbed OS User Guide']
+- ['Full_Guide/guide_index.md', 'Introduction to the mbed OS User Guide', 'Introduction to the mbed OS User Guide']
 - ['Full_Guide/app_on_yotta.md', 'Introduction to mbed OS', 'mbed OS applications with yotta']
 - ['Full_Guide/app_on_mbed_os.md', 'Introduction to mbed OS', 'Writing applications for mbed OS']
 - ['GetTheCode.md', 'Introduction to mbed OS', 'Additional examples and code']
