@@ -194,7 +194,7 @@ mbed-gcc 0.0.14
 yotta target bbc-microbit-classic-armcc
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** If this is the first time you're accessing the yotta Registry, you will be asked to log into your mbed user account.</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The first time you access the yotta Registry, you need to log into your mbed user account.</span>
 
 #### Creating your own target
 
