@@ -2,11 +2,19 @@
 
 This is the mbed OS User Guide. We're publishing it one chapter at a time. 
 
-Currently available: 
+## Introduction to  mbed OS
+
+A general review of how to write applications for mbed OS:
 
 * [mbed OS applications with yotta](app_on_yotta.md): The relationship between yotta and mbed OS, and how you can create yotta-based mbed OS applications. 
 
 * [Writing applications for mbed OS](app_on_mbed_os.md): Some general principles of mbed OS applications.
+
+* [Additional examples and code](../GetTheCode.md): Links to additional sample applications for mbed OS and to our code repositories.
+
+## mbed OS features
+
+These chapters explain how to work with the various mbed OS features:
 
 * [Debugging mbed OS applications](Debugging.md): Debugging for applications built with ARMCC and GCC.
 
