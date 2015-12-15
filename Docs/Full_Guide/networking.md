@@ -165,7 +165,7 @@ Thread support is built-in to the 6LoWPAN stack. See [Introduction to Thread](ht
 
 The BLE libraries in mbed OS abstract the BLE protocol, so that no matter which manufacturer’s stack you’re using, the API remains the same and you don’t need to rewrite your code. By moving to yotta, we have gained the ability to switch between API implementations depending on which target we select.
 
-To learn more about BLE on mbed OS, see our [BLE Intros](docs.mbed.com/docs/ble-intros/).
+To learn more about BLE on mbed OS, see our [BLE Intros](https://docs.mbed.com/docs/ble-intros/).
 
 ## Including networking headers in your code
 
