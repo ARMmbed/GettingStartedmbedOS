@@ -149,13 +149,13 @@ void app_start(int argc, char *argv[]) {
 
 ## IPv6 (6LoWPAN)
 
-6LoWPAN stack is a robust, scalable and self-healing mesh networking stack for low power, less complex constrained devices. The 6LoWPAN stack [ documentation](http://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/) is giving overview of the 6LoWPAN technology and reference to 6LoWPAN stack C API.
+The 6LoWPAN stack is a robust, scalable and self-healing mesh networking stack for low power, less complex constrained devices. The 6LoWPAN stack [documentation](http://docs.mbed.com/docs/arm-ipv66lowpan-stack/en/latest/) gives an overview of the 6LoWPAN technology and reference to the 6LoWPAN stack C API.
 
-In mbed OS, the 6LoWPAN stack which is written in C language, should be used via [mbed-mesh-api](https://github.com/ARMmbed/mbed-mesh-api) and [mbed C++ Socket API](https://github.com/ARMmbed/sockets/blob/master/README.md). The mbed-mesh-api is responsible for initializing the 6LoWPAN stack when used for the first time and therefore application must connect to wireless network by using the mbed-mesh-api before using any methods from the socket API.
+In mbed OS, the 6LoWPAN stack should be used through [mbed-mesh-api](https://github.com/ARMmbed/mbed-mesh-api) and the [mbed C++ Socket API](https://github.com/ARMmbed/sockets/blob/master/README.md). The mbed mesh API is responsible for initializing the 6LoWPAN stack when used for the first time; applications must therefore connect to a wireless network by using the mbed-mesh-api before using any other method from the socket API.
 
-The mbed C++ Socket API is not fully supported by 6LoWPAN adaptation layer. To see 6LoWPAN stack deviations from the mbed Socket C++ API please see readme in [sal-iface-6lowpan](https://github.com/ARMmbed/sal-iface-6lowpan).
+The mbed C++ Socket API is not fully supported by the 6LoWPAN adaptation layer. You can see the 6LoWPAN stack deviations from the mbed Socket C++ API in the [sal-iface-6lowpan](https://github.com/ARMmbed/sal-iface-6lowpan) documentation.
 
-The mbed-mesh-api is in experimental state, it is using static configuration. It does not provide API for selecting the node operating mode, security option, radio channel or other options that are needed for connecting to 6LoWPAN network. Support for these configurations will be available later.
+The mbed-mesh-api is in an experimental state and uses static configuration. It does not provide API for selecting the node operating mode, security option, radio channel or other options that are needed for connecting to a 6LoWPAN network. Support for these configurations will be available in the future.
 
 ## Thread
 
