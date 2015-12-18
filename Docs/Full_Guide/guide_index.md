@@ -16,6 +16,8 @@ A general review of how to write applications for mbed OS:
 
 These chapters explain how to work with the various mbed OS features:
 
+* [Interfacing to hardware](Interfacing.md): How mbed OS controls different hardware.
+
 * [Debugging mbed OS applications](Debugging.md): Debugging for applications built with ARMCC and GCC.
 
 * [Security with mbed TLS](mbed_tls.md): Using mbed TLS for communication security in mbed OS.
