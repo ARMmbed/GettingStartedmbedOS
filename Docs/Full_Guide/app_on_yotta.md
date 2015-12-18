@@ -216,7 +216,7 @@ When you build your application, yotta downloads from the yotta Registry:
 
 #### mbed-drivers
 
-We saw the [core modules mbed OS needs](../overview.md). Each of these modules depends on other modules. All mbed OS modules are available on the yotta Registry.
+We saw the [core modules mbed OS needs](../index.md). Each of these modules depends on other modules. All mbed OS modules are available on the yotta Registry.
 
 For example, here is a partial tree for **Blinky**. It shows Blinky's two dependencies: ``mbed-drivers`` and ``uvisor-lib``. Then it shows the start of the next level of dependencies: ``uvisor-lib`` has only one dependency, whereas ``mbed-drivers`` has several. These, in turn, have their own dependencies. And so on:
 
