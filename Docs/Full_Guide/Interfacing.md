@@ -5,7 +5,7 @@ mbed OS offers the APIs that interface directly with the hardware. While each AP
 Hardware interfaces are handled by the mbed Hardware Abstraction Layer (HAL). The mbed HAL is an [interface](https://github.com/ARMmbed/mbed-hal/tree/master/mbed-hal) that has various generic manufacturer implementations, such as [Nordic](https://github.com/ARMmbed/mbed-hal-nordic) and [Freescale](https://github.com/ARMmbed/mbed-hal-freescale), as well as various board implementations.
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
-![](Images/HAL_Tree.png)</span>
+![](../Full_Guide/Images/HAL_Tree.png)</span>
 
 When you delve into board-specific implementations you get the mapping that HAL requires. The following example focuses on the FRDM-K64F implementation, which is the same board we use in this document's code examples.
 
@@ -71,7 +71,7 @@ Of course, we don't want you to have to specify the exact pin every time you wri
 ``DigitalOut.h`` #includes ``platform.h``, which #includes ``PinNames.h``, which is in turn the header that maps the board's pins to our generic names. It is part of HAL, and is therefore board-specific. In our example, Blinky, we can find it in the ``yotta_module`` directory under the target name: ``/blinky/yotta_modules/mbed-hal-frdm-k64f/mbed-hal-frdm-k64f/``.
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
-![](Images/pins.png)</span>
+![](../Full_Guide/Images/pins.png)</span>
 
 Let's look at how the LEDs are mapped in ``PinNames.h`` for the FRDM-K64F:
 
@@ -98,6 +98,6 @@ PTB21 = (1 << GPIO_PORT_SHIFT | 21),
 The numbers PTB22, PTE26 and PTB21 are taken directly from the board's pinout:
 
 <span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
-![](Images/frdm_k64f_pinnout.jpg)</span>
+![](../Full_Guide/Images/frdm_k64f_pinnout.jpg)</span>
 
 This brings us all the way from a generic LED1 call in your code to a board-specific pin use.
