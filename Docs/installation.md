@@ -16,7 +16,7 @@ There are two ways to get yotta:
 
 Try the [quick guide](FirstProjectmbedOS.md) to get a first sample application working, or see the [full list of samples](GetTheCode.md).
 
-Read the [full guide](Full_Guide/overview.md) to understand how mbed OS and yotta work together. 
+Read the [full guide](index.md) to understand how mbed OS and yotta work together. 
 
 If your'e interested in specific yotta modules:
 
