@@ -6,7 +6,7 @@ If you skipped Blinky, please go [get the code for it](FirstProjectmbedOS.md). Y
 
 ## The hardware
 
-Get a breadboard, a 220 ohm resistor (or something close to 220 ohm), and two wires. 
+Get a breadboard, a 220 ohm resistor (or something close to 220 ohm), and two wires.
 
 To know how we should connect everything together we need to take a look at the pinout of the board. Normally, this is listed on the board's page on the mbed website (for example, here is the [FRDM-K64F pinout](https://www.mbed.com/en/development/hardware/boards/nxp/frdm_k64f/)). You can also do an image search for '[board-name] pinout'.
 
@@ -48,7 +48,7 @@ Now the LED on the breadboard blinks, rather than the LED on the board.
 
 Since we have the breadboard ready anyway, we can also change this program to toggle the LED when a button is being pressed, rather than every 500ms.
 
-First we need to take another digital pin (in my case PTA2/D5), and wire the button up on the breadboard. Make sure to also have a pull-down resistor to ground. 
+First we need to take another digital pin (in my case PTA2/D5), and wire the button up on the breadboard. Make sure to also have a pull-down resistor to ground.
 
 <span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Sketch of a button and a LED on a breadboard](Images/bb-sketch-btn.png)</span>
 
@@ -59,24 +59,55 @@ Now we can configure PTA2/D5 as an [`InterruptIn`](https://developer.mbed.org/ha
 
 static DigitalOut led(YOTTA_CFG_HARDWARE_PINS_D4);
 
-static void led_on(void) {
-    led = true;    
-    printf("LED = %d \r\n", led.read());
-}
-
-static void led_off(void) {
-    led = false;
+static void led_toggle(void) {
+    led = !led;
     printf("LED = %d \r\n", led.read());
 }
 
 void app_start(int, char**) {
     static InterruptIn button(YOTTA_CFG_HARDWARE_PINS_D5);
-    
-    // when we press the button the circuit closes, and turns the LED on
-    button.rise(&led_on);
-    // when we release the button the circuit opens again, turning the LED off
-    button.fall(&led_off);
+
+    // when we press the button the circuit closes and the LED state is toggled
+    button.rise(&led_toggle);
+    // when we release the button the circuit opens again and the LED state is toggled again
+    button.fall(&led_toggle);
 }
 ```
 
 <span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)</span>
+
+The LED state changes as it should and it might look like everything is fine, but there's actually a very important change in the code above when compared with its original version: the usage of `rise` and `fall`:
+
+```cpp
+button.rise(&led_toggle);
+button.fall(&led_toggle);
+```
+
+`rise` and `fall` set the functions that will be called when the logic level on `button` changes from 0 to 1 and 1 to 0 respectively. However, `rise` and `fall` are legacy functions from mbed Classic, so they bypass MINAR and call their arguments (`led_toggle` in this case) in an interrupt cotext. As explained in the [InterruptIn documentation](https://developer.mbed.org/handbook/InterruptIn), it is not safe to call some C library functions from an interrupt context. `printf` is one of these functions, so the code above might actually be problematic. Even if it works fine in this particular case, calling `printf` from an interrupt context should generally be avoided. Fortunately, this is one of the things that MINAR is good at: deferring code executing from interrupt context to user context. Since calling MINAR from an interrupt context is safe, all we need to do is schedule a callback from an interrupt handler. MINAR will safely execute that callback later from the user context:
+
+```cpp
+#include "mbed-drivers/mbed.h"
+#include "minar/minar.h"
+#include "core-util/FunctionPointer.h"
+
+using namespace mbed::util;
+
+static DigitalOut led(YOTTA_CFG_HARDWARE_PINS_D4);
+
+static void led_toggle_user(void) {
+    led = !led;
+    printf("LED = %d \r\n", led.read());
+}
+
+static void led_toggle_irq(void) {
+   minar::Scheduler::postCallback(FunctionPointer0<void>(&led_toggle_user).bind());
+}
+
+void app_start(int, char**) {
+    static InterruptIn button(YOTTA_CFG_HARDWARE_PINS_D5);
+
+    // when we press the button the circuit closes and the LED state is toggled
+    button.rise(&led_toggle_irq);
+    // when we release the button the circuit opens again and the LED state is toggled again
+    button.fall(&led_toggle_irq);
+```
