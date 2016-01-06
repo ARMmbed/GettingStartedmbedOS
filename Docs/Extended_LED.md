@@ -76,6 +76,8 @@ void app_start(int, char**) {
 
 <span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)</span>
 
+## Making the code safe
+
 The LED state changes as it should and it might look like everything is fine, but there's actually a very important change in the code above when compared with its original version: the use of `rise` and `fall`:
 
 ```cpp
@@ -110,4 +112,5 @@ void app_start(int, char**) {
     button.rise(&led_toggle_irq);
     // when we release the button the circuit opens again and the LED state is toggled again
     button.fall(&led_toggle_irq);
+}
 ```
