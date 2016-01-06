@@ -6,7 +6,7 @@ pages:
 - ['index.md','Overview of mbed OS']
 - ['installation.md', 'Quick Guide', 'Installation']
 - ['FirstProjectmbedOS.md', 'Quick Guide', 'Blinky - your first application']
-- ['FirstProjectmbedOS.md', 'Quick Guide', 'Extending Blinky']
+- ['Extended_LED.md', 'Quick Guide', 'Extending Blinky']
 - ['Full_Guide/guide_index.md', 'Introduction to the mbed OS User Guide', 'Introduction']
 - ['Full_Guide/app_on_yotta.md', 'Applications on mbed OS', 'mbed OS applications with yotta']
 - ['Full_Guide/app_on_mbed_os.md', 'Applications on mbed OS', 'Writing applications for mbed OS']
