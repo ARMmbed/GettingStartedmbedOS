@@ -85,7 +85,7 @@ button.rise(&led_toggle);
 button.fall(&led_toggle);
 ```
 
-`rise` and `fall` set the functions that will be called when the logic level on `button` changes from 0 to 1 and 1 to 0 respectively. However, `rise` and `fall` are legacy functions from mbed Classic, so they bypass MINAR and call their arguments (`led_toggle` in this case) in an interrupt cotext. As explained in the [InterruptIn documentation](https://developer.mbed.org/handbook/InterruptIn), it is not safe to call some C library functions from an interrupt context. `printf` is one of these functions, so the code above might actually be problematic. Even if it works fine in this particular case, calling `printf` from an interrupt context should generally be avoided. Fortunately, this is one of the things that [MINAR](Full_Guide/MINAR.md) is good at: deferring code executing from interrupt context to user context. Since calling MINAR from an interrupt context is safe, all we need to do is schedule a callback from an interrupt handler. MINAR will safely execute that callback later from the user context:
+`rise` and `fall` set the functions that will be called when the logic level on `button` changes from 0 to 1 and 1 to 0 respectively. However, `rise` and `fall` are legacy functions from mbed Classic, so they bypass [MINAR](Full_Guide/MINAR.md) and call their arguments (`led_toggle` in this case) in an interrupt cotext. As explained in the [InterruptIn documentation](https://developer.mbed.org/handbook/InterruptIn), it is not safe to call some C library functions from an interrupt context. `printf` is one of these functions, so the code above might actually be problematic. Even if it works fine in this particular case, calling `printf` from an interrupt context should generally be avoided. Fortunately, this is one of the things that [MINAR](Full_Guide/MINAR.md) is good at: deferring code executing from interrupt context to user context. Since calling MINAR from an interrupt context is safe, all we need to do is schedule a callback from an interrupt handler. MINAR will safely execute that callback later from the user context:
 
 ```cpp
 #include "mbed-drivers/mbed.h"
@@ -114,3 +114,4 @@ void app_start(int, char**) {
     button.fall(&led_toggle_irq);
 }
 ```
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can read more [about MINAR here](Full_Guide/MINAR.md).</span>
