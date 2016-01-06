@@ -76,14 +76,14 @@ void app_start(int, char**) {
 
 <span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)</span>
 
-The LED state changes as it should and it might look like everything is fine, but there's actually a very important change in the code above when compared with its original version: the usage of `rise` and `fall`:
+The LED state changes as it should and it might look like everything is fine, but there's actually a very important change in the code above when compared with its original version: the use of `rise` and `fall`:
 
 ```cpp
 button.rise(&led_toggle);
 button.fall(&led_toggle);
 ```
 
-`rise` and `fall` set the functions that will be called when the logic level on `button` changes from 0 to 1 and 1 to 0 respectively. However, `rise` and `fall` are legacy functions from mbed Classic, so they bypass MINAR and call their arguments (`led_toggle` in this case) in an interrupt cotext. As explained in the [InterruptIn documentation](https://developer.mbed.org/handbook/InterruptIn), it is not safe to call some C library functions from an interrupt context. `printf` is one of these functions, so the code above might actually be problematic. Even if it works fine in this particular case, calling `printf` from an interrupt context should generally be avoided. Fortunately, this is one of the things that MINAR is good at: deferring code executing from interrupt context to user context. Since calling MINAR from an interrupt context is safe, all we need to do is schedule a callback from an interrupt handler. MINAR will safely execute that callback later from the user context:
+`rise` and `fall` set the functions that will be called when the logic level on `button` changes from 0 to 1 and 1 to 0 respectively. However, `rise` and `fall` are legacy functions from mbed Classic, so they bypass MINAR and call their arguments (`led_toggle` in this case) in an interrupt cotext. As explained in the [InterruptIn documentation](https://developer.mbed.org/handbook/InterruptIn), it is not safe to call some C library functions from an interrupt context. `printf` is one of these functions, so the code above might actually be problematic. Even if it works fine in this particular case, calling `printf` from an interrupt context should generally be avoided. Fortunately, this is one of the things that [MINAR](Full_Guide/MINAR.md) is good at: deferring code executing from interrupt context to user context. Since calling MINAR from an interrupt context is safe, all we need to do is schedule a callback from an interrupt handler. MINAR will safely execute that callback later from the user context:
 
 ```cpp
 #include "mbed-drivers/mbed.h"
