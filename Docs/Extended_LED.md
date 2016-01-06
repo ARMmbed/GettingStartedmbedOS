@@ -69,4 +69,4 @@ void app_start(int, char**) {
 }
 ```
 
-![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)
+<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)</span>
