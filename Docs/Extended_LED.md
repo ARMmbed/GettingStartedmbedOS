@@ -2,6 +2,8 @@
 
 We've seen how to automatically blink the built-in LED, but the great thing about dev kits is that they allow us to add new sensors and peripherals and experiment with user interactions. Let's use an external LED instead of the on-board one, then add manual control.
 
+If you skipped Blinky, please go [get the code for it](FirstProjectmbedOS.md). You'll need to modify that code to get this example working.
+
 ## The hardware
 
 Get a breadboard, a 220 ohm resistor (or something close to 220 ohm), and two wires. 
