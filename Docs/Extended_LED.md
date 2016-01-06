@@ -69,4 +69,4 @@ void app_start(int, char**) {
 }
 ```
 
-<span style="background-color: #F0F0F5; text-align:center; display:block; height:100%; padding:10px;">![Button and a LED on a breadboard](Images/bb03.gif)</span>
+![Button and a LED on a breadboard](Images/bb03.gif)
