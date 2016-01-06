@@ -26,9 +26,9 @@ Now we're ready to set up the circuit.
 
 ## Changing the pin association in the code
 
-Now we need to configure the LED in our Blinky code to no longer reference `LED1`. To reference our pin we can use the name of the pin directly (`PTB23`) or we can use the standard name 'D4', which is mapped automatically to the right pin through [yotta](http://yottadocs.mbed.com/reference/config.html). The latter is prefered, as it makes it easier to port your code to other hardware.
+Now we need to configure the LED in our [Blinky code](https://github.com/ARMmbed/example-mbedos-blinky/blob/master/source/blinky.cpp) to no longer reference `LED1`. To reference our pin we can use the name of the pin directly (`PTB23`) or we can use the standard name 'D4', which is mapped automatically to the right pin through [yotta](http://yottadocs.mbed.com/reference/config.html). The latter is prefered, as it makes it easier to port your code to other hardware.
 
-Change the ``blinky`` function to:
+Change [the ``blinky`` function](https://github.com/ARMmbed/example-mbedos-blinky/blob/master/source/blinky.cpp) to:
 
 ```cpp
 static void blinky(void) {
