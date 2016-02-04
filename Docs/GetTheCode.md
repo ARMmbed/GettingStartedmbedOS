@@ -2,6 +2,10 @@
 
 These example applications can help you get started with various functions of mbed OS.
 
+## Blinky
+
+Blinky is the simplest application we have, and is available in the [quick start guide](FirstProjectmbedOS.md), alongside an [extended form](Extended_LED.md).
+
 ## Networking
 
 * [mbed Client](https://github.com/ARMmbed/mbed-client-examples).
