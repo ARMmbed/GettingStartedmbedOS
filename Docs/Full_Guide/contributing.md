@@ -4,14 +4,17 @@ This chapter covers the different aspects of developing your own modules for use
 
 1. [The yotta Registry](#writing-reusable-modules-for-the-yotta-registry): Use the yotta Registry release mechanism to publish reusable modules that are not part of the mbed OS code base.
 1. [The mbed OS code base](#Contributing-to-the-mbed-OS-code-base): Use GitHub to contribute additions and bug fixes to mbed OS itself.
+
 ## Publishing reusable modules to the yotta Registry
+
 Modules you publish to the yotta registry are functionalities that you expect others to need for their own applications, and that you may reuse yourself in future applications. 
 
 The yotta documentation site explains how to [write](http://yottadocs.mbed.com/tutorial/reuse.html) and [release](http://yottadocs.mbed.com/tutorial/release.html) software with yotta.
 
 The yotta Registry is not a source code repository; it's a component repository, so you should publish components to the yotta Registry at version points: whenever you would normally apply a new version, or would have sent it out to customers or users. Note that once something is published to the yotta Registry it can't be unpublished - it's there to stay.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The mbed OS User Guide reviewed the [version guidelines](app_on_yotta.md#versioning-an-existing-yotta-module) in the context of initiating yotta modules.</span>
+<span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The mbed OS User Guide reviewed the [version guidelines](app_on_yotta.md#versioning-an-existing-yotta-module) in the context of initiating yotta modules.</span>
+
 ### Licensing binaries and libraries
 
 When you write original code you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others. 
