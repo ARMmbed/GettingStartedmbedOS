@@ -2,7 +2,7 @@
 
 This is the mbed OS User Guide. We're publishing it one chapter at a time. 
 
-## Introduction to  mbed OS
+## Applications to  mbed OS
 
 A general review of how to write applications for mbed OS:
 
@@ -27,6 +27,16 @@ These chapters explain how to work with the various mbed OS features:
 * [Memory in mbed OS](memory.md): Memory management and allocation in mbed OS. 
 
 * [Networking with mbed OS](networking.md): Networking options and structure on mbed OS.
+
+## Contributing to mbed OS and publishing modules
+
+* [Creating and publishing your own modules and contributing to mbed OS](contributing.md): The process and legal requirements for publishing modules as stand-alone or as part of the mbed OS code base.
+
+* [Codying style and GitHub pull request guidlines](Code_Style): Style guidelines for code and GitHub pull requests.
+
+## Additional resources
+
+Links to other resources that might interest you.
 
 ## Prerequisites
 
