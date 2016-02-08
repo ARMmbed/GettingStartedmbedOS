@@ -127,7 +127,7 @@ All code changes and additions to mbed OS are handled through GitHub, where mbed
 
 If you want to contribute code to mbed OS, you must sign an mbed Contributor License Agreement (CLA). Please ask for a CLA before submitting any code (for example, while discussing the issue on GitHub), then wait for ARM to confirm acceptance of your CLA before making contributions. 
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** If you publish a feature or a solution to a problem before signing the CLA, then find out that you are not able or allowed to sign the CLA, we will not be able to use your solution anymore. That may prevent us from solving the problem for you.</span>
+<span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Note:** If you publish a feature or a solution to a problem before signing the CLA, then find out that you are not able or allowed to sign the CLA, we will not be able to use your solution anymore. That may prevent us from solving the problem for you.</span>
 
 When you ask for the CLA, we'll send you the agreement and ask you to sign it *before* we handle any pull request from you: 
 
