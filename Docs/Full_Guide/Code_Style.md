@@ -1,7 +1,8 @@
 # Code contributions: GitHub pull requests and code style guide
-The mbed OS code base is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests]() and the [coding style guide]() in your submissions.
+The mbed OS code base is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#Guidelines-for-GitHub-pull-requests) and the [coding style guide](#Coding-style) in your submissions.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Please also read the section [Creating and publishing your own modules and contributing to mbed OS]() for a review of the process and legal requirements.</span>
+<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Please also read the section [Creating and publishing your own modules and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
+
 ## Guidelines for GitHub pull requests
 
 Pull requests on GitHub have to meet a number of requirements in order to keep the code and commit history clean:
@@ -23,7 +24,8 @@ Pull requests on GitHub have to meet a number of requirements in order to keep t
 
 * Since we use GitHub and explicit CLAs, special commit tags that other projects might use, like “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 ## Code acceptance
-[After the CLA]() is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
+
+[After the CLA](contributing.md) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
 ## Coding style
 Whether you're writing new code or fixing bugs in existing code, please follow the mbed OS coding style. 
@@ -127,8 +129,41 @@ __Functions__
 
 As an example:
 
-```
-#define ADC_INSTANCE_SHIFT 8   class AnalogIn { public:     /** Create an AnalogIn connected to the specified pin.      *      * @param pin AnalogIn pin to connect to      * @param name (optional) A string to identify the object      */     AnalogIn(PinName pin) {         analogin_init(&_adc, pin);     }       /** Read the input voltage, represented as a float in the range [0.0, 1.0].      *      * @returns       *    A floating-point value representing the current input voltage, measured as a percentage      */     uint32_t read() {         return analogin_read(&_adc, operation);     }   protected:     analogin_t _adc; };   typedef enum {     ADC0_SE0 = (0 << ADC_INSTANCE_SHIFT) | 0, } ADCName;   struct analogin_s {     ADCName adc; };   typedef struct analogin_s analogin_t;
+```c
+#define ADC_INSTANCE_SHIFT 8 
+
+class AnalogIn {
+public:
+	/** Create an AnalogIn connected to the specified pin.
+	*
+	* @param pin AnalogIn pin to connect to
+	* @param name (optional) A string to identify the object
+	*/
+	AnalogIn(PinName pin) {
+		analogin_init(&_adc, pin);
+	}
+	
+	/** Read the input voltage, represented as a float in the range [0.0, 1.0].
+	*
+	* @returns
+	* 	A floating-point value representing the current input voltage, measured as a percentage
+	*/
+	uint32_t read() {
+		return analogin_read(&_adc, operation);
+	}
+protected:
+	analogin_t _adc;
+};
+
+typedef enum {
+	ADC0_SE0 = (0 << ADC_INSTANCE_SHIFT) | 0,
+} ADCName;
+
+struct analogin_s {
+	ADCName adc;
+};
+
+typedef struct analogin_s analogin_t;
 ```
 
 #### Doxygen documentation
