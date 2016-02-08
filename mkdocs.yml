@@ -17,6 +17,7 @@ pages:
 - ['Full_Guide/MINAR.md', 'mbed OS features', 'Asynchronous programming with MINAR']
 - ['Full_Guide/memory.md', 'mbed OS features', 'Memory in mbed OS']
 - ['Full_Guide/networking.md', 'mbed OS features', 'Networking in mbed OS']
+- ['Full_Guide/contributing.md', 'Contributing and publishing', 'Module publishing guidelines']
+- ['Full_Guide/Code_Style.md', 'Contributing and publishing', 'Code style and GitHub']
 - ['FurtherReading.md', 'Additional Resources', 'Further reading']
-- ['Full_Guide/contributing.md', 'Additional Resources', 'Guidlines for code contributions']
 - ['docker_install.md','','']
