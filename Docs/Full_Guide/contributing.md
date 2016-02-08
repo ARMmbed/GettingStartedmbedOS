@@ -164,7 +164,7 @@ For best practice on bug reporting, please see [the mbed OS bug reporting guidel
 
 #### Bug fixes
 
-Please refer to the [coding style chapter](Code_Style.md). 
+Please refer to the [code contributions chapter](Code_Style.md). 
 
 Bug fixes must be verified by a member of the mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the module, then submit a pull request with your changes. 
 
