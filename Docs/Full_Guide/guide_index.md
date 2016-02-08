@@ -32,7 +32,7 @@ These chapters explain how to work with the various mbed OS features:
 
 * [Creating and publishing your own modules and contributing to mbed OS](contributing.md): The process and legal requirements for publishing modules as stand-alone or as part of the mbed OS code base.
 
-* [Codying style and GitHub pull request guidlines](Code_Style): Style guidelines for code and GitHub pull requests.
+* [Coding style and GitHub pull request guidelines](Code_Style): Style guidelines for code and GitHub pull requests.
 
 ## Additional resources
 
