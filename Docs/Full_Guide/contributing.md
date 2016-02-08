@@ -42,15 +42,14 @@ The full text of the license can be found on the [Apache website](http://www.apa
 In order to clearly reflect the Apache 2.0 license, please create two text files:
 
 * A *LICENSE* file with the following text:</br>
-<p>~~~</br>
-Unless specifically indicated otherwise in a file, files are licensed under the Apache 2.0 license, as can be found in: LICENSE-apache-2.0.txt</br></p>
-<p>~~~</p>
+
+<pre>Unless specifically indicated otherwise in a file, files are licensed under the Apache 2.0 license, as can be found in: LICENSE-apache-2.0.txt</pre>
 
 * The full original [Apache 2.0 license text](http://www.apache.org/licenses/LICENSE-2.0) in *LICENSE-apache-2.0.txt*
 
 Each source header should *start with* your copyright line, the SPDX identifier and the Apache 2.0 header as shown here:
 
-<p>=======================</p>
+<pre>=======================
 Copyright (c) [First year]-[Last year], **Your Name or Company Here**, All Rights Reserved SPDX-License-Identifier: Apache-2.0
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
@@ -60,7 +59,7 @@ You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 See the License for the specific language governing permissions and limitations under the License.
-<p>=======================</p>
+=======================</pre>
 
 #### When to use the Permissive Binary License
 
@@ -75,9 +74,8 @@ The full text can be found on [mbed.com](https://www.mbed.com/licenses/PBL-1.0).
 In order to clearly reflect the PBL license, please create three text files:
 
 * A *LICENSE* file with:
-<p>~~~</br>
-Unless specifically indicated otherwise in a file, files are licensed under the Public Binary License, as can be found in: LICENSE-permissive-binary-license-1.0.txt</p>
-<p>~~~</p>
+
+<pre>Unless specifically indicated otherwise in a file, files are licensed under the Public Binary License, as can be found in: LICENSE-permissive-binary-license-1.0.txt</pre>
 
 * The full original [Public Binary License 1.0 text](https://www.mbed.com/licenses/PBL-1.0) in *LICENSE-permissive-binary-license-1.0.txt*.
 
@@ -85,7 +83,7 @@ Unless specifically indicated otherwise in a file, files are licensed under the 
 
 Each source header should *start with* your copyright line, the SPDX identifier and the BPL header:
 
-<p>=======================</p>
+<pre>=======================
 
 Copyright (c) [First year]-[Last year], **Your Name Here**, All Rights Reserved
 
@@ -97,7 +95,7 @@ You may obtain a copy of the License at https://www.mbed.com/licenses/PBL-1.0
 
 See the License for the specific language governing permissions and limitations under the License.
 
-<p>=======================</p>
+=======================</pre>
 
 ### Using a different license
 
