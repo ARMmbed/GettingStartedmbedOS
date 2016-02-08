@@ -22,7 +22,7 @@ If you create new modules, such as drivers, libraries and examples, you can appl
 
 * For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License](https://www.mbed.com/licenses/PBL-1.0). This is designed to be compatible with Apache 2.0 and the mbed OS code base.
 
-* If your module incorporates or is derived from other third party open source code, please be sure to retain all notices and identify the license for the third party licensed code in the same manner as [described below](). Remember, you cannot change the license on someone else’s code, because you are not the copyright holder! Instead, choose a license that is compatible with the license used by the third party open source code, or use the same license as that code. For example, if your module is derived from GPL source code, GPL requires you to license the rest of your code in that module under the GPL too. Note that many commercial users won’t be able to use GPL source code in their products, so we don't recommend this license if you're not obligated to use it. 
+* If your module incorporates or is derived from other third party open source code, please be sure to retain all notices and identify the license for the third party licensed code in the same manner as described below. Remember, you cannot change the license on someone else’s code, because you are not the copyright holder! Instead, choose a license that is compatible with the license used by the third party open source code, or use the same license as that code. For example, if your module is derived from GPL source code, GPL requires you to license the rest of your code in that module under the GPL too. Note that many commercial users won’t be able to use GPL source code in their products, so we don't recommend this license if you're not obligated to use it. 
 
 You must either write all the code you provide yourself, or have the necessary rights to provide code written by someone else. 
 
@@ -118,7 +118,7 @@ All the source code and binary blobs that end up in mbed OS yotta modules are ma
 
 ### Contributions
 
-All code changes and additions to mbed OS are handled through GitHub, where mbed OS is divided into modules. If you want to contribute to these modules, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide]() and [GitHub pull request guidelines]().
+All code changes and additions to mbed OS are handled through GitHub, where mbed OS is divided into modules. If you want to contribute to these modules, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](Code_Style).
 
 ### Licensing
 
@@ -156,7 +156,7 @@ For best practice on bug reporting, please see [the mbed OS bug reporting guidel
 
 #### Bug fixes
 
-Please refer to the [coding style section](). 
+Please refer to the [coding style chapter](Code_Style.md). 
 
 Bug fixes must be verified by a member of the mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the module, then submit a pull request with your changes. 
 
@@ -164,4 +164,4 @@ The last line in your commit message description should say “Fixes #deadbeef�
 
 ## Further reading
 
-Please see the [code contributions section]() for the guidelines to GitHub pull requests and the coding style guide.
+Please see the [code contributions chapter](Code_Style.md) for the guidelines to GitHub pull requests and the coding style guide.
