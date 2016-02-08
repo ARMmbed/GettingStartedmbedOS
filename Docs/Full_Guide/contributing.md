@@ -3,7 +3,7 @@
 This chapter covers the different aspects of developing your own modules for use in mbed devices, as well as items to keep in mind during development, like licensing. It covers:
 
 1. [The yotta Registry](#writing-reusable-modules-for-the-yotta-registry): Use the yotta Registry release mechanism to publish reusable modules that are not part of the mbed OS code base.
-1. [The mbed OS code base](#Contributing-to-the-mbed-OS-code-base): Use GitHub to contribute additions and bug fixes to mbed OS itself.
+1. [The mbed OS code base](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to mbed OS itself.
 
 ## Publishing reusable modules to the yotta Registry
 
@@ -121,7 +121,7 @@ All the source code and binary blobs that end up in mbed OS yotta modules are ma
 
 ### Contributions
 
-All code changes and additions to mbed OS are handled through GitHub, where mbed OS is divided into modules. If you want to contribute to these modules, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](Code_Style).
+All code changes and additions to mbed OS are handled through GitHub, where mbed OS is divided into modules. If you want to contribute to these modules, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](Code_Style.md).
 
 ### Licensing
 
