@@ -13,7 +13,7 @@ Pull requests on GitHub have to meet a number of requirements in order to keep t
 
 * Each commit should be the minimum self-contained commit for a change. A commit should always result in a new state that is again in a compilable state. Large changes should (if possible) be split up into logical smaller commits that help reviewers follow the reasoning behind the full change.
 
-* Commits should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit/#seven-rules):
+* Commits should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit#seven-rules):
 	1. Separate subject from body with a blank line.
 	1. Limit the subject line to 72 characters (note that this is a deviation from Beam's standard).
 	1. Capitalize the subject line.
