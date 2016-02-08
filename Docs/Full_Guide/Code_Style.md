@@ -1,5 +1,5 @@
 # Code contributions: GitHub pull requests and code style guide
-The mbed OS code base is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#Guidelines-for-GitHub-pull-requests) and the [coding style guide](#Coding-style) in your submissions.
+The mbed OS code base is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
 <span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Please also read the section [Creating and publishing your own modules and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
 
@@ -23,11 +23,13 @@ Pull requests on GitHub have to meet a number of requirements in order to keep t
 	1. Use the body to explain _what_ and _why_ vs _how_.
 
 * Since we use GitHub and explicit CLAs, special commit tags that other projects might use, like “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
+
 ## Code acceptance
 
 [After the CLA](contributing.md) is in place and the code has gone through automated testing, developers will take a look and comment on the pull request. If all is well and acceptable, your code will be ready for merging into the central development branch.
 
 ## Coding style
+
 Whether you're writing new code or fixing bugs in existing code, please follow the mbed OS coding style. 
 
 mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R_style), with at least two exceptions (which can be found in the list below the code sample).
