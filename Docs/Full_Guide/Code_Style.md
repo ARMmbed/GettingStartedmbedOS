@@ -172,7 +172,7 @@ typedef struct analogin_s analogin_t;
 
 All functions and methods should contain documentation using Doxgyen.
 
-<span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can publish your documentation on docs.mbed.com. See our [publishing guide](https://docs.mbed.com/docs/writing-and-publishing-guides/en/latest/publishing_guide) for more details.</span>
+<span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can publish your documentation on docs.mbed.com. See our [publishing guide](https://docs.mbed.com/docs/writing-and-publishing-guides/en/latest/publishing_guide/) for more details.</span>
 
 You can use [Artistic Style (AStyle)](http://sourceforge.net/projects/astyle/files/) to format your code. Use the command-line switch to select the correct style and point to the file you want to edit:
 
