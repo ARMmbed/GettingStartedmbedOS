@@ -2,7 +2,7 @@
 
 This is the mbed OS User Guide. We're publishing it one chapter at a time. 
 
-## Applications to  mbed OS
+## Applications on  mbed OS
 
 A general review of how to write applications for mbed OS:
 
