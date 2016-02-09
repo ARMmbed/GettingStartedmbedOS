@@ -150,7 +150,8 @@ public:
 	* @returns
 	* 	A floating-point value representing the current input voltage, measured as a percentage
 	*/
-	uint32_t read() {
+	uint32_t read() 
+	{
 		return analogin_read(&_adc, operation);
 	}
 protected:
