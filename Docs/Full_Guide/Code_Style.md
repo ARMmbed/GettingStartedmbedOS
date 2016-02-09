@@ -141,7 +141,8 @@ public:
 	* @param pin AnalogIn pin to connect to
 	* @param name (optional) A string to identify the object
 	*/
-	AnalogIn(PinName pin) {
+	AnalogIn(PinName pin) 
+	{
 		analogin_init(&_adc, pin);
 	}
 	
