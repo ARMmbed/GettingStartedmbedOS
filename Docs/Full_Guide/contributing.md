@@ -51,8 +51,8 @@ as can be found in: LICENSE-apache-2.0.txt</pre>
 Each source header should *start with* your copyright line, the SPDX identifier and the Apache 2.0 header as shown here:
 
 <pre>
-Copyright (c) [First year]-[Last year], **Your Name or Company Here**, 
-All Rights Reserved SPDX-License-Identifier: Apache-2.0
+Copyright (c) [First year]-[Last year], **Your Name or Company Here**, All Rights Reserved
+SPDX-License-Identifier: Apache-2.0
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License.
@@ -90,9 +90,7 @@ as can be found in: LICENSE-permissive-binary-license-1.0.txt</pre>
 Each source header should *start with* your copyright line, the SPDX identifier and the BPL header:
 
 <pre>
-
 Copyright (c) [First year]-[Last year], **Your Name Here**, All Rights Reserved
-
 SPDX-License-Identifier: LicenseRef-PBL
 
 Licensed under the Permissive Binary License, Version 1.0 (the "License"); 
@@ -101,7 +99,6 @@ you may not use this file except in compliance with the License.
 You may obtain a copy of the License at https://www.mbed.com/licenses/PBL-1.0
 
 See the License for the specific language governing permissions and limitations under the License.
-
 </pre>
 
 ### Using a different license
