@@ -10,7 +10,7 @@ If you haven't already installed yotta, please follow these [installation instru
 
 
 ## Regular method: creating a new application
-<details>
+
 This method uses yotta to initialize an application and manually add our code to it.
 
 ### Step 1: create an application
@@ -151,9 +151,8 @@ To build the application:
 	LED = 0
 	...
 	```
-</details>
 ## Alternative method: cloning an existing application
-<details>
+
 Instead of setting up your own application from scratch, you could clone an existing one and modify it. We have published the above [blinky example application](https://github.com/armmbed/example-mbedos-blinky) on GitHub so you can clone the repo and build it.
 
 ### Step 1: clone the repo
@@ -181,4 +180,3 @@ $ yotta build
 ```
 
 As in the previous method, the compiled binary is at `/build/frdm-k64f-gcc/source/example-mbedos-blinky.bin`. You can copy it to your board to run it, and hook your board up to a terminal to see the output, as explained in step 6 above.
-</details>
