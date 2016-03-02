@@ -28,6 +28,8 @@ These chapters explain how to work with the various mbed OS features:
 
 * [Networking with mbed OS](networking.md): Networking options and structure on mbed OS.
 
+* [Asynchronous I2C](I2C.md): Two-wire serial bus protocol on mbed OS.
+
 ## Contributing to mbed OS and publishing modules
 
 * [Creating and publishing your own modules and contributing to mbed OS](contributing.md): The process and legal requirements for publishing modules as stand-alone or as part of the mbed OS code base.
