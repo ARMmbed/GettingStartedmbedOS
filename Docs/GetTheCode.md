@@ -28,7 +28,7 @@ Blinky is the simplest application we have, and is available in the [quick start
 
 ## Interrupts
 
-* [GPIO InterruptIn](https://github.com/ARMmbed/example-mbedos-interruptin).
+* [GPIO InterruptIn](https://github.com/ARMmbed/example-mbedos-interruptin). Coming soon.
 
 # Key code repositories
 
