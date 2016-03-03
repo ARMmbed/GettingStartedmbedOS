@@ -12,11 +12,7 @@ Welcome to the ARM® mbed™ OS user guide.
 
 * [Learn about mbed OS](about_mbed_os.md): A quick review of mbed OS features and code base, as well as its use of yotta.
 
-## In depth review of mbed OS
-
-The in depth section of the guide reviews the principles and features of mbed OS. This section isn't fully ready, but we're publishing stand-alone chapters as fast as we can.
-
-### Applications on  mbed OS
+## Applications on  mbed OS
 
 A general review of how to write applications for mbed OS:
 
@@ -24,7 +20,7 @@ A general review of how to write applications for mbed OS:
 
 * [Writing applications for mbed OS](Full_Guide/app_on_mbed_os.md): Some general principles of mbed OS applications.
 
-### mbed OS features
+## mbed OS features
 
 These chapters explain how to work with the various mbed OS features:
 
