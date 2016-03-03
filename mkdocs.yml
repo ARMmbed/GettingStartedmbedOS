@@ -1,16 +1,17 @@
-site_name: Getting Started Guides
+site_name: mbed OS Guides
 
 docs_dir: Docs
 
 pages:
-- ['index.md','Overview of mbed OS']
+- ['index.md','Welcome to the mbed OS User Guides']
+- ['about_mbed_os.md','Overview of mbed OS']
 - ['installation.md', 'Quick Guide', 'Installation']
 - ['FirstProjectmbedOS.md', 'Quick Guide', 'Blinky - your first application']
 - ['Extended_LED.md', 'Quick Guide', 'Extending Blinky']
+- ['GetTheCode.md', 'Quick Guide', 'Additional examples and code']
 - ['Full_Guide/guide_index.md', 'Introduction to the mbed OS User Guide', 'Introduction']
 - ['Full_Guide/app_on_yotta.md', 'Applications on mbed OS', 'mbed OS applications with yotta']
 - ['Full_Guide/app_on_mbed_os.md', 'Applications on mbed OS', 'Writing applications for mbed OS']
-- ['GetTheCode.md', 'Applications on mbed OS', 'Additional examples and code']
 - ['Full_Guide/Interfacing.md', 'mbed OS features', 'Interfacing to hardware']
 - ['Full_Guide/Debugging.md', 'mbed OS features', 'Debugging mbed OS applications']
 - ['Full_Guide/mbed_tls.md', 'mbed OS features', 'Security with mbed TLS']
