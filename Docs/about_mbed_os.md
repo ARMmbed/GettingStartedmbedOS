@@ -1,12 +1,8 @@
 # Overview of mbed OS
 
-This page provides a review of [mbed OS](#mbed-os), its [code base](#code-base) and its use of [the build system yotta](#mbed-os-and-yotta).
-
-## mbed OS
-
 mbed OS is the operating system we created for mbed-enabled boards. It allows your C++ applications to run on these boards by providing APIs that you can use from your application to control the hardware.
 
-### Features
+## Features
 
 We designed mbed OS specifically for constrained devices, so it works behind the scenes to automatically make the most of the limited hardware and network resources available:
 
@@ -27,11 +23,12 @@ We designed mbed OS specifically for constrained devices, so it works behind the
 mbed OS also works with other ARM mbed tools, like our testing tool (Greentea) and mbed Device Server. To learn more about these tools, see the [main site](https://www.mbed.com/en/).
 
 
-### Code base
+## Code base
 
 As explained above, mbed OS is modular. This section gives a short review of the main modules. Some of these will be reviewed in greater detail later.
 
-#### Core modules
+### Core modules
+
 * [_compiler-polyfill_](https://github.com/ARMmbed/compiler-polyfill): Common compiler intrinsics and attributes made portable across toolchains.
 
 * [_core-util_](https://github.com/ARMmbed/core-util): Core data structures and primitives for the OS.
@@ -42,7 +39,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_uvisor_](https://github.com/ARMmbed/uvisor): mbed OS uVisor is a supervisory kernel for security on mbed OS.
 
-#### Hardware abstraction and drivers
+### Hardware abstraction and drivers
 
 * [_mbed-drivers_](https://github.com/ARMmbed/mbed-drivers): Abstract drivers for common hardware peripherals and communications interfaces such as SPI and I2C. Provides a higher level interface than the mbed HAL; these are the APIs that applications should use.
 
@@ -50,7 +47,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_mbed-hal_](https://github.com/ARMmbed/mbed-hal): The mbed Hardware Abstraction Layer (HAL).
 
-#### Networking and connectivity
+### Networking and connectivity
 
 * [_ble_](https://github.com/ARMmbed/ble): APIs for using Bluetooth Low Energy.
 
@@ -64,7 +61,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_sockets_](https://github.com/ARMmbed/sockets): High level portable socket layer (sitting on top of the SAL).
 
-#### mbed Client
+### mbed Client
 
 * [_mbed-client-c_](https://github.com/ARMmbed/mbed-client-c): Core library in C.
 
@@ -74,7 +71,7 @@ As explained above, mbed OS is modular. This section gives a short review of the
 
 * [_mbed-client-mbedtls_](https://github.com/ARMmbed/mbed-client-mbed-tls): mbed TLS-specific implementation for mbed Client.
 
-### mbed OS and yotta
+## mbed OS and yotta
 
 yotta is the build system we use for mbed OS. We'll get into the details of it [later](Full_Guide/app_on_yotta.md), but what you need to understand at this point is that mbed OS applications cannot be built without yotta. 
 
