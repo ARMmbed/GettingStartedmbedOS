@@ -20,35 +20,33 @@ The in depth section of the guide reviews the principles and features of mbed OS
 
 A general review of how to write applications for mbed OS:
 
-* [mbed OS applications with yotta](app_on_yotta.md): The relationship between yotta and mbed OS, and how you can create yotta-based mbed OS applications. 
+* [mbed OS applications with yotta](Full_Guide/app_on_yotta.md): The relationship between yotta and mbed OS, and how you can create yotta-based mbed OS applications. 
 
-* [Writing applications for mbed OS](app_on_mbed_os.md): Some general principles of mbed OS applications.
-
-* [Additional examples and code](../GetTheCode.md): Links to additional sample applications for mbed OS and to our code repositories.
+* [Writing applications for mbed OS](Full_Guide/app_on_mbed_os.md): Some general principles of mbed OS applications.
 
 ### mbed OS features
 
 These chapters explain how to work with the various mbed OS features:
 
-* [Interfacing to hardware](Interfacing.md): How mbed OS controls different hardware.
+* [Interfacing to hardware](Full_Guide/Interfacing.md): How mbed OS controls different hardware.
 
-* [Debugging mbed OS applications](Debugging.md): Debugging for applications built with ARMCC and GCC.
+* [Debugging mbed OS applications](Full_Guide/Debugging.md): Debugging for applications built with ARMCC and GCC.
 
-* [Security with mbed TLS](mbed_tls.md): Using mbed TLS for communication security in mbed OS.
+* [Security with mbed TLS](Full_Guide/mbed_tls.md): Using mbed TLS for communication security in mbed OS.
 
-* [Asynchronous programming with MINAR](MINAR.md): Using the mbed OS schedular MINAR for asynchronous programming. 
+* [Asynchronous programming with MINAR](Full_Guide/MINAR.md): Using the mbed OS schedular MINAR for asynchronous programming. 
 
-* [Memory in mbed OS](memory.md): Memory management and allocation in mbed OS. 
+* [Memory in mbed OS](Full_Guide/memory.md): Memory management and allocation in mbed OS. 
 
-* [Networking with mbed OS](networking.md): Networking options and structure on mbed OS.
+* [Networking with mbed OS](Full_Guide/networking.md): Networking options and structure on mbed OS.
 
-* [Asynchronous I2C](I2C.md): Two-wire serial bus protocol on mbed OS.
+* [Asynchronous I2C](Full_Guide/I2C.md): Two-wire serial bus protocol on mbed OS.
 
 ## Contributing to mbed OS and publishing modules
 
-* [Creating and publishing your own modules and contributing to mbed OS](contributing.md): The process and legal requirements for publishing modules as stand-alone or as part of the mbed OS code base.
+* [Creating and publishing your own modules and contributing to mbed OS](Full_Guide/contributing.md): The process and legal requirements for publishing modules as stand-alone or as part of the mbed OS code base.
 
-* [Coding style and GitHub pull request guidelines](Code_Style.md): Style guidelines for code and GitHub pull requests.
+* [Coding style and GitHub pull request guidelines](Full_Guide/Code_Style.md): Style guidelines for code and GitHub pull requests.
 
 ## What you need to know before reading the guide
 
