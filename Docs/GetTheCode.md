@@ -26,6 +26,10 @@ Blinky is the simplest application we have, and is available in the [quick start
 
 * [Async SPI](https://github.com/ARMmbed/example-asynch-spi).
 
+## Interrupts
+
+* [GPIO InterruptIn](https://github.com/ARMmbed/example-mbedos-interruptin).
+
 # Key code repositories
 
 For a list of key code repositories and the documentation they contain, as well as a few more samples, see [our main site](http://mbed.com/en/development/getting-started/get-code/).
