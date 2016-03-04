@@ -16,28 +16,27 @@ There are three ways to get yotta:
 
 ### Installers
 
-* OS X installer:
+yotta has installers for OS X and Windows. They include an installation of all yotta dependencies. 
 
-	1. Download the latest [OS X yotta.app](https://github.com/ARMmbed/yotta_osx_installer/releases/latest).
+#### OS X installer
 
-	1. Drag ``yotta.app`` from the disk image into your Applications folder.
+1. Download the latest [OS X yotta.app](https://github.com/ARMmbed/yotta_osx_installer/releases/latest).
 
-	1. When you run yotta.app, it opens a terminal where you can use yotta commands.
+1. Drag ``yotta.app`` from the disk image into your Applications folder.
 
+1. When you run ``yotta.app``, it opens a terminal where you can use yotta commands.
 
-* Windows installer:
+#### Windows installer
 
-	1. Download the latest [yotta windows installer](https://github.com/ARMmbed/yotta_windows_installer/releases/latest).
+1. Download the latest [yotta windows installer](https://github.com/ARMmbed/yotta_windows_installer/releases/latest).
 
-	1. Run the installer.
+1. Run the installer.
 
-	1. Click the ``Run Yotta`` shortcut on the desktop or in the start menu to run a session with the yotta path temporarily pre-pended to system path.
-
+1. Click the ``Run Yotta`` shortcut on the desktop or in the start menu to run a session with the yotta path temporarily pre-pended to system path.
 
 ### Docker container
 
 [See the Docker container instructions](docker_install.md).
-
 
 ### Manual installation
 
