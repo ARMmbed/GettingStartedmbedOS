@@ -8,11 +8,11 @@ Working with mbed OS means you use yotta to combine your own application code wi
 
 There are three ways to get yotta: 
 
-* Manual installation of yotta and all its dependencies.
+* [Our installers](#installers), which include the yotta dependencies.
 
-* Our installers, which include the yotta dependencies.
+* [A Docker container](#docker-container), which includes the yotta dependencies. 
 
-* Docker container, which includes the yotta dependencies. 
+* [Manual installation](#manual-installation) of yotta and all its dependencies.
 
 ### Installers
 
@@ -48,7 +48,7 @@ If you want to manually install yotta, please ensure you have your dependencies,
 Before installing yotta, make sure you have:
 
 * [Python 2.7](https://www.python.org/download/releases/2.7/). Python 3 support is experimental.
-* [pip](http://pip.readthedocs.org/en/latest/installing.html).
+* [pip](https://pypi.python.org/pypi/pip).
 
 #### Manual installation instructions
 
