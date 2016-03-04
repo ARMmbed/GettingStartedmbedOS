@@ -440,14 +440,21 @@ You have to remember that MINAR will not run one callback if another callback is
 The following images show the relationship between MINAR event attributes and the execution order of callbacks:
 
 * Compare tasks that aren't posted by an interrupt with tasks that are posted by an interrupt (note that the system sleeps while waiting for the IRQ):
-<span style="background-color: #F0F0F5; display:block; height:100%; padding:10px;">![Interrupt-based tasks](../Full_Guide/Images/post_callback.png)</span>
+
+<span style="background-color: #F0F0F5; display:block; width:75%; padding:10px;">![Interrupt-based tasks](../Full_Guide/Images/post_callback.png)</span>
+
 
 * Tasks with delays, and a single task with intervals:
-<span style="background-color: #F0F0F5; display:block; height:100%; padding:10px;">![These tasks have delay or interval parameters](../Full_Guide/Images/post_callback_d_i.png)</span>
+
+<span style="background-color: #F0F0F5; display:block; width:75%; padding:10px;">![These tasks have delay or interval parameters](../Full_Guide/Images/post_callback_d_i.png)</span>
+
 
 * You can use tolerance to optimize MINAR's scheduling, because a task with low tolerance will push ahead of tasks with higher tolerance. Tasks are ordered in the queue by the last possible time to run them. Task 3 runs before Task 2, because Task 3 has no tolerance - its last possible executable time is earlier than Task 2's last possible executable time:
-<span style="background-color: #F0F0F5; display:block; height:100%; padding:10px;">![Task 2 is executed only after Task 3](../Full_Guide/Images/post_callback_t_2.png)</span>
+
+<span style="background-color: #F0F0F5; display:block; width:75%; padding:10px;">![Task 2 is executed only after Task 3](../Full_Guide/Images/post_callback_t_2.png)</span>
+
 
 * Tolerance can be used to prevent the MCU from going to sleep, but not to wake it up. Task 2 is performed right after Task 1, because the MCU is already running and Task 2's tolerance allows it to run this early. But Task 3 happens after a sleep (its scheduled time), because its tolerance isn't big enough to push it to the end of Task 2, and so the MCU goes to sleep - and will not wake up to run something earlier than its scheduled execution time:
-<span style="background-color: #F0F0F5; display:block; height:100%; padding:10px;">![Two of these tasks have a tolerance, giving MINAR some execution freedom](../Full_Guide/Images/post_callback_t.png)</span>
+
+<span style="background-color: #F0F0F5; display:block; width:75%; padding:10px;">![Two of these tasks have a tolerance, giving MINAR some execution freedom](../Full_Guide/Images/post_callback_t.png)</span>
 
