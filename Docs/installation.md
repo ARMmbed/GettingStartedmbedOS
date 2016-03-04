@@ -1,31 +1,65 @@
-# Getting mbed OS
+# Getting mbed OS and yotta
 
 You don't "get" mbed OS in the same way that you get a new app on your phone. There is no mbed OS download and no way to install it on your machine.
 
-Working with mbed OS means you use yotta to combine your own application code with the mbed OS code base. yotta gets the relevant parts of mbed OS for you from its own registry.
+Working with mbed OS means you use yotta to combine your own application code with the mbed OS code base. yotta gets the relevant parts of mbed OS for you from its own registry. So our guide walks you through working with yotta, then shows you how to write an application that can work with the mbed OS code base. But first, you'll have to get yotta.
 
-So these guides will walk you through working with yotta, then show you how to write an application that can work with the mbed OS code base. 
+## Installing yotta
 
-There are two ways to get yotta: 
+There are three ways to get yotta: 
 
-* [Install it on your machine](http://yottadocs.mbed.com/#installing).
+* Manual installation of yotta and all its dependencies.
 
-* [Run it in a Docker container](docker_install.md).
+* Our installers, which include the yotta dependencies.
+
+* Docker container, which includes the yotta dependencies. 
+
+### Installers
+
+* OS X installer:
+
+	1. Download the latest [OS X yotta.app](https://github.com/ARMmbed/yotta_osx_installer/releases/latest).
+
+	1. Drag ``yotta.app`` from the disk image into your Applications folder.
+
+	1. When you run yotta.app, it opens a terminal where you can use yotta commands.
+
+
+* Windows installer:
+
+	1. Download the latest [yotta windows installer](https://github.com/ARMmbed/yotta_windows_installer/releases/latest).
+
+	1. Run the installer.
+
+	1. Click the ``Run Yotta`` shortcut on the desktop or in the start menu to run a session with the yotta path temporarily pre-pended to system path.
+
+
+### Docker container
+
+[See the Docker container instructions](docker_install.md).
+
+
+### Manual installation
+
+If you want to manually install yotta, please ensure you have your dependencies, then follow the instructions for your operating system.
+
+#### Dependencies
+
+Before installing yotta, make sure you have:
+
+* [Python 2.7](https://www.python.org/download/releases/2.7/). Python 3 support is experimental.
+* [pip](http://pip.readthedocs.org/en/latest/installing.html).
+
+#### Manual installation instructions
+
+* [OS X](http://yottadocs.mbed.com/#installing-on-osx).
+
+* [Windows](http://yottadocs.mbed.com/#installing-on-windows).
+
+* [Linux](http://yottadocs.mbed.com/#installing-on-linux).
 
 ## What's next?
 
-Try the [quick guide](FirstProjectmbedOS.md) to get a first sample application working, or see the [full list of samples](GetTheCode.md).
+Try the [Blinky quick guide](FirstProjectmbedOS.md) to get a first sample application working, or see the [full list of samples](GetTheCode.md).
 
-Read the [full guide](index.md) to understand how mbed OS and yotta work together. 
-
-If your'e interested in specific yotta modules:
-
-* [``mbed-drivers``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/mbed-drivers/) is the heart of mbed OS. You'll see it again and again in the guide.
-
-* [``mbed-client``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/mbed-client/) is best explored through its [getting started guide](https://docs.mbed.com/docs/mbed-client-guide/en/latest/).
-
-* [``mbedtls``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/mbedtls/) is the mbed connectivity security module, and explored in greater detail in [the user guide chapter covering its use in mbed OS](Full_Guide/mbed_tls.md).
-
-* Some other modules that might interest you are [``sockets``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/sockets/), [``ble``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/ble/) and [``sal-stack-nanostack``](https://www.mbed.com/en/development/software/mbed-yotta/search/result/module/sal-stack-nanostack/) for connectivity.
-
-You can search for other modules [on our main site](https://www.mbed.com/en/development/software/mbed-yotta/).
+You can also read the [full guide](Full_Guide/app_on_yotta.md) to understand how mbed OS and yotta work together. 
