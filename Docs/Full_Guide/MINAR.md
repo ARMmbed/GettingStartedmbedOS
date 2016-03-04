@@ -445,8 +445,9 @@ The following images show the relationship between MINAR event attributes and th
 * Tasks with delays, and a single task with intervals:
 ![These tasks have delay or interval parameters](Images/post_callback_d_i.png)
 
-* Tasks with tolerance. Note that Task 2 is performed right after Task 1 (without sleeping), thanks to the tolerance of Task 2, but Task 3 happens after a sleep, because its tolerance isn't big enough to push it to the end of Task 2:
+* You can use tolerance to optimize MINAR's scheduling, because a task with low tolerance will push ahead of tasks with higher tolerance. Tasks are ordered in the queue by the last possible time to run them. Task 3 runs before Task 2, because Task 3 has no tolerance - its last possible executable time is earlier than Task 2's last possible executable time:
+![Task 2 is executed only after Task 3](Images/post_callback_t_2.png)
+
+* Tolerance can be used to prevent the MCU from going to sleep, but not to wake it up. Task 2 is performed right after Task 1, because the MCU is already running and Task 2's tolerance allows it to run this early. But Task 3 happens after a sleep (its scheduled time), because its tolerance isn't big enough to push it to the end of Task 2, and so the MCU goes to sleep - and will not wake up to run something earlier than its scheduled execution time:
 ![Two of these tasks have a tolerance, giving MINAR some execution freedom](Images/post_callback_t.png)
 
-* MINAR can use tolerance to rearrange tasks for best results. For example, since MINAR doesn't know how long it will take Task 2 to run, and Task 2 has a large tolerance, MINAR chooses to run Tas 3 first, rather than risk running it late because Task 2 took too long:
-![Task 2 is executed only after Task 3](Images/post_callback_t_2.png)
