@@ -437,16 +437,16 @@ This example uses the attributes we introduced earlier to schedule a series of c
 
 You have to remember that MINAR will not run one callback if another callback is executing. That means that when you design the callback sequence, it's important to take into account their performance time, delay and tolerance. Because the first callback in our example has a delay of 500ms and a tolerance of 100ms, it could take up to 600ms to start running. We therefore gave the next callback a period of 650ms and a tolerance of 100ms, meaning its first run can start 750ms after the first callback without causing problems.
 
-The following images show the relationship between MINAR even attributes and the execution order of callbacks:
+The following images show the relationship between MINAR event attributes and the execution order of callbacks:
 
-* Compare tasks that aren't waiting for an interrupt with tasks that require an interrupt:
-![Interrupt-based and tasks](Images/post_callback.png)
+* Compare tasks that aren't posted by an interrupt with tasks that are posted by an interrupt (note that the system sleeps while waiting for the IRQ):
+![Interrupt-based tasks](Images/post_callback.png)
 
 * Tasks with delays, and a single task with intervals:
 ![These tasks have delay or interval parameters](Images/post_callback_d_i.png)
 
-* Tasks with tolerance. Note the difference between the posting order and the execution order, the result of MINAR using Task 3's full tolerance time:
+* Tasks with tolerance. Note that Task 2 is performed right after Task 1 (without sleeping), thanks to the tolerance of Task 2, but Task 3 happens after a sleep, because its tolerance isn't big enough to push it to the end of Task 2:
 ![Two of these tasks have a tolerance, giving MINAR some execution freedom](Images/post_callback_t.png)
 
-* Tasks with tolerance. This time only Task 2 has tolerance, and it extends past Task 3's execution time. It cannot be performed between tasks 1 and 3, so it's performed after 3:
+* MINAR can use tolerance to rearrange tasks for best results. For example, since MINAR doesn't know how long it will take Task 2 to run, and Task 2 has a large tolerance, MINAR chooses to run Tas 3 first, rather than risk running it late because Task 2 took too long:
 ![Task 2 is executed only after Task 3](Images/post_callback_t_2.png)
