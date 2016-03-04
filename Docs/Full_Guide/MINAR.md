@@ -436,3 +436,18 @@ This example uses the attributes we introduced earlier to schedule a series of c
 ```
 
 You have to remember that MINAR will not run one callback if another callback is executing. That means that when you design the callback sequence, it's important to take into account their performance time, delay and tolerance. Because the first callback in our example has a delay of 500ms and a tolerance of 100ms, it could take up to 600ms to start running. We therefore gave the next callback a period of 650ms and a tolerance of 100ms, meaning its first run can start 750ms after the first callback without causing problems.
+
+The following images show the relationship between MINAR event attributes and the execution order of callbacks:
+
+* Compare tasks that aren't posted by an interrupt with tasks that are posted by an interrupt (note that the system sleeps while waiting for the IRQ):
+![Interrupt-based tasks](Images/post_callback.png)
+
+* Tasks with delays, and a single task with intervals:
+![These tasks have delay or interval parameters](Images/post_callback_d_i.png)
+
+* You can use tolerance to optimize MINAR's scheduling, because a task with low tolerance will push ahead of tasks with higher tolerance. Tasks are ordered in the queue by the last possible time to run them. Task 3 runs before Task 2, because Task 3 has no tolerance - its last possible executable time is earlier than Task 2's last possible executable time:
+![Task 2 is executed only after Task 3](Images/post_callback_t_2.png)
+
+* Tolerance can be used to prevent the MCU from going to sleep, but not to wake it up. Task 2 is performed right after Task 1, because the MCU is already running and Task 2's tolerance allows it to run this early. But Task 3 happens after a sleep (its scheduled time), because its tolerance isn't big enough to push it to the end of Task 2, and so the MCU goes to sleep - and will not wake up to run something earlier than its scheduled execution time:
+![Two of these tasks have a tolerance, giving MINAR some execution freedom](Images/post_callback_t.png)
+
