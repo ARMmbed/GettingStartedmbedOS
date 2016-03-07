@@ -34,6 +34,10 @@ You might want to pay special attention to [mbed Client](/http://v3.mbed.com/en/
 
 * Moving from [prototyping to production](http://mbed.com/en/development/hardware/prototyping-production/), including an introduction to the hardware development kit (HDK).
 
+## Porting guide
+
+The [mbed OS Porting Guide](https://docs.mbed.com/docs/porting-guide/en/latest/) walks you through porting mbed products to Cortex-M based hardware.
+
 ## mbed and the development community
 
 Learn how to [get help](http://mbed.com/en/development/community-help/) from other developers and on-line sources, and [engage with mbed](http://mbed.com/en/about-mbed/engage-with-us/).
