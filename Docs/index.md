@@ -52,7 +52,9 @@ The examples in this guide focus on the FRDM-K64F board. If you have another boa
 
 ### Additional sources
 
-* [Further reading sources](FurtherReading.md) about other mbed tools, hardware, community and partners.
+* [Further reading sources](FurtherReading.md): other mbed tools, hardware, community and partners. 
+
+* The [mbed OS Porting Guide](https://docs.mbed.com/docs/porting-guide/en/latest/) for porting mbed products to Cortex-M based hardware.
 
 * Links to [our main code repositories and their documentation, as well as examples](GetTheCode.md).
 
