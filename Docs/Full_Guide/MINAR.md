@@ -113,8 +113,8 @@ static void blinky(void) {
 }
 
 void buttonTask() {
-    /* minar doesn't break if the handle is stale, so we can call this >once */
     Scheduler::cancelCallback(handle);
+    handle = 0;
 }
 
 void buttonISR() {
