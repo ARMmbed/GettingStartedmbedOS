@@ -14,7 +14,6 @@ pages:
 - ['Full_Guide/Interfacing.md', 'mbed OS features', 'Interfacing to hardware']
 - ['Full_Guide/Debugging.md', 'mbed OS features', 'Debugging mbed OS applications']
 - ['Full_Guide/mbed_tls.md', 'mbed OS features', 'Security with mbed TLS']
-- ['Full_Guide/MINAR.md', 'mbed OS features', 'Asynchronous programming with MINAR']
 - ['Full_Guide/memory.md', 'mbed OS features', 'Memory in mbed OS']
 - ['Full_Guide/networking.md', 'mbed OS features', 'Networking in mbed OS']
 - ['Full_Guide/I2C.md', 'mbed OS features', 'Asynchronous I2C']
