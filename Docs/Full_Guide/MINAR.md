@@ -34,9 +34,7 @@ void app_start(int, char**){
     minar::Scheduler::postCallback(blinky).delay(minar::milliseconds(5000));
 }   
 ```
-
-
-By default the tolerance is 10ms:
+Tolerance is how sensitive your task is to being run at the exact scheduled time. MINAR will decide when to run a task (the current workload permitting) based on the scheduled time plus/minus the tolerance. By default the tolerance is 10ms:
 
 ```c
 minar::Scheduler::postCallback(blinky)
