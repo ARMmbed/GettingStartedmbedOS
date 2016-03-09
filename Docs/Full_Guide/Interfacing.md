@@ -104,4 +104,4 @@ This brings us all the way from a generic LED1 call in your code to a board-spec
 
 ## Further reading
 
-You might be interested in the Doxygen for [mbed-drivers](https://docs.mbed.com/docs/mbed-drivers-api/en/latest/api/index.html).
+You might be interested in the Doxygen for [mbed-drivers](https://docs.mbed.com/docs/mbed-drivers-api/en/latest/api/index.html) and [mbed-hal](https://docs.mbed.com/docs/mbed-hal-api/en/latest/api/index.html).
