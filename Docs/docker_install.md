@@ -2,7 +2,7 @@
 
 Docker containers let you run an application such as yotta, with all of its dependencies (like Python), without installing anything directly on your machine. This protects you from version conflicts and other installation problems. 
 
-We’ve built a yotta Docker container and a bash script (``yotta.sh``) which allows you to use the yotta Docker container to mimic a yotta installation on your system; yotta will be fully functional.
+We’ve built a yotta Docker container and a bash script (``yotta.sh``), which allows you to use the yotta Docker container to mimic a yotta installation on your system; yotta will be fully functional.
 
 ### Prerequisites
 
@@ -48,7 +48,4 @@ yotta build
 
 ### Open Source
 
-The yotta Docker image is open source, feel free to fork it:
-
-https://github.com/ARMmbed/yotta-docker
-
+The yotta Docker image is open source, so [feel free to fork it](https://github.com/ARMmbed/yotta-docker).
