@@ -16,7 +16,7 @@ yotta has installers for OS X and Windows. They include an installation of all y
 
 ### OS X installer
 
-1. Download the latest [OS X yotta.app](https://github.com/ARMmbed/yotta_osx_installer/releases/latest).
+1. Download the latest [OS X yotta.app](https://www.mbed.com/en/development/software/mbed-yotta/#Installing_yotta).
 
 1. Drag ``yotta.app`` from the disk image into your Applications folder.
 
@@ -24,7 +24,7 @@ yotta has installers for OS X and Windows. They include an installation of all y
 
 ### Windows installer
 
-1. Download the latest [yotta windows installer](https://github.com/ARMmbed/yotta_windows_installer/releases/latest).
+1. Download the latest [yotta Windows installer](https://www.mbed.com/en/development/software/mbed-yotta/#Installing_yotta).
 
 1. Run the installer.
 
