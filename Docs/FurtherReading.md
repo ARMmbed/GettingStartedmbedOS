@@ -36,9 +36,7 @@ You might want to pay special attention to [mbed Client](/http://v3.mbed.com/en/
 
 ## Doxygen
 
-* [mbed-drivers](https://docs.mbed.com/docs/mbed-drivers-api/en/latest/api/index.html).
-* [mbed-hal](https://docs.mbed.com/docs/mbed-hal-api/en/latest/api/index.html).
-* [ble](https://docs.mbed.com/docs/ble-api/en/master/api/index.html).
+If you're interested in API Doxygen, [see the list here](https://docs.mbed.com/docs/api-documentation-list/en/latest/).
 
 ## mbed and the development community
 
