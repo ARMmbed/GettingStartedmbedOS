@@ -4,11 +4,7 @@ To learn more about mbed, see the [main site](http://mbed.com).
 
 ## Release notes
 
-All release notes are available on the main site:
-
-* [mbed OS](https://www.mbed.com/en/development/software/mbed-os/releases/).
-
-* [mbed Client](https://www.mbed.com/en/development/software/mbed-client/releases/).
+All release notes for mbed OS and mbed Client are [in the mbed Release Documents project](https://docs.mbed.com/docs/release-documents/en/latest/).
 
 ## Software
 
@@ -26,7 +22,7 @@ To learn about mbed [software](http://mbed.com/en/development/software/):
 
 Learn about [connectivity on mbed](http://mbed.com/en/technologies/connectivity/) and [mbed cloud services](http://mbed.com/en/development/cloud/).
 
-You might want to pay special attention to [mbed Client](/http://v3.mbed.com/en/development/cloud/mbed-client/), the software library that connects constrained devices to mbed Device Server.
+You might want to pay special attention to [mbed Client](/http://mbed.com/en/development/cloud/mbed-client/), the software library that connects constrained devices to mbed Device Server.
 
 ## Hardware and production
 
