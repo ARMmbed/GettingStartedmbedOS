@@ -157,7 +157,7 @@ All mbed OS modules are on GitHub; please use GitHub's [issues mechanism](https:
 
 If you're not sure which repository you need, please ask on [the forums](http://forums.mbed.com/).
 
-For best practice on bug reporting, please see [the mbed OS bug reporting guidelines](https://github.com/ARMmbed/mbed-os/blob/master/Reporting%20Bugs.md).
+For best practice on bug reporting, please see [the mbed OS bug reporting guidelines](https://github.com/ARMmbed/mbed-os-docs/blob/master/Reporting%20Bugs.md).
 
 #### Bug fixes
 
