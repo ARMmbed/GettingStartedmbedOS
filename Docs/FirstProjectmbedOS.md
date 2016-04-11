@@ -151,6 +151,7 @@ To build the application:
 	LED = 0
 	...
 	```
+
 ## Alternative method: cloning an existing application
 
 Instead of setting up your own application from scratch, you could clone an existing one and modify it. We have published the above [blinky example application](https://github.com/armmbed/example-mbedos-blinky) on GitHub so you can clone the repo and build it.
