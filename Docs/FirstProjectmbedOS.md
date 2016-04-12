@@ -184,4 +184,4 @@ As in the previous method, the compiled binary is at `/build/frdm-k64f-gcc/sourc
 
 # Importing to the IDE
 
-code-include{https://github.com/ARMmbed/example-mbedos-blinky/blob/master/source/blinky.cpp}
+[![View code](https://github.com/ARMmbed/example-mbedos-blinky)](https://github.com/ARMmbed/example-mbedos-blinky/blob/master/source/blinky.cpp)
