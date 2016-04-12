@@ -181,3 +181,7 @@ $ yotta build
 ```
 
 As in the previous method, the compiled binary is at `/build/frdm-k64f-gcc/source/example-mbedos-blinky.bin`. You can copy it to your board to run it, and hook your board up to a terminal to see the output, as explained in step 6 above.
+
+# Importing to the IDE
+
+code-include{https://github.com/ARMmbed/example-mbedos-blinky/blob/master/source/blinky.cpp}
