@@ -30,9 +30,13 @@ You might want to pay special attention to [mbed Client](/http://mbed.com/en/dev
 
 * Moving from [prototyping to production](http://mbed.com/en/development/hardware/prototyping-production/), including an introduction to the hardware development kit (HDK).
 
-## Doxygen
+## APIs
 
-If you're interested in API Doxygen, [see the list here](https://docs.mbed.com/docs/api-documentation-list/en/latest/).
+If you're interested in reviewig the APIs, [see the list here](https://docs.mbed.com/docs/api-documentation-list/en/latest/).
+
+## Third party integeration
+
+Read about using mbed OS [with third party tools](https://docs.mbed.com/docs/third-party-integrations/en/latest/).
 
 ## mbed and the development community
 
