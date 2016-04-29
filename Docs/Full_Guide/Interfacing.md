@@ -1,19 +1,19 @@
-## Interfacing to hardware
+# Interfacing to hardware
 
 mbed OS offers the APIs that interface directly with the hardware. While each API's hardware-facing side can delve into board-specific details, the side facing you - and your application - remains constant. That allows you to write a single piece of code and run it on all supported boards.
 
 Hardware interfaces are handled by the mbed Hardware Abstraction Layer (HAL). The mbed HAL is an [interface](https://github.com/ARMmbed/mbed-hal/tree/master/mbed-hal) that has various generic manufacturer implementations, such as [Nordic](https://github.com/ARMmbed/mbed-hal-nordic) and [Freescale](https://github.com/ARMmbed/mbed-hal-freescale), as well as various board implementations.
 
-<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
+<span class="images">
 ![](../Full_Guide/Images/HAL_Tree.png)</span>
 
 When you delve into board-specific implementations you get the mapping that HAL requires. The following example focuses on the FRDM-K64F implementation, which is the same board we use in this document's code examples.
 
-### yotta and HAL selection
+## yotta and HAL selection
 
 When you tell yotta which board you're building for (your target), yotta knows which modules that board requires. So when you say ``yotta target frdm-k64g-gcc`` and then ``yotta build``, the build is performed with your board's specific HAL.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** to learn about yotta targets, read [the chapter about mbed OS applications with yotta](app_on_yotta.md).</span>
+<span class="tips">**Tip:** to learn about yotta targets, read [the chapter about mbed OS applications with yotta](app_on_yotta.md).</span>
 
 We can see this when we run ``yotta ls`` in the Blinky directory we built earlier ([please refer to the quick guide if you haven't built Blinky yet](../FirstProjectmbedOS.md)):
 
@@ -44,17 +44,17 @@ Focusing on HAL, we can see that the board-specific implementation is actually m
 
 We'll see an implementation example in the next section, after we introduce our first hardware interface: GPIO.
 
-### GPIO
+## GPIO
 
 General-purpose input/output (GPIO) is handled twice: in ``mbed-drivers``, to interface with your code; and in HAL, to interface with the board. There is a general GPIO header, but mbed-drivers and HAL include headers for different input and output types, and HAL further includes pin names, peripheral names and so on.
 
 You can use the GPIO related APIs for digital input and output. You can also get a notification (an interrupt) when the logic value on a GPIO pin changes from 0 to 1 or from 1 to 0.
 
-#### HAL implementation example - from the APIs to the hardware
+### HAL implementation example - from the APIs to the hardware
 
 This example focuses on the LEDs on our boards, but it introduces general principles and file structures that apply to all GPIO functionalities.
 
-##### Mapping the user-facing API to pinouts
+#### Mapping the user-facing API to pinouts
 
 To support board-agnostic programming, the mapping of a functionality to a pin is handled by board-specific HAL implementations. Let's look at how our sample application, Blinky, uses a LED on the board:
 
@@ -70,7 +70,7 @@ Of course, we don't want you to have to specify the exact pin every time you wri
 
 ``DigitalOut.h`` #includes ``platform.h``, which #includes ``PinNames.h``, which is in turn the header that maps the board's pins to our generic names. It is part of HAL, and is therefore board-specific. In our example, Blinky, we can find it in the ``yotta_module`` directory under the target name: ``/blinky/yotta_modules/mbed-hal-frdm-k64f/mbed-hal-frdm-k64f/``.
 
-<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
+<span class="images">
 ![](../Full_Guide/Images/pins.png)</span>
 
 Let's look at how the LEDs are mapped in ``PinNames.h`` for the FRDM-K64F:
@@ -97,7 +97,7 @@ PTB21 = (1 << GPIO_PORT_SHIFT | 21),
 
 The numbers PTB22, PTE26 and PTB21 are taken directly from the board's pinout:
 
-<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
+<span class="images">
 ![](../Full_Guide/Images/frdm_k64f_pinnout.jpg)</span>
 
 This brings us all the way from a generic LED1 call in your code to a board-specific pin use.
