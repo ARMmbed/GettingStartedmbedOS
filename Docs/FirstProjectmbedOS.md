@@ -8,7 +8,6 @@ yotta is the build system we use for mbed OS. We'll get into the details of it l
 
 If you haven't already installed yotta, please follow these [installation instructions](installation.md).
 
-
 ## Regular method: creating a new application
 
 This method uses yotta to initialize an application and manually add our code to it.
@@ -24,7 +23,7 @@ This method uses yotta to initialize an application and manually add our code to
 
 1. Initialize the module with `yotta init` and fill in the details. Make sure you select **executable** as the module type:
 
-<span style="display:block; text-align:center; padding:5px;">
+<span class="images">
 ![](Full_Guide/Images/yotta_init.png)</span>
 
 You should now have several folders and files in the directory:
@@ -42,7 +41,7 @@ blinky  module.json  source  test
 
 * The `/blinky` directory is where header files for your application will be created.
 
-**Tip:** if you want to learn about other module types, [start here](http://docs.yottabuild.org/).
+<span class="tips">**Tip:** if you want to learn about other module types, [start here](http://docs.yottabuild.org/).</span>
 
 ### Step 2: select a target board
 
@@ -67,7 +66,7 @@ In this example you are going to use the Freescale FRDM-K64F board configured fo
 $ yotta target frdm-k64f-gcc
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The first time you access the yotta Registry, you need to log into your mbed user account.</span>
+<span class="notes">**Note:** The first time you access the yotta Registry, you need to log into your mbed user account.</span>
 
 To check that the target has been set correctly run the target command without parameters. It shows what yotta is currently targeting for its builds:
 
@@ -113,7 +112,7 @@ void app_start(int, char**) {
 
 This application causes LED1 on the board to flash and prints the status of LED1 to the terminal. 
 
-**Tip:** When setting up your terminal, note that the default terminal speed is 9600 baud at 8-N-1.
+<span class="tips">**Tip:** When setting up your terminal, note that the default terminal speed is 9600 baud at 8-N-1.</span>
 
 ### Step 5: build
 
@@ -164,7 +163,7 @@ $ git clone https://github.com/ARMmbed/example-mbedos-blinky.git
 $ cd example-mbedos-blinky
 ```
 
-**Note:** This repo includes ``mbed-drivers`` as a dependency, so there is no need to manually install it as you did in the previous method (yotta will install it when you build the application).
+<span class="notes">**Note:** This repo includes ``mbed-drivers`` as a dependency, so there is no need to manually install it as you did in the previous method (yotta will install it when you build the application).</span>
 
 ### Step 2: select a target platform
 
