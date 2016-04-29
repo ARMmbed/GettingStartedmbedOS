@@ -10,19 +10,16 @@ Get a breadboard, a 220 ohm resistor (or something close to 220 ohm), and two wi
 
 To know how we should connect everything together we need to take a look at the pinout of the board. Normally, this is listed on the board's page on the mbed website (for example, here is the [FRDM-K64F pinout](https://www.mbed.com/en/development/hardware/boards/nxp/frdm_k64f/)). You can also do an image search for '[board-name] pinout'.
 
-<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Finding pinouts with your favourite search engine](Images/bb01.png)</span>
+<span class="images">![Finding pinouts with your favourite search engine](Images/bb01.png)<span>Finding pinouts with your favourite search engine</span></span>
 
-*Finding pinouts with your favourite search engine*
 
 We need a digital pin for the LED. Since I'm using the FRDM-K64F, I selected pin PTB23/D4.
 
-<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Choosing a digital pin](Images/bb04.png)</span>
+<span class="images">![Choosing a digital pin](Images/bb04.png)</span>
 
 Now we're ready to set up the circuit.
 
-<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Sketch of a LED wired up on a breadboard](Images/bb-sketch-led.png)</span>
-
-*Black wire running from GND to the short leg of the LED. Orange wire running from PTB23 through a resistor to the long leg of the LED.*
+<span class="images">![Sketch of a LED wired up on a breadboard](Images/bb-sketch-led.png)<span>*Black wire running from GND to the short leg of the LED. Orange wire running from PTB23 through a resistor to the long leg of the LED.*</span></span>
 
 ## Changing the pin association in the code
 
@@ -42,7 +39,7 @@ static void blinky(void) {
 
 Now the LED on the breadboard blinks, rather than the LED on the board.
 
-<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![LED wired up on a breadboard](Images/bb02.png)</span>
+<span class="images">![LED wired up on a breadboard](Images/bb02.png)</span>
 
 ## Adding a button
 
@@ -50,7 +47,7 @@ Since we have the breadboard ready anyway, we can also change this program to to
 
 First we need to take another digital pin (in my case PTA2/D5), and wire the button up on the breadboard. Make sure to also have a pull-down resistor to ground.
 
-<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Sketch of a button and a LED on a breadboard](Images/bb-sketch-btn.png)</span>
+<span class="images">![Sketch of a button and a LED on a breadboard](Images/bb-sketch-btn.png)</span>
 
 Now we can configure PTA2/D5 as an [`InterruptIn`](https://developer.mbed.org/handbook/InterruptIn) pin and get notified when the button gets pressed or released. Change 'source/app.cpp' to read:
 
@@ -74,7 +71,7 @@ void app_start(int, char**) {
 }
 ```
 
-<span style="background-color: #F0F0F5; display:block; text-align:center; height:100%; padding:10px;">![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)</span>
+<span class="images">![Button and a LED on a breadboard](https://raw.githubusercontent.com/ARMmbed/GettingStartedmbedOS/master/Docs/Images/bb03.gif)</span>
 
 ## Making the code safe
 
@@ -114,4 +111,4 @@ void app_start(int, char**) {
     button.fall(&led_toggle_irq);
 }
 ```
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can read more [about MINAR here](Full_Guide/MINAR.md).</span>
+<span class="tips">**Tip:** You can read more [about MINAR here](Full_Guide/MINAR.md).</span>
