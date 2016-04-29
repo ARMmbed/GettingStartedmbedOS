@@ -13,7 +13,7 @@ The yotta documentation site explains how to [write](http://yottadocs.mbed.com/t
 
 The yotta Registry is not a source code repository; it's a component repository, so you should publish components to the yotta Registry at version points: whenever you would normally apply a new version, or would have sent it out to customers or users. Note that once something is published to the yotta Registry it can't be unpublished - it's there to stay.
 
-<span style="background-color:#E6E6E6;border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The mbed OS User Guide reviewed the [version guidelines](app_on_yotta.md#versioning-an-existing-yotta-module) in the context of initiating yotta modules.</span>
+<span class="tips">**Tip:** The mbed OS User Guide reviewed the [version guidelines](app_on_yotta.md#versioning-an-existing-yotta-module) in the context of initiating yotta modules.</span>
 
 ### Licensing binaries and libraries
 
