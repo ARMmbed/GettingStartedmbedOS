@@ -33,7 +33,7 @@ An application and a library have similar structures:
 * A ``readme.md`` file summarizing the API of the module.
 
 
-<span style="display:block; text-align:center; padding:5px; border:1px solid #000;">
+<span class="images">
 ![](../Full_Guide/Images/module_struct.png)</span>
 
 **The ``module.json`` file** describes:
@@ -68,14 +68,13 @@ To build your application with mbed OS and yotta, you need to:
 
 1. [Build the module](#building-the-module).
 
-
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** When working with yotta in a command line prompt or terminal, you must navigate to your module directory before calling yotta.</span>
+<span class="tips">**Tip:** When working with yotta in a command line prompt or terminal, you must navigate to your module directory before calling yotta.</span>
 
 ### Initializing a yotta executable module
 
 If you have [yotta installed](../installation.md) on your computer, you can use ``yotta init`` to construct a new skeleton module in an empty directory by answering a simple series of questions. For example, here is how to initialize the [Blinky sample application](https://github.com/ARMmbed/example-mbedos-blinky):
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** There is only one difference between initializing a library module and an executable module, and that is the selection between library and executable. You'll see soon where to make that selection.</span>
+<span class="tips">**Tip:** There is only one difference between initializing a library module and an executable module, and that is the selection between library and executable. You'll see soon where to make that selection.</span>
 
 * Create a directory called ``blinky``. In a terminal or CMD, run:
 
@@ -101,7 +100,7 @@ If you have [yotta installed](../installation.md) on your computer, you can use 
 
  * "What is the license for this project": The default license is Apache-2.0, but you can enter a different one, such as ISC or MIT.
 
-<span style="display:block; text-align:center; padding:5px;">
+<span class="images">
 ![](../Full_Guide/Images/yotta_init.png)</span>
 
 * When you've answered all of the questions, yotta creates the basic file structure you need. You can view it with the command ``ls``:
@@ -111,7 +110,7 @@ user$ ls
 module.json	my_blinky	source		test
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can use ``yotta init`` in an existing module to modify it at any time. Your previous answers are shown as the default, so you can edit only the ones that need to change; simply press Enter to accept the answers you don't want to change.</span>
+<span class="tips">**Tip:** You can use ``yotta init`` in an existing module to modify it at any time. Your previous answers are shown as the default, so you can edit only the ones that need to change; simply press Enter to accept the answers you don't want to change.</span>
 
 ### Versioning an existing yotta module
 
@@ -145,7 +144,7 @@ You could also have used ``yotta version major`` for a major version (2.0.0) or 
 
 ### yotta targets
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** The full explanation for yotta targets is on the [yotta documentation site](http://yottadocs.mbed.com/tutorial/targets.html). Earlier in this document (that chapter will be published soon), you saw how yotta targets and the hardware implementation work together. This chapter explains only a couple of concepts and the basic yotta commands.</span>
+<span class="tips">**Tip:** The full explanation for yotta targets is on the [yotta documentation site](http://yottadocs.mbed.com/tutorial/targets.html). Earlier in this document (that chapter will be published soon), you saw how yotta targets and the hardware implementation work together. This chapter explains only a couple of concepts and the basic yotta commands.</span>
 
 yotta can build your code for different targets: different boards and operating systems. It can also use different compilers. This means you don't have to re-write code every time you want to test or deploy on a new kind of board. It also means you need to explicitly identify your target to yotta. Identifying a target means naming both the hardware and build toolchain you'll be using. The following sections explain how to work with targets.
 
@@ -157,7 +156,7 @@ The yotta registry has a list of targets. You can search it using ``yotta search
 yotta search target "k64f"
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You can use the ``--limit`` option to change the number of results displayed.</span>
+<span class="tips">**Tip:** You can use the ``--limit`` option to change the number of results displayed.</span>
 
 Here are the top two results:
 
@@ -194,7 +193,7 @@ mbed-gcc 0.0.14
 yotta target bbc-microbit-classic-armcc
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The first time you access the yotta Registry, you need to log into your mbed user account.</span>
+<span class="notes">**Note:** The first time you access the yotta Registry, you need to log into your mbed user account.</span>
 
 #### Creating your own target
 
@@ -212,7 +211,7 @@ When you build your application, yotta downloads from the yotta Registry:
 
 * For each of the modules you listed, the other modules that module itself lists in its ``module.json``.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** Because yotta downloads dependencies from the yotta Registry, you must be online the first time you build.</span>
+<span class="notes">**Note:** Because yotta downloads dependencies from the yotta Registry, you must be online the first time you build.</span>
 
 #### mbed-drivers
 
@@ -220,10 +219,10 @@ We saw the [core modules mbed OS needs](../index.md). Each of these modules depe
 
 For example, here is a partial tree for **Blinky**. It shows Blinky's two dependencies: ``mbed-drivers`` and ``uvisor-lib``. Then it shows the start of the next level of dependencies: ``uvisor-lib`` has only one dependency, whereas ``mbed-drivers`` has several. These, in turn, have their own dependencies. And so on:
 
-<span style="display:block; text-slign:center; padding:5px; border:1px solid #000;">
+<span class="images">
 ![](../Full_Guide/Images/yotta_dep.png)</span>
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.</span>
+<span class="notes">**Note:** The list of dependencies for any application may change without warning; Blinky's changed while we were writing this chapter.</span>
 
 Your dependencies are listed in the [``module.json``](#Structure-of-a-yotta-module) file for your module. Below, you can see how to list dependencies from the yotta Registry, GitHub and privately hosted sources.
 
@@ -251,7 +250,7 @@ Using ``yotta install <dependency_name>``, rather than manually editing ``module
 
 For modules with a 0.x version number, we recommend using ``~`` rather than ^. Even though semantic versioning specifies that any update may break compatibility, if you are using 0.x versions of something you're accepting some breakage anyway, and using ^ prevents you from getting any updates.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** For more information about versions and specifiers, see the [yotta documentation site](http://yottadocs.mbed.com/reference/module.html#dependencies).</span>
+<span class="tips">**Tip:** For more information about versions and specifiers, see the [yotta documentation site](http://yottadocs.mbed.com/reference/module.html#dependencies).</span>
 
 ##### module.json: dependencies from GitHub repositories
 
@@ -351,7 +350,7 @@ user$ yotta build
 
 The built executable (a binary) is created at ``./build/<target_name>/source/<module_name>``. So the result of that build is at ``blinky/build/frdm-k64f-gcc/source/``.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** Some targets require a HEX file, not a BIN. yotta knows which file type to build based on the target description.</span>
+<span class="tips">**Tip:** Some targets require a HEX file, not a BIN. yotta knows which file type to build based on the target description.</span>
 
 #### Flashing the application to the board
 
