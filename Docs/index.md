@@ -56,6 +56,6 @@ The examples in this guide focus on the FRDM-K64F board. If you have another boa
 
 * Links to [our main code repositories and their documentation, as well as examples](GetTheCode.md).
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** For more details about mbed, [see our main site](http://mbed.com/en/about-mbed/what-mbed/).</span>
+<span class="tips">**Tip:** For more details about mbed, [see our main site](http://mbed.com/en/about-mbed/what-mbed/).</span>
 
 
