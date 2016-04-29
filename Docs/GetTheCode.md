@@ -1,10 +1,12 @@
-# Example applications
+# Code resources
+
+## Example applications
 
 These example applications can help you get started with various functions of mbed OS.
 
 !{https://raw.githubusercontent.com/ARMmbed/Sample_List/master/Docs/index.md}
 
-# Key yotta modules
+## Key yotta modules
 
 If your'e interested in specific yotta modules:
 
@@ -18,7 +20,7 @@ If your'e interested in specific yotta modules:
 
 You can search for other modules [on our main site](https://www.mbed.com/en/development/software/mbed-yotta/).
 
-# Key code repositories
+## Key code repositories
 
 For a list of key code repositories and the documentation they contain, see [our main site](http://mbed.com/en/development/getting-started/get-code/).
 
