@@ -3,7 +3,7 @@
 
 This section shows the general structure of an application running on mbed OS, and discusses best practices for coding (coming soon).
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** You'll be using Blinky, the same application you used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](https://docs.mbed.com/docs/getting-started-mbed-os/en/latest/FirstProjectmbedOS/) and follow the instructions there.</span>
+<span class="tips">**Tip:** You'll be using Blinky, the same application you used earlier to learn about yotta and the project build process. You should already have Blinky built. If you don't, please take a look at the [quick guide](https://docs.mbed.com/docs/getting-started-mbed-os/en/latest/FirstProjectmbedOS/) and follow the instructions there.</span>
 
 ## Blinky's code
 
@@ -34,7 +34,7 @@ Note that including requires the full path to the file:
 #include "mbed-drivers/mbed.h"
 ```
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Note:** There are limitations on the path and file names. For more information about this, please see the [yotta documentation](http://yottadocs.mbed.com/tutorial/tutorial.html).</span>
+<span class="notes">**Note:** There are limitations on the path and file names. For more information about this, please see the [yotta documentation](http://yottadocs.mbed.com/tutorial/tutorial.html).</span>
 
 Please remember that for the compilation to work correctly, yotta has to know where the included file comes from. That requires listing dependencies in the ``module.json`` file, as [explained in the yotta chapter](app_on_yotta/#installing-dependencies). In this example, ``mbed.h`` is part of ``mbed-drivers``, which you installed when you built your code.
 
@@ -78,7 +78,7 @@ Debugging and testing are subjects worthy of their own guides. Until we have tho
 
 mbed OS applications are binary files (or, for certain boards, HEX). They're built locally (in your computer's project directory) and must be flashed (copied to) the board.
 
-<span style="background-color:#E6E6E6;  border:1px solid #000;display:block; height:100%; padding:10px">**Tip:** yotta builds a separate application binary for each target under you application directory. In our example, the binary will be at ``/blinky/build/frdm-k64f-gcc/source/``. The file is ``my_blink.bin``.</span>
+<span class="tips">**Tip:** yotta builds a separate application binary for each target under you application directory. In our example, the binary will be at ``/blinky/build/frdm-k64f-gcc/source/``. The file is ``my_blink.bin``.</span>
 
 To flash an application to your board:
 
