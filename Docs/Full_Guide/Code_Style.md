@@ -22,7 +22,6 @@ Pull requests on GitHub have to meet a number of requirements in order to keep t
 	1. Use the imperative mood in the subject line.
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
-
 * Since we use GitHub and explicit CLAs, special commit tags that other projects might use, like “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
 
 * Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the mbed-drivers repo would not be acceptable, as it is already understood that the commit applies to "mbed-drivers". Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
