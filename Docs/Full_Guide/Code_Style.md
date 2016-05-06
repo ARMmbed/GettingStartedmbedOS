@@ -9,11 +9,8 @@ The mbed OS code base is hosted on GitHub, and you can submit new features or bu
 Pull requests on GitHub have to meet a number of requirements in order to keep the code and commit history clean:
 
 * Commits should always contain a proper description of their content. Start with a concise and sensible one-line description, then elaborate on reasoning of the choices taken, descriptions for reviewers and other information that might otherwise  be lost.
-
 * Commits should always be written to allow publication, so they can never contain confidential information, reference private documents, links to intranet locations, or rude language.
-
 * Each commit should be the minimum self-contained commit for a change. A commit should always result in a new state that is again in a compilable state. Large changes should (if possible) be split up into logical smaller commits that help reviewers follow the reasoning behind the full change.
-
 * Commits should follow [Chris Beam’s seven rules of great commit messages](http://chris.beams.io/posts/git-commit#seven-rules):
 	1. Separate subject from body with a blank line.
 	1. Limit the subject line to 72 characters (note that this is a deviation from Beam's standard).
@@ -23,7 +20,6 @@ Pull requests on GitHub have to meet a number of requirements in order to keep t
 	1. Wrap the body at 72 characters.
 	1. Use the body to explain _what_ and _why_ vs _how_.
 * Since we use GitHub and explicit CLAs, special commit tags that other projects might use, like “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub keeps track of who reviewed what and when, and our stack of signed CLAs shows us who has agreed to our development contribution agreement.
-
 * Prefixing your commit message with a domain is acceptable and recommended where it makes sense to do so. However, prefixing one's domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the mbed-drivers repo would not be acceptable, as it is already understood that the commit applies to "mbed-drivers". Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, as it communicates that the change applies to the doppelwidget area of mbed-drivers.
 
 ## Code acceptance
