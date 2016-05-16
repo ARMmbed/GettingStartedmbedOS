@@ -364,6 +364,10 @@ The file you need to flash onto the mbed-enabled board is ``my_blinky.bin``:
 
 1. The application is now on your board and should start working immediately. Note that some boards need a reset.
 
+## yotta and private GitHub repositories
+
+If your GitHub repo is private, yotta will only be able to access it if you add yotta as an authorized application. Please read the [GitHub help page on this topic](https://help.github.com/articles/connecting-with-third-party-applications/) for more information.
+
 ## Building a project: summary
 
 To build your ``blinky`` project with mbed OS and yotta, you:
