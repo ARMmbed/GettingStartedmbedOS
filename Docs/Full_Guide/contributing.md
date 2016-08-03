@@ -1,26 +1,26 @@
-# Creating and publishing your own modules and contributing to mbed OS
+# Creating and publishing your own libraries and contributing to mbed OS
 
-This chapter covers the different aspects of developing your own modules for use in mbed devices, as well as items to keep in mind during development, like licensing. It covers:
+This chapter covers the different aspects of developing your own libraries for use in mbed devices, as well as items to keep in mind during development, like licensing. It covers:
 
 1. [The mbed OS code base](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to mbed OS itself.
 
-[comment]: <> (TODO add section about the index service when available)
+[//]: # (TODO add section about the index service when available)
 
 ### Licensing binaries and libraries
 
 When you write original code you own the copyright and can choose to make it available to others under a license of your choice. A license gives rights and puts limitations on the reuse of your code by others. Not having a license means others cannot use your code. We encourage you to choose a license that makes possible (and encourages!) reuse by others. 
 
-If you create new modules, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well known license such as one of the ones listed [on spdx.org](http://spdx.org/licenses/), preferably an [OSI-approved] (https://opensource.org/licenses/alphabetical), permissive open source software license. Specifically, we recommend the following:
+If you create new software, such as drivers, libraries and examples, you can apply whatever license you like as the author and copyright holder of that code. Having said that, we encourage you to use a well known license such as one of the ones listed [on spdx.org](http://spdx.org/licenses/), preferably an [OSI-approved] (https://opensource.org/licenses/alphabetical), permissive open source software license. Specifically, we recommend the following:
 
 * For original source code, use the Apache 2.0 license.  
 
 * For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License](https://www.mbed.com/licenses/PBL-1.0). This is designed to be compatible with Apache 2.0 and the mbed OS code base.
 
-* If your module incorporates or is derived from other third party open source code, please be sure to retain all notices and identify the license for the third party licensed code in the same manner as described below. Remember, you cannot change the license on someone else’s code, because you are not the copyright holder! Instead, choose a license that is compatible with the license used by the third party open source code, or use the same license as that code. For example, if your module is derived from GPL source code, GPL requires you to license the rest of your code in that module under the GPL too. Note that many commercial users won’t be able to use GPL source code in their products, so we don't recommend this license if you're not obligated to use it. 
+* If your software incorporates or is derived from other third party open source code, please be sure to retain all notices and identify the license for the third party licensed code in the same manner as described below. Remember, you cannot change the license on someone else’s code, because you are not the copyright holder! Instead, choose a license that is compatible with the license used by the third party open source code, or use the same license as that code. For example, if your software is derived from GPL source code, GPL requires you to license the rest of your code in that software under the GPL too. Note that many commercial users won’t be able to use GPL source code in their products, so we don't recommend this license if you're not obligated to use it. 
 
 You must either write all the code you provide yourself, or have the necessary rights to provide code written by someone else. 
 
-In all cases, whatever license you use, please use an [SPDX](https://spdx.org/about-spdx/what-is-spdx) [license identifier](http://spdx.org/licenses/) in the [yotta ``module.json`` license section](http://yottadocs.mbed.com/reference/module.html#license) to make it easier for users to understand and legally review licenses.
+In all cases, whatever license you use, please use an [SPDX](https://spdx.org/about-spdx/what-is-spdx) [license identifier](http://spdx.org/licenses/) to make it easier for users to understand and legally review licenses.
 
 #### When to use Apache 2.0
 
@@ -108,7 +108,7 @@ If you decide to use a different license for your work, follow the same pattern:
 
 ### mbed OS principles
 
-mbed OS uses these same basic principles for its source code and module distributions. So source code we own is distributed under the Apache 2.0 license and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
+mbed OS uses these same basic principles for its source code and library distributions. So source code we own is distributed under the Apache 2.0 license and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
 
 All the source code and binary blobs that end up in mbed OS are maintained in public GitHub repositories.
 
@@ -150,7 +150,7 @@ All mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.
 
 Please refer to the [code contributions chapter](Code_Style.md). 
 
-Bug fixes must be verified by a member of the mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the module, then submit a pull request with your changes. 
+Bug fixes must be verified by a member of the mbed team before they're pulled into the main branch. You must therefore use GitHub to fork the repo, then submit a pull request with your changes. 
 
 The last line in your commit message description should say “Fixes #deadbeef”, where “deadbeef” is the issue number in GitHub. This allows GitHub to automatically close the issue when the commit is merged into the default branch.
 
