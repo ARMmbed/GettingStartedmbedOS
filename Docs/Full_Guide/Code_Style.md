@@ -2,7 +2,7 @@
 
 The mbed OS code base is hosted on GitHub, and you can submit new features or bug fixes. Please follow the [guidelines for GitHub pull requests](#guidelines-for-github-pull-requests) and the [coding style guide](#coding-style) in your submissions.
 
-<span class="tips">**Tip:** Please also read the section [Creating and publishing your own modules and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
+<span class="tips">**Tip:** Please also read the section [Creating and publishing your own libraries and contributing to mbed OS](contributing.md) for a review of the process and legal requirements.</span>
 
 ## Guidelines for GitHub pull requests
 
@@ -36,43 +36,43 @@ mbed OS follows the [K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R
 
 ```c
 static const PinMap PinMap_ADC[] = {
-  {PTC2, ADC0_SE4b, 0},
-  {NC , NC , 0}
+    {PTC2, ADC0_SE4b, 0},
+    {NC , NC , 0}
 };
 
 uint32_t adc_function(analogin_t *obj, uint32_t options)
 {
-  uint32_t instance = obj->adc >> ADC_INSTANCE_SHIFT;
-  switch (options) {
-    case 1:
-      timeout = 6;
-      break;
-    default:
-      timeout = 10;
-      break;
-  }
-  
-  while (!adc_hal_is_conversion_completed(instance, 0)) {
-    if (timeout == 0) {
-      break;
-    } else {
-      timeout--;
+    uint32_t instance = obj->adc >> ADC_INSTANCE_SHIFT;
+    switch (options) {
+        case 1:
+            timeout = 6;
+            break;
+        default:
+            timeout = 10;
+            break;
     }
-  }
   
-  if (obj->adc == ADC_CHANNEL0) {
-    adc_measure_channel(instance);
-    adc_stop_channel(instance);
-  } else {
-    error("channel not available");
-  }
+    while (!adc_hal_is_conversion_completed(instance, 0)) {
+        if (timeout == 0) {
+            break;
+        } else {
+            timeout--;
+        }
+    }
+  
+    if (obj->adc == ADC_CHANNEL0) {
+        adc_measure_channel(instance);
+        adc_stop_channel(instance);
+    } else {
+        error("channel not available");
+    }
     
 #if DEBUG
-  for (uint32_t i = 0; i < 10; i++) {
-    printf("Loop : %d", i);
-  }
+    for (uint32_t i = 0; i < 10; i++) {
+        printf("Loop : %d", i);
+    }
 #endif
-  return adc_hal_get_conversion_value(instance, 0);
+    return adc_hal_get_conversion_value(instance, 0);
 } 
 ```
 #### Rules
@@ -134,35 +134,35 @@ As an example:
 
 class AnalogIn {
 public:
-	/** Create an AnalogIn connected to the specified pin.
-	*
-	* @param pin AnalogIn pin to connect to
-	* @param name (optional) A string to identify the object
-	*/
-	AnalogIn(PinName pin) 
-	{
-		analogin_init(&_adc, pin);
-	}
+    /** Create an AnalogIn connected to the specified pin.
+     *
+     * @param pin AnalogIn pin to connect to
+     * @param name (optional) A string to identify the object
+     */
+    AnalogIn(PinName pin) 
+    {
+        analogin_init(&_adc, pin);
+    }
 	
-	/** Read the input voltage, represented as a float in the range [0.0, 1.0].
-	*
-	* @returns
-	* 	A floating-point value representing the current input voltage, measured as a percentage
-	*/
-	uint32_t read() 
-	{
-		return analogin_read(&_adc, operation);
-	}
+    /** Read the input voltage, represented as a float in the range [0.0, 1.0].
+     *
+     * @returns
+     * 	A floating-point value representing the current input voltage, measured as a percentage
+     */
+    uint32_t read() 
+    {
+        return analogin_read(&_adc, operation);
+    }
 protected:
-	analogin_t _adc;
+    analogin_t _adc;
 };
 
 typedef enum {
-	ADC0_SE0 = (0 << ADC_INSTANCE_SHIFT) | 0,
+    ADC0_SE0 = (0 << ADC_INSTANCE_SHIFT) | 0,
 } ADCName;
 
 struct analogin_s {
-	ADCName adc;
+    ADCName adc;
 };
 
 typedef struct analogin_s analogin_t;
