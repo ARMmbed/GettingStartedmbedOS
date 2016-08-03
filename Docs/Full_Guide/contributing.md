@@ -2,18 +2,9 @@
 
 This chapter covers the different aspects of developing your own modules for use in mbed devices, as well as items to keep in mind during development, like licensing. It covers:
 
-1. [The yotta Registry](#writing-reusable-modules-for-the-yotta-registry): Use the yotta Registry release mechanism to publish reusable modules that are not part of the mbed OS code base.
 1. [The mbed OS code base](#contributing-to-the-mbed-os-code-base): Use GitHub to contribute additions and bug fixes to mbed OS itself.
 
-## Publishing reusable modules to the yotta Registry
-
-Modules you publish to the yotta registry are functionalities that you expect others to need for their own applications, and that you may reuse yourself in future applications. 
-
-The yotta documentation site explains how to [write](http://yottadocs.mbed.com/tutorial/reuse.html) and [release](http://yottadocs.mbed.com/tutorial/release.html) software with yotta.
-
-The yotta Registry is not a source code repository; it's a component repository, so you should publish components to the yotta Registry at version points: whenever you would normally apply a new version, or would have sent it out to customers or users. Note that once something is published to the yotta Registry it can't be unpublished - it's there to stay.
-
-<span class="tips">**Tip:** The mbed OS User Guide reviewed the [version guidelines](app_on_yotta.md#versioning-an-existing-yotta-module) in the context of initiating yotta modules.</span>
+[comment]: <> (TODO add section about the index service when available)
 
 ### Licensing binaries and libraries
 
@@ -119,11 +110,11 @@ If you decide to use a different license for your work, follow the same pattern:
 
 mbed OS uses these same basic principles for its source code and module distributions. So source code we own is distributed under the Apache 2.0 license and binary blobs are released under the Permissive Binary License. Software parts from third parties that were already licensed under a different license are available under that original license.
 
-All the source code and binary blobs that end up in mbed OS yotta modules are maintained in public GitHub repositories.
+All the source code and binary blobs that end up in mbed OS are maintained in public GitHub repositories.
 
 ### Contributions
 
-All code changes and additions to mbed OS are handled through GitHub, where mbed OS is divided into modules. If you want to contribute to these modules, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](Code_Style.md).
+All code changes and additions to mbed OS are handled through GitHub. If you want to contribute, either by adding features or by fixing bugs, please follow the guidelines for [new features](#contributing-new-features-to-mbed-os) and [bugs](#reporting-and-fixing-bugs), and in both cases please follow the [code style guide and GitHub pull request guidelines](Code_Style.md).
 
 ### Licensing
 
@@ -141,7 +132,7 @@ The same agreement is then valid for all future pull requests from that GitHub u
 
 ### Contributing new features to mbed OS
 
-Before contributing an enhancement (new feature, new port and so on) please [discuss it on the forums](http://forums.mbed.com/c/mbed-os) to avoid duplication of work, as we or others might be working on a related feature.
+Before contributing an enhancement (new feature, new port and so on) please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on a related feature.
 
 Patch contributions can only be accepted through GitHub by creating a pull request from forked versions of our repositories. This allows us to review the contributions in a user friendly and reliable way, under public scrutiny.
 
@@ -149,15 +140,11 @@ Please create separate patches for each concern; each patch should have a clear 
 
 ### Reporting and fixing bugs
 
-Before submitting a bug report or a bug fix, please [discuss it on the forums](http://forums.mbed.com/c/mbed-os) to avoid duplication of work, as we or others might be working on it already.
+Before submitting a bug report or a bug fix, please [discuss it on the forums](https://developer.mbed.org/forum/) to avoid duplication of work, as we or others might be working on it already.
 
 #### Bug reports (issues) on GitHub
 
-All mbed OS modules are on GitHub; please use GitHub's [issues mechanism](https://guides.github.com/features/issues/) to open a bug report directly against the relevant GitHub repository. 
-
-If you're not sure which repository you need, please ask on [the forums](http://forums.mbed.com/).
-
-For best practice on bug reporting, please see [the mbed OS bug reporting guidelines](https://github.com/ARMmbed/mbed-os-docs/blob/master/Reporting%20Bugs.md).
+All mbed OS is on GitHub; please use GitHub's [issues mechanism](https://guides.github.com/features/issues/) to open a bug report directly against the relevant GitHub repository.
 
 #### Bug fixes
 
