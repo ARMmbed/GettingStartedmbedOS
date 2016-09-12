@@ -1,6 +1,8 @@
 # The mbed OS User Guide
 
-Welcome to the ARM® mbed™ OS user guide.
+Welcome to the ARM® mbed™ OS 3 user guide.
+
+For mbed OS 5, please [see here](https://docs.mbed.com/docs/mbed-os-handbook/en/5.1/).
 
 ## Getting started
 
