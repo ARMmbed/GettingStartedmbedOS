@@ -1,10 +1,10 @@
-site_name: mbed OS Guides
+site_name: mbed OS 3.0 Guides
 
 docs_dir: Docs
 
 pages:
-- ['index.md','Welcome to the mbed OS User Guides']
-- ['about_mbed_os.md','Overview of mbed OS']
+- ['index.md','Welcome to the mbed OS 3.0 User Guides']
+- ['about_mbed_os.md','Overview of mbed OS 3.0']
 - ['installation.md', 'Getting Started', 'Installation']
 - ['FirstProjectmbedOS.md', 'Getting Started', 'Blinky - your first application']
 - ['Extended_LED.md', 'Getting Started', 'Extending Blinky']
