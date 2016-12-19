@@ -1,5 +1,7 @@
 # Installing mbed OS and yotta
 
+<span class="tips">For mbed OS 5, please [see here](https://docs.mbed.com/docs/mbed-os-handbook/en/5.1/).</span>
+
 Like many open source operating systems, mbed OS is distributed as source code. You use yotta to fetch all the modules that you require to build for your hardware. Once you’ve done that, yotta works as an offline build tool that combines mbed OS and your application code into a single executable. All this means that you don't install mbed OS on your computer - you simply install yotta, and let it work for you.
 
 There are three ways to install yotta: 
